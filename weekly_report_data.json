@@ -1,0 +1,49 @@
+{
+  "generated": "2026-05-01T15:22:02.594149+00:00",
+  "report_friday": "2026-05-01",
+  "windows": {
+    "last_week": {
+      "start": "2026-04-24",
+      "end": "2026-04-30",
+      "label": "4/24-30"
+    },
+    "prior_week": {
+      "start": "2026-04-17",
+      "end": "2026-04-23",
+      "label": "4/17-23"
+    }
+  },
+  "kpis": {
+    "monthly_volume": {
+      "headline_30d": 21857623.357506,
+      "last_week_sum": 5753057.781783999,
+      "prior_week_sum": 5741287.918447,
+      "wow_pct": 0.2050038859605334
+    },
+    "tokenized_assets": {
+      "last_end": 123970,
+      "prior_end": 124608,
+      "wow_pct": -0.512005649717514
+    },
+    "mau": {
+      "last_end": 13008,
+      "prior_end": 17055,
+      "wow_pct": -23.72911169744943
+    },
+    "domain_launches": {
+      "last_end": 448,
+      "prior_end": 424,
+      "wow_pct": 5.660377358490567
+    }
+  },
+  "premium_domains": {
+    "live": {
+      "name": "ALERT.ai",
+      "fdv_usd": 260537.09000000003
+    },
+    "upcoming": {
+      "name": "E.credit",
+      "fdv_usd": 100532.57
+    }
+  }
+}
