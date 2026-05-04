@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-03T07:00:17.538393+00:00",
+  "generated": "2026-05-04T07:00:19.161017+00:00",
   "report_friday": "2026-05-08",
   "windows": {
     "last_week": {
@@ -15,25 +15,25 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 19783222.420344003,
-      "last_week_sum": 1495156.774736,
+      "headline_30d": 20860112.353400003,
+      "last_week_sum": 2572046.707792,
       "prior_week_sum": 5753057.781783999,
-      "wow_pct": -74.0110940746999
+      "wow_pct": -55.29252781128127
     },
     "tokenized_assets": {
-      "last_end": 124474,
-      "prior_end": 123970,
-      "wow_pct": 0.40654997176736307
+      "last_end": 124790,
+      "prior_end": 123971,
+      "wow_pct": 0.6606383751038549
     },
     "mau": {
-      "last_end": 8036,
+      "last_end": 8078,
       "prior_end": 13008,
-      "wow_pct": -38.22263222632226
+      "wow_pct": -37.899753997539975
     },
     "domain_launches": {
-      "last_end": 450,
+      "last_end": 451,
       "prior_end": 448,
-      "wow_pct": 0.4464285714285714
+      "wow_pct": 0.6696428571428571
     }
   },
   "premium_domains": {
@@ -42,8 +42,8 @@
       "fdv_usd": 633.65
     },
     "upcoming": {
-      "name": "BTCROUTE.com",
-      "fdv_usd": 500.0
+      "name": "KOOCHE.com",
+      "fdv_usd": 1500.0
     }
   }
 }
