@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-05T07:00:19.880111+00:00",
+  "generated": "2026-05-06T07:00:19.321735+00:00",
   "report_friday": "2026-05-08",
   "windows": {
     "last_week": {
@@ -15,31 +15,31 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 21596841.899319004,
-      "last_week_sum": 3308776.253711,
+      "headline_30d": 22112656.297628004,
+      "last_week_sum": 3824590.6520200004,
       "prior_week_sum": 5753057.781783999,
-      "wow_pct": -42.48665007002654
+      "wow_pct": -33.520732850452774
     },
     "tokenized_assets": {
-      "last_end": 124719,
+      "last_end": 124812,
       "prior_end": 123971,
-      "wow_pct": 0.6033669164562679
+      "wow_pct": 0.6783844608819805
     },
     "mau": {
-      "last_end": 8187,
+      "last_end": 8202,
       "prior_end": 13008,
-      "wow_pct": -37.06180811808118
+      "wow_pct": -36.94649446494465
     },
     "domain_launches": {
-      "last_end": 456,
+      "last_end": 473,
       "prior_end": 448,
-      "wow_pct": 1.7857142857142856
+      "wow_pct": 5.580357142857143
     }
   },
   "premium_domains": {
     "live": {
       "name": "JOYRIDECOIN.com",
-      "fdv_usd": 633.65
+      "fdv_usd": 587.1999999999999
     },
     "upcoming": {
       "name": "BRUT.xyz",
