@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-07T07:00:21.397889+00:00",
+  "generated": "2026-05-08T07:00:19.753393+00:00",
   "report_friday": "2026-05-08",
   "windows": {
     "last_week": {
@@ -15,31 +15,31 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 22860994.438648004,
-      "last_week_sum": 4572928.79304,
+      "headline_30d": 23488090.293633007,
+      "last_week_sum": 5200024.6480250005,
       "prior_week_sum": 5753057.781783999,
-      "wow_pct": -20.513073803650308
+      "wow_pct": -9.612855541101574
     },
     "tokenized_assets": {
-      "last_end": 125105,
+      "last_end": 125257,
       "prior_end": 123972,
-      "wow_pct": 0.9139160455586746
+      "wow_pct": 1.0365243764721066
     },
     "mau": {
-      "last_end": 8232,
+      "last_end": 8243,
       "prior_end": 13008,
-      "wow_pct": -36.715867158671585
+      "wow_pct": -36.63130381303813
     },
     "domain_launches": {
-      "last_end": 478,
+      "last_end": 483,
       "prior_end": 448,
-      "wow_pct": 6.696428571428571
+      "wow_pct": 7.8125
     }
   },
   "premium_domains": {
     "live": {
-      "name": "JOYRIDECOIN.com",
-      "fdv_usd": 250.29000000000002
+      "name": "NOMADCLUN.com",
+      "fdv_usd": 224.71
     },
     "upcoming": {
       "name": "NIMBO.com",
