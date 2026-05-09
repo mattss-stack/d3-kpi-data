@@ -1,49 +1,64 @@
 {
-  "generated": "2026-05-08T07:00:19.753393+00:00",
-  "report_friday": "2026-05-08",
+  "generated": "2026-05-09T07:00:19.929538+00:00",
+  "report_friday": "2026-05-15",
   "windows": {
     "last_week": {
+      "start": "2026-05-08",
+      "end": "2026-05-14",
+      "label": "5/8-14"
+    },
+    "prior_week": {
       "start": "2026-05-01",
       "end": "2026-05-07",
       "label": "5/1-7"
-    },
-    "prior_week": {
-      "start": "2026-04-24",
-      "end": "2026-04-30",
-      "label": "4/24-30"
     }
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 23488090.293633007,
-      "last_week_sum": 5200024.6480250005,
-      "prior_week_sum": 5753057.781783999,
-      "wow_pct": -9.612855541101574
+      "headline_30d": 19041304.363429,
+      "last_week_sum": 934306.621416,
+      "prior_week_sum": 5200024.6480250005,
+      "wow_pct": -82.03265013809397,
+      "rolling_30d_pct": -18.93208802679634
     },
     "tokenized_assets": {
-      "last_end": 125257,
-      "prior_end": 123972,
-      "wow_pct": 1.0365243764721066
+      "last_end": 125346,
+      "prior_end": 125257,
+      "wow_pct": 0.07105391315455424,
+      "breakdown": {
+        "domains": {
+          "last_end": 26561,
+          "prior_end": 26410,
+          "wow_pct": 0.571753123816736
+        },
+        "name_tokens": {
+          "last_end": 19553,
+          "prior_end": 19616,
+          "wow_pct": -0.3211663947797716
+        },
+        "subdomains": {
+          "last_end": 79232,
+          "prior_end": 79231,
+          "wow_pct": 0.0012621322462167586
+        }
+      }
     },
     "mau": {
-      "last_end": 8243,
-      "prior_end": 13008,
-      "wow_pct": -36.63130381303813
+      "last_end": 6772,
+      "prior_end": 8243,
+      "wow_pct": -17.845444619677302
     },
     "domain_launches": {
-      "last_end": 483,
-      "prior_end": 448,
-      "wow_pct": 7.8125
+      "last_end": 487,
+      "prior_end": 483,
+      "wow_pct": 0.8281573498964804
     }
   },
   "premium_domains": {
-    "live": {
-      "name": "NOMADCLUN.com",
-      "fdv_usd": 224.71
-    },
+    "live": null,
     "upcoming": {
-      "name": "NIMBO.com",
-      "fdv_usd": 5000.0
+      "name": "MOM.xyz",
+      "fdv_usd": 11500.0
     }
   }
 }
