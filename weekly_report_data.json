@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-09T07:00:19.929538+00:00",
+  "generated": "2026-05-10T07:00:21.375886+00:00",
   "report_friday": "2026-05-15",
   "windows": {
     "last_week": {
@@ -15,26 +15,26 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 19041304.363429,
-      "last_week_sum": 934306.621416,
+      "headline_30d": 19612681.079315998,
+      "last_week_sum": 1505683.337303,
       "prior_week_sum": 5200024.6480250005,
-      "wow_pct": -82.03265013809397,
-      "rolling_30d_pct": -18.93208802679634
+      "wow_pct": -71.04468845402747,
+      "rolling_30d_pct": -16.499464902719353
     },
     "tokenized_assets": {
-      "last_end": 125346,
+      "last_end": 124900,
       "prior_end": 125257,
-      "wow_pct": 0.07105391315455424,
+      "wow_pct": -0.2850140111929872,
       "breakdown": {
         "domains": {
-          "last_end": 26561,
+          "last_end": 26580,
           "prior_end": 26410,
-          "wow_pct": 0.571753123816736
+          "wow_pct": 0.6436955698599016
         },
         "name_tokens": {
-          "last_end": 19553,
+          "last_end": 19088,
           "prior_end": 19616,
-          "wow_pct": -0.3211663947797716
+          "wow_pct": -2.691680261011419
         },
         "subdomains": {
           "last_end": 79232,
@@ -44,9 +44,9 @@
       }
     },
     "mau": {
-      "last_end": 6772,
+      "last_end": 6793,
       "prior_end": 8243,
-      "wow_pct": -17.845444619677302
+      "wow_pct": -17.590683003760766
     },
     "domain_launches": {
       "last_end": 487,
@@ -58,7 +58,7 @@
     "live": null,
     "upcoming": {
       "name": "MOM.xyz",
-      "fdv_usd": 11500.0
+      "fdv_usd": 13453.99375
     }
   }
 }
