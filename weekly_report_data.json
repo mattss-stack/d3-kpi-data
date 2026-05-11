@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-10T07:00:21.375886+00:00",
+  "generated": "2026-05-11T07:00:21.588866+00:00",
   "report_friday": "2026-05-15",
   "windows": {
     "last_week": {
@@ -15,38 +15,38 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 19612681.079315998,
-      "last_week_sum": 1505683.337303,
+      "headline_30d": 20801717.359321,
+      "last_week_sum": 2694719.617308,
       "prior_week_sum": 5200024.6480250005,
-      "wow_pct": -71.04468845402747,
-      "rolling_30d_pct": -16.499464902719353
+      "wow_pct": -48.17871453106534,
+      "rolling_30d_pct": -11.437170501001575
     },
     "tokenized_assets": {
-      "last_end": 124900,
+      "last_end": 124521,
       "prior_end": 125257,
-      "wow_pct": -0.2850140111929872,
+      "wow_pct": -0.5875919110309203,
       "breakdown": {
         "domains": {
-          "last_end": 26580,
+          "last_end": 26659,
           "prior_end": 26410,
-          "wow_pct": 0.6436955698599016
+          "wow_pct": 0.9428246876183264
         },
         "name_tokens": {
-          "last_end": 19088,
+          "last_end": 18626,
           "prior_end": 19616,
-          "wow_pct": -2.691680261011419
+          "wow_pct": -5.0469004893964104
         },
         "subdomains": {
-          "last_end": 79232,
+          "last_end": 79236,
           "prior_end": 79231,
-          "wow_pct": 0.0012621322462167586
+          "wow_pct": 0.006310661231083792
         }
       }
     },
     "mau": {
-      "last_end": 6793,
+      "last_end": 6839,
       "prior_end": 8243,
-      "wow_pct": -17.590683003760766
+      "wow_pct": -17.032633749848355
     },
     "domain_launches": {
       "last_end": 487,
@@ -55,10 +55,13 @@
     }
   },
   "premium_domains": {
-    "live": null,
+    "live": {
+      "name": "BTCCHIPS.com",
+      "fdv_usd": 101.66999999999999
+    },
     "upcoming": {
       "name": "MOM.xyz",
-      "fdv_usd": 13453.99375
+      "fdv_usd": 13768.34625
     }
   }
 }
