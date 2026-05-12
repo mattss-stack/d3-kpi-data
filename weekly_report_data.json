@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-11T07:00:21.588866+00:00",
+  "generated": "2026-05-12T07:00:21.682766+00:00",
   "report_friday": "2026-05-15",
   "windows": {
     "last_week": {
@@ -15,53 +15,53 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 20801717.359321,
-      "last_week_sum": 2694719.617308,
+      "headline_30d": 21509294.948464997,
+      "last_week_sum": 3402297.206452,
       "prior_week_sum": 5200024.6480250005,
-      "wow_pct": -48.17871453106534,
-      "rolling_30d_pct": -11.437170501001575
+      "wow_pct": -34.57151769955144,
+      "rolling_30d_pct": -8.424675316002203
     },
     "tokenized_assets": {
-      "last_end": 124521,
+      "last_end": 125218,
       "prior_end": 125257,
-      "wow_pct": -0.5875919110309203,
+      "wow_pct": -0.03113598441604062,
       "breakdown": {
         "domains": {
-          "last_end": 26659,
+          "last_end": 27506,
           "prior_end": 26410,
-          "wow_pct": 0.9428246876183264
+          "wow_pct": 4.149943203332071
         },
         "name_tokens": {
-          "last_end": 18626,
+          "last_end": 18471,
           "prior_end": 19616,
-          "wow_pct": -5.0469004893964104
+          "wow_pct": -5.837071778140293
         },
         "subdomains": {
-          "last_end": 79236,
+          "last_end": 79241,
           "prior_end": 79231,
-          "wow_pct": 0.006310661231083792
+          "wow_pct": 0.012621322462167585
         }
       }
     },
     "mau": {
-      "last_end": 6839,
+      "last_end": 6887,
       "prior_end": 8243,
-      "wow_pct": -17.032633749848355
+      "wow_pct": -16.45032148489628
     },
     "domain_launches": {
-      "last_end": 487,
+      "last_end": 509,
       "prior_end": 483,
-      "wow_pct": 0.8281573498964804
+      "wow_pct": 5.383022774327122
     }
   },
   "premium_domains": {
     "live": {
-      "name": "BTCCHIPS.com",
-      "fdv_usd": 101.66999999999999
+      "name": "ESCALATIONS.com",
+      "fdv_usd": 2033.4099999999999
     },
     "upcoming": {
       "name": "MOM.xyz",
-      "fdv_usd": 13768.34625
+      "fdv_usd": 14740.225625
     }
   }
 }
