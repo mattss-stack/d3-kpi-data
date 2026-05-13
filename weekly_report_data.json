@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-12T07:00:21.682766+00:00",
+  "generated": "2026-05-13T07:00:22.061588+00:00",
   "report_friday": "2026-05-15",
   "windows": {
     "last_week": {
@@ -15,53 +15,53 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 21509294.948464997,
-      "last_week_sum": 3402297.206452,
+      "headline_30d": 21958623.374874,
+      "last_week_sum": 3851625.632861,
       "prior_week_sum": 5200024.6480250005,
-      "wow_pct": -34.57151769955144,
-      "rolling_30d_pct": -8.424675316002203
+      "wow_pct": -25.93062738031694,
+      "rolling_30d_pct": -6.511669955448037
     },
     "tokenized_assets": {
-      "last_end": 125218,
+      "last_end": 125675,
       "prior_end": 125257,
-      "wow_pct": -0.03113598441604062,
+      "wow_pct": 0.33371388425397386,
       "breakdown": {
         "domains": {
-          "last_end": 27506,
+          "last_end": 28060,
           "prior_end": 26410,
-          "wow_pct": 4.149943203332071
+          "wow_pct": 6.247633472169633
         },
         "name_tokens": {
-          "last_end": 18471,
+          "last_end": 18371,
           "prior_end": 19616,
-          "wow_pct": -5.837071778140293
+          "wow_pct": -6.346859706362154
         },
         "subdomains": {
-          "last_end": 79241,
+          "last_end": 79244,
           "prior_end": 79231,
-          "wow_pct": 0.012621322462167585
+          "wow_pct": 0.01640771920081786
         }
       }
     },
     "mau": {
-      "last_end": 6887,
+      "last_end": 6915,
       "prior_end": 8243,
-      "wow_pct": -16.45032148489628
+      "wow_pct": -16.110639330340895
     },
     "domain_launches": {
-      "last_end": 509,
+      "last_end": 514,
       "prior_end": 483,
-      "wow_pct": 5.383022774327122
+      "wow_pct": 6.418219461697723
     }
   },
   "premium_domains": {
     "live": {
       "name": "ESCALATIONS.com",
-      "fdv_usd": 2033.4099999999999
+      "fdv_usd": 2033.8000000000002
     },
     "upcoming": {
       "name": "MOM.xyz",
-      "fdv_usd": 14740.225625
+      "fdv_usd": 14817.52
     }
   }
 }
