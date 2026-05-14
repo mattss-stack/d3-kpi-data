@@ -1,57 +1,57 @@
 {
-  "generated": "2026-05-14T07:00:22.529036+00:00",
+  "generated": "2026-05-14T16:53:04.308470+00:00",
   "report_friday": "2026-05-15",
   "windows": {
     "last_week": {
-      "start": "2026-05-08",
-      "end": "2026-05-14",
-      "label": "5/8-14"
+      "start": "2026-05-07",
+      "end": "2026-05-13",
+      "label": "5/7-13"
     },
     "prior_week": {
-      "start": "2026-05-01",
-      "end": "2026-05-07",
-      "label": "5/1-7"
+      "start": "2026-04-30",
+      "end": "2026-05-06",
+      "label": "4/30-6"
     }
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 22514764.715259,
-      "last_week_sum": 4407766.973246001,
-      "prior_week_sum": 5200024.6480250005,
-      "wow_pct": -15.235652297915623,
-      "rolling_30d_pct": -4.143911089433475
+      "headline_30d": 22779543.497125,
+      "last_week_sum": 5125952.763001,
+      "prior_week_sum": 5013452.918377,
+      "wow_pct": 2.243959332132696,
+      "rolling_30d_pct": -3.0166215628865958
     },
     "tokenized_assets": {
-      "last_end": 126617,
-      "prior_end": 125257,
-      "wow_pct": 1.0857676616875704,
+      "last_end": 126347,
+      "prior_end": 125117,
+      "wow_pct": 0.9830798372723132,
       "breakdown": {
         "domains": {
-          "last_end": 29068,
-          "prior_end": 26410,
-          "wow_pct": 10.06436955698599
+          "last_end": 28721,
+          "prior_end": 26253,
+          "wow_pct": 9.400830381289756
         },
         "name_tokens": {
-          "last_end": 18295,
-          "prior_end": 19616,
-          "wow_pct": -6.734298531810767
+          "last_end": 18372,
+          "prior_end": 19638,
+          "wow_pct": -6.446684998472349
         },
         "subdomains": {
           "last_end": 79254,
-          "prior_end": 79231,
-          "wow_pct": 0.02902904166298545
+          "prior_end": 79226,
+          "wow_pct": 0.03534193320374625
         }
       }
     },
     "mau": {
-      "last_end": 6957,
-      "prior_end": 8243,
-      "wow_pct": -15.601116098507825
+      "last_end": 7380,
+      "prior_end": 8550,
+      "wow_pct": -13.684210526315791
     },
     "domain_launches": {
       "last_end": 518,
-      "prior_end": 483,
-      "wow_pct": 7.246376811594203
+      "prior_end": 478,
+      "wow_pct": 8.368200836820083
     }
   },
   "premium_domains": {
@@ -61,7 +61,7 @@
     },
     "upcoming": {
       "name": "MOM.xyz",
-      "fdv_usd": 14626.53375
+      "fdv_usd": 14692.19875
     }
   }
 }
