@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-14T16:53:04.308470+00:00",
+  "generated": "2026-05-15T07:00:21.602262+00:00",
   "report_friday": "2026-05-15",
   "windows": {
     "last_week": {
@@ -15,21 +15,21 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 22779543.497125,
+      "headline_30d": 22873132.537881,
       "last_week_sum": 5125952.763001,
       "prior_week_sum": 5013452.918377,
       "wow_pct": 2.243959332132696,
-      "rolling_30d_pct": -3.0166215628865958
+      "rolling_30d_pct": -2.6181683911471647
     },
     "tokenized_assets": {
-      "last_end": 126347,
-      "prior_end": 125117,
-      "wow_pct": 0.9830798372723132,
+      "last_end": 126349,
+      "prior_end": 125118,
+      "wow_pct": 0.9838712255630685,
       "breakdown": {
         "domains": {
-          "last_end": 28721,
-          "prior_end": 26253,
-          "wow_pct": 9.400830381289756
+          "last_end": 28723,
+          "prior_end": 26254,
+          "wow_pct": 9.404281252380589
         },
         "name_tokens": {
           "last_end": 18372,
@@ -57,11 +57,11 @@
   "premium_domains": {
     "live": {
       "name": "ESCALATIONS.com",
-      "fdv_usd": 2033.8000000000002
+      "fdv_usd": 1764.23
     },
     "upcoming": {
       "name": "MOM.xyz",
-      "fdv_usd": 14692.19875
+      "fdv_usd": 14665.705625
     }
   }
 }
