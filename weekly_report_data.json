@@ -1,67 +1,67 @@
 {
-  "generated": "2026-05-15T07:00:21.602262+00:00",
-  "report_friday": "2026-05-15",
+  "generated": "2026-05-16T07:00:21.426986+00:00",
+  "report_friday": "2026-05-22",
   "windows": {
     "last_week": {
+      "start": "2026-05-14",
+      "end": "2026-05-20",
+      "label": "5/14-20"
+    },
+    "prior_week": {
       "start": "2026-05-07",
       "end": "2026-05-13",
       "label": "5/7-13"
-    },
-    "prior_week": {
-      "start": "2026-04-30",
-      "end": "2026-05-06",
-      "label": "4/30-6"
     }
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 22873132.537881,
-      "last_week_sum": 5125952.763001,
-      "prior_week_sum": 5013452.918377,
-      "wow_pct": 2.243959332132696,
-      "rolling_30d_pct": -2.6181683911471647
+      "headline_30d": 17738673.687904,
+      "last_week_sum": 1077214.014102,
+      "prior_week_sum": 5125952.763001,
+      "wow_pct": -78.98509674382285,
+      "rolling_30d_pct": -22.447554314974756
     },
     "tokenized_assets": {
-      "last_end": 126349,
-      "prior_end": 125118,
-      "wow_pct": 0.9838712255630685,
+      "last_end": 126989,
+      "prior_end": 126349,
+      "wow_pct": 0.506533490569771,
       "breakdown": {
         "domains": {
-          "last_end": 28723,
-          "prior_end": 26254,
-          "wow_pct": 9.404281252380589
+          "last_end": 29533,
+          "prior_end": 28723,
+          "wow_pct": 2.8200396894474813
         },
         "name_tokens": {
-          "last_end": 18372,
-          "prior_end": 19638,
-          "wow_pct": -6.446684998472349
+          "last_end": 18178,
+          "prior_end": 18372,
+          "wow_pct": -1.055954713694753
         },
         "subdomains": {
-          "last_end": 79254,
-          "prior_end": 79226,
-          "wow_pct": 0.03534193320374625
+          "last_end": 79278,
+          "prior_end": 79254,
+          "wow_pct": 0.03028238322355969
         }
       }
     },
     "mau": {
-      "last_end": 7380,
-      "prior_end": 8550,
-      "wow_pct": -13.684210526315791
+      "last_end": 6135,
+      "prior_end": 7380,
+      "wow_pct": -16.869918699186993
     },
     "domain_launches": {
-      "last_end": 518,
-      "prior_end": 478,
-      "wow_pct": 8.368200836820083
+      "last_end": 522,
+      "prior_end": 518,
+      "wow_pct": 0.7722007722007722
     }
   },
   "premium_domains": {
     "live": {
-      "name": "ESCALATIONS.com",
-      "fdv_usd": 1764.23
+      "name": "BARBEQUE.io",
+      "fdv_usd": 2342.9700000000003
     },
     "upcoming": {
-      "name": "MOM.xyz",
-      "fdv_usd": 14665.705625
+      "name": "EYELINE.xyz",
+      "fdv_usd": 812.5
     }
   }
 }
