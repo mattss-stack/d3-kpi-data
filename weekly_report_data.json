@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-19T07:00:20.886356+00:00",
+  "generated": "2026-05-20T07:00:20.838910+00:00",
   "report_friday": "2026-05-22",
   "windows": {
     "last_week": {
@@ -15,49 +15,49 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 19834889.298973,
-      "last_week_sum": 3173429.6251709997,
+      "headline_30d": 20681171.765183,
+      "last_week_sum": 4019712.091381,
       "prior_week_sum": 5125952.763001,
-      "wow_pct": -38.09093115182925,
-      "rolling_30d_pct": -13.283022051641849
+      "wow_pct": -21.581171789268474,
+      "rolling_30d_pct": -9.583124519861093
     },
     "tokenized_assets": {
-      "last_end": 126991,
+      "last_end": 135663,
       "prior_end": 126349,
-      "wow_pct": 0.5081164077278015,
+      "wow_pct": 7.371645204948199,
       "breakdown": {
         "domains": {
-          "last_end": 29587,
+          "last_end": 29618,
           "prior_end": 28723,
-          "wow_pct": 3.0080423354106465
+          "wow_pct": 3.1159697803154267
         },
         "name_tokens": {
-          "last_end": 17789,
+          "last_end": 17677,
           "prior_end": 18372,
-          "wow_pct": -3.1733072066187673
+          "wow_pct": -3.7829305464837795
         },
         "subdomains": {
-          "last_end": 79615,
+          "last_end": 88368,
           "prior_end": 79254,
-          "wow_pct": 0.45549751432104374
+          "wow_pct": 11.499735029146795
         }
       }
     },
     "mau": {
-      "last_end": 8113,
+      "last_end": 10163,
       "prior_end": 7380,
-      "wow_pct": 9.932249322493226
+      "wow_pct": 37.710027100271006
     },
     "domain_launches": {
-      "last_end": 532,
+      "last_end": 533,
       "prior_end": 518,
-      "wow_pct": 2.7027027027027026
+      "wow_pct": 2.8957528957528957
     }
   },
   "premium_domains": {
     "live": {
-      "name": "AIDROPMINE.com",
-      "fdv_usd": 6188.400000000001
+      "name": "BARBEQUE.io",
+      "fdv_usd": 2426.3700000000003
     },
     "upcoming": {
       "name": "GRADUATION.ai",
