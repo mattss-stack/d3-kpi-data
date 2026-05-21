@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-20T07:00:20.838910+00:00",
+  "generated": "2026-05-21T07:00:20.484007+00:00",
   "report_friday": "2026-05-22",
   "windows": {
     "last_week": {
@@ -15,21 +15,21 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 20681171.765183,
-      "last_week_sum": 4019712.091381,
+      "headline_30d": 21597715.262283005,
+      "last_week_sum": 4723784.009027,
       "prior_week_sum": 5125952.763001,
-      "wow_pct": -21.581171789268474,
-      "rolling_30d_pct": -9.583124519861093
+      "wow_pct": -7.845736638012822,
+      "rolling_30d_pct": -5.576049863243408
     },
     "tokenized_assets": {
-      "last_end": 135663,
+      "last_end": 138081,
       "prior_end": 126349,
-      "wow_pct": 7.371645204948199,
+      "wow_pct": 9.285392049007116,
       "breakdown": {
         "domains": {
-          "last_end": 29618,
+          "last_end": 29614,
           "prior_end": 28723,
-          "wow_pct": 3.1159697803154267
+          "wow_pct": 3.1020436583922293
         },
         "name_tokens": {
           "last_end": 17677,
@@ -37,16 +37,16 @@
           "wow_pct": -3.7829305464837795
         },
         "subdomains": {
-          "last_end": 88368,
+          "last_end": 90790,
           "prior_end": 79254,
-          "wow_pct": 11.499735029146795
+          "wow_pct": 14.555732202791027
         }
       }
     },
     "mau": {
-      "last_end": 10163,
+      "last_end": 11715,
       "prior_end": 7380,
-      "wow_pct": 37.710027100271006
+      "wow_pct": 58.739837398373986
     },
     "domain_launches": {
       "last_end": 533,
@@ -57,7 +57,7 @@
   "premium_domains": {
     "live": {
       "name": "BARBEQUE.io",
-      "fdv_usd": 2426.3700000000003
+      "fdv_usd": 2427.1000000000004
     },
     "upcoming": {
       "name": "GRADUATION.ai",
