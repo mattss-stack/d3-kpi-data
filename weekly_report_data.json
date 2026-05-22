@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-21T07:00:20.484007+00:00",
+  "generated": "2026-05-22T07:00:22.248587+00:00",
   "report_friday": "2026-05-22",
   "windows": {
     "last_week": {
@@ -15,21 +15,21 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 21597715.262283005,
+      "headline_30d": 22098685.493790004,
       "last_week_sum": 4723784.009027,
       "prior_week_sum": 5125952.763001,
       "wow_pct": -7.845736638012822,
-      "rolling_30d_pct": -5.576049863243408
+      "rolling_30d_pct": -3.385837260412007
     },
     "tokenized_assets": {
-      "last_end": 138081,
+      "last_end": 138082,
       "prior_end": 126349,
-      "wow_pct": 9.285392049007116,
+      "wow_pct": 9.28618350758613,
       "breakdown": {
         "domains": {
-          "last_end": 29614,
+          "last_end": 29615,
           "prior_end": 28723,
-          "wow_pct": 3.1020436583922293
+          "wow_pct": 3.1055251888730284
         },
         "name_tokens": {
           "last_end": 17677,
@@ -57,7 +57,7 @@
   "premium_domains": {
     "live": {
       "name": "BARBEQUE.io",
-      "fdv_usd": 2427.1000000000004
+      "fdv_usd": 2429.03
     },
     "upcoming": {
       "name": "GRADUATION.ai",
