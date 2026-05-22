@@ -1,6 +1,6 @@
 {
-  "snapshot_date": "2026-05-08",
-  "prior_snapshot_date": "2026-05-01",
+  "snapshot_date": "2026-05-22",
+  "prior_snapshot_date": "2026-05-08",
   "top_25": {
     "total_in_pipeline": 25,
     "qualified_or_above": 11,
@@ -11,7 +11,7 @@
   "long_tail": {
     "total_in_pipeline": 37,
     "qualified_or_above": 19,
-    "advanced_past_week": 2,
+    "advanced_past_week": 0,
     "closed_this_week": 0,
     "signed_contracts_ytd": 5
   }
