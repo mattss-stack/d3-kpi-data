@@ -1,67 +1,67 @@
 {
-  "generated": "2026-05-22T07:00:22.248587+00:00",
-  "report_friday": "2026-05-22",
+  "generated": "2026-05-23T07:00:19.676381+00:00",
+  "report_friday": "2026-05-29",
   "windows": {
     "last_week": {
+      "start": "2026-05-21",
+      "end": "2026-05-27",
+      "label": "5/21-27"
+    },
+    "prior_week": {
       "start": "2026-05-14",
       "end": "2026-05-20",
       "label": "5/14-20"
-    },
-    "prior_week": {
-      "start": "2026-05-07",
-      "end": "2026-05-13",
-      "label": "5/7-13"
     }
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 22098685.493790004,
-      "last_week_sum": 4723784.009027,
-      "prior_week_sum": 5125952.763001,
-      "wow_pct": -7.845736638012822,
-      "rolling_30d_pct": -3.385837260412007
+      "headline_30d": 17188996.277002003,
+      "last_week_sum": 1524673.1132820002,
+      "prior_week_sum": 4723784.009027,
+      "wow_pct": -67.72347951624378,
+      "rolling_30d_pct": -22.217109783148338
     },
     "tokenized_assets": {
-      "last_end": 138082,
-      "prior_end": 126349,
-      "wow_pct": 9.28618350758613,
+      "last_end": 141716,
+      "prior_end": 138082,
+      "wow_pct": 2.6317695282513287,
       "breakdown": {
         "domains": {
-          "last_end": 29615,
-          "prior_end": 28723,
-          "wow_pct": 3.1055251888730284
+          "last_end": 29666,
+          "prior_end": 29615,
+          "wow_pct": 0.17221002870167146
         },
         "name_tokens": {
-          "last_end": 17677,
-          "prior_end": 18372,
-          "wow_pct": -3.7829305464837795
+          "last_end": 17567,
+          "prior_end": 17677,
+          "wow_pct": -0.6222775357809583
         },
         "subdomains": {
-          "last_end": 90790,
-          "prior_end": 79254,
-          "wow_pct": 14.555732202791027
+          "last_end": 94483,
+          "prior_end": 90790,
+          "wow_pct": 4.067628593457429
         }
       }
     },
     "mau": {
-      "last_end": 11715,
-      "prior_end": 7380,
-      "wow_pct": 58.739837398373986
+      "last_end": 10716,
+      "prior_end": 11715,
+      "wow_pct": -8.52752880921895
     },
     "domain_launches": {
-      "last_end": 533,
-      "prior_end": 518,
-      "wow_pct": 2.8957528957528957
+      "last_end": 540,
+      "prior_end": 533,
+      "wow_pct": 1.3133208255159476
     }
   },
   "premium_domains": {
     "live": {
-      "name": "BARBEQUE.io",
-      "fdv_usd": 2429.03
+      "name": "EFM.io",
+      "fdv_usd": 187.75
     },
     "upcoming": {
-      "name": "GRADUATION.ai",
-      "fdv_usd": 45000.0
+      "name": "TOKENISING.xyz",
+      "fdv_usd": 1625.0
     }
   }
 }
