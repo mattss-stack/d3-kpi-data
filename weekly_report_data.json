@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-23T07:00:19.676381+00:00",
+  "generated": "2026-05-24T07:00:23.204384+00:00",
   "report_friday": "2026-05-29",
   "windows": {
     "last_week": {
@@ -15,38 +15,38 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 17188996.277002003,
-      "last_week_sum": 1524673.1132820002,
+      "headline_30d": 18278767.991865,
+      "last_week_sum": 2614444.828145,
       "prior_week_sum": 4723784.009027,
-      "wow_pct": -67.72347951624378,
-      "rolling_30d_pct": -22.217109783148338
+      "wow_pct": -44.653590783387216,
+      "rolling_30d_pct": -17.28572273223421
     },
     "tokenized_assets": {
-      "last_end": 141716,
+      "last_end": 141786,
       "prior_end": 138082,
-      "wow_pct": 2.6317695282513287,
+      "wow_pct": 2.682464043104822,
       "breakdown": {
         "domains": {
-          "last_end": 29666,
+          "last_end": 29681,
           "prior_end": 29615,
-          "wow_pct": 0.17221002870167146
+          "wow_pct": 0.22286003714333952
         },
         "name_tokens": {
-          "last_end": 17567,
+          "last_end": 17540,
           "prior_end": 17677,
-          "wow_pct": -0.6222775357809583
+          "wow_pct": -0.775018385472648
         },
         "subdomains": {
-          "last_end": 94483,
+          "last_end": 94565,
           "prior_end": 90790,
-          "wow_pct": 4.067628593457429
+          "wow_pct": 4.157946910452693
         }
       }
     },
     "mau": {
-      "last_end": 10716,
+      "last_end": 10804,
       "prior_end": 11715,
-      "wow_pct": -8.52752880921895
+      "wow_pct": -7.776355100298763
     },
     "domain_launches": {
       "last_end": 540,
@@ -57,7 +57,7 @@
   "premium_domains": {
     "live": {
       "name": "EFM.io",
-      "fdv_usd": 187.75
+      "fdv_usd": 176.71
     },
     "upcoming": {
       "name": "TOKENISING.xyz",
