@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-24T07:00:23.204384+00:00",
+  "generated": "2026-05-25T07:00:22.855354+00:00",
   "report_friday": "2026-05-29",
   "windows": {
     "last_week": {
@@ -15,38 +15,38 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 18278767.991865,
-      "last_week_sum": 2614444.828145,
+      "headline_30d": 19604368.966987997,
+      "last_week_sum": 3940045.803268,
       "prior_week_sum": 4723784.009027,
-      "wow_pct": -44.653590783387216,
-      "rolling_30d_pct": -17.28572273223421
+      "wow_pct": -16.591321793318684,
+      "rolling_30d_pct": -11.287171481321547
     },
     "tokenized_assets": {
-      "last_end": 141786,
+      "last_end": 141833,
       "prior_end": 138082,
-      "wow_pct": 2.682464043104822,
+      "wow_pct": 2.716501788792167,
       "breakdown": {
         "domains": {
-          "last_end": 29681,
+          "last_end": 29707,
           "prior_end": 29615,
-          "wow_pct": 0.22286003714333952
+          "wow_pct": 0.3106533851088975
         },
         "name_tokens": {
-          "last_end": 17540,
+          "last_end": 17525,
           "prior_end": 17677,
-          "wow_pct": -0.775018385472648
+          "wow_pct": -0.8598744130791425
         },
         "subdomains": {
-          "last_end": 94565,
+          "last_end": 94601,
           "prior_end": 90790,
-          "wow_pct": 4.157946910452693
+          "wow_pct": 4.197598854499394
         }
       }
     },
     "mau": {
-      "last_end": 10804,
+      "last_end": 11019,
       "prior_end": 11715,
-      "wow_pct": -7.776355100298763
+      "wow_pct": -5.941101152368758
     },
     "domain_launches": {
       "last_end": 540,
