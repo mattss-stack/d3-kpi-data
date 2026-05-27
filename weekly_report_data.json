@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-26T07:00:21.194727+00:00",
+  "generated": "2026-05-27T07:00:21.394168+00:00",
   "report_friday": "2026-05-29",
   "windows": {
     "last_week": {
@@ -15,53 +15,53 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 20740044.577153,
-      "last_week_sum": 5075721.4134329995,
+      "headline_30d": 22051316.703160997,
+      "last_week_sum": 6386993.539441,
       "prior_week_sum": 4723784.009027,
-      "wow_pct": 7.4503280364525315,
-      "rolling_30d_pct": -6.148062141609273
+      "wow_pct": 35.20926289677217,
+      "rolling_30d_pct": -0.2143511687259322
     },
     "tokenized_assets": {
-      "last_end": 150471,
-      "prior_end": 138082,
-      "wow_pct": 8.972204921713185,
+      "last_end": 162365,
+      "prior_end": 138083,
+      "wow_pct": 17.58507564291042,
       "breakdown": {
         "domains": {
-          "last_end": 29717,
-          "prior_end": 29615,
-          "wow_pct": 0.3444200574033429
+          "last_end": 29724,
+          "prior_end": 29616,
+          "wow_pct": 0.3646677471636953
         },
         "name_tokens": {
-          "last_end": 17490,
+          "last_end": 17447,
           "prior_end": 17677,
-          "wow_pct": -1.057871810827629
+          "wow_pct": -1.3011257566329129
         },
         "subdomains": {
-          "last_end": 103264,
+          "last_end": 115194,
           "prior_end": 90790,
-          "wow_pct": 13.739398612181958
+          "wow_pct": 26.879612292102657
         }
       }
     },
     "mau": {
-      "last_end": 11421,
+      "last_end": 11750,
       "prior_end": 11715,
-      "wow_pct": -2.5096030729833547
+      "wow_pct": 0.2987622705932565
     },
     "domain_launches": {
-      "last_end": 540,
+      "last_end": 553,
       "prior_end": 533,
-      "wow_pct": 1.3133208255159476
+      "wow_pct": 3.75234521575985
     }
   },
   "premium_domains": {
     "live": {
-      "name": "EFM.io",
-      "fdv_usd": 176.98
+      "name": "POINTPROGRAM.xyz",
+      "fdv_usd": 339.44
     },
     "upcoming": {
-      "name": "TOKENISING.xyz",
-      "fdv_usd": 1625.0
+      "name": "COINBAG.xyz",
+      "fdv_usd": 375812.5
     }
   }
 }
