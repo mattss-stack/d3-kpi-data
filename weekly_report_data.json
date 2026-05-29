@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-28T22:45:34.039024+00:00",
+  "generated": "2026-05-29T07:00:26.749016+00:00",
   "report_friday": "2026-05-29",
   "windows": {
     "last_week": {
@@ -15,11 +15,11 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 24473033.385934997,
+      "headline_30d": 24512454.438614,
       "last_week_sum": 7224003.77131,
       "prior_week_sum": 4723784.009027,
       "wow_pct": 52.92832520507205,
-      "rolling_30d_pct": 10.74429469034352,
+      "rolling_30d_pct": 10.922681104730385,
       "organic_last_week": 1432171.179716002,
       "organic_prior_week": 1041983.1099980029,
       "non_organic_last_week": 5791832.591593998,
@@ -68,7 +68,7 @@
   "premium_domains": {
     "live": {
       "name": "POINTPROGRAM.xyz",
-      "fdv_usd": 290.21
+      "fdv_usd": 191.87
     },
     "upcoming": {
       "name": "COINBAG.xyz",
