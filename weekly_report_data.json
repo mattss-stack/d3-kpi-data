@@ -66,10 +66,7 @@
     }
   },
   "premium_domains": {
-    "live": {
-      "name": "POINTPROGRAM.xyz",
-      "fdv_usd": 191.87
-    },
+    "live": null,
     "upcoming": {
       "name": "COINBAG.xyz",
       "fdv_usd": 375812.5
