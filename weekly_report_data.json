@@ -1,303 +1,138 @@
 {
-  "generated": "2026-05-29T07:00:26.749016+00:00",
-  "report_friday": "2026-05-29",
+  "generated": "2026-05-30T07:00:27.427355+00:00",
+  "report_friday": "2026-06-05",
   "windows": {
     "last_week": {
+      "start": "2026-05-28",
+      "end": "2026-06-03",
+      "label": "5/28-3"
+    },
+    "prior_week": {
       "start": "2026-05-21",
       "end": "2026-05-27",
       "label": "5/21-27"
-    },
-    "prior_week": {
-      "start": "2026-05-14",
-      "end": "2026-05-20",
-      "label": "5/14-20"
     }
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 24512454.438614,
-      "last_week_sum": 7224003.77131,
-      "prior_week_sum": 4723784.009027,
-      "wow_pct": 52.92832520507205,
-      "rolling_30d_pct": 10.922681104730385,
-      "organic_last_week": 1432171.179716002,
-      "organic_prior_week": 1041983.1099980029,
-      "non_organic_last_week": 5791832.591593998,
-      "non_organic_prior_week": 3681800.899028997,
-      "organic_wow_pct": 37.44667893117259,
-      "non_organic_wow_pct": 57.30977177830231
+      "headline_30d": 20842706.006391004,
+      "last_week_sum": 3128713.064182,
+      "prior_week_sum": 7224003.77131,
+      "wow_pct": -56.69004110147856,
+      "rolling_30d_pct": -14.970954628036399,
+      "organic_last_week": 477615.1368319996,
+      "organic_prior_week": 1432171.179716002,
+      "non_organic_last_week": 2651097.92735,
+      "non_organic_prior_week": 5791832.591593998,
+      "organic_wow_pct": -66.65097415752284,
+      "non_organic_wow_pct": -54.22695864521908
     },
     "tokenized_assets": {
-      "last_end": 162420,
-      "prior_end": 138083,
-      "wow_pct": 17.624906758978295,
+      "last_end": 162445,
+      "prior_end": 162420,
+      "wow_pct": 0.015392193079669991,
       "breakdown": {
         "domains": {
-          "last_end": 29731,
-          "prior_end": 29616,
-          "wow_pct": 0.3883036196650459
+          "last_end": 29741,
+          "prior_end": 29731,
+          "wow_pct": 0.033634926507685584
         },
         "name_tokens": {
-          "last_end": 17447,
-          "prior_end": 17677,
-          "wow_pct": -1.3011257566329129
+          "last_end": 17353,
+          "prior_end": 17447,
+          "wow_pct": -0.5387745744254027
         },
         "subdomains": {
-          "last_end": 115242,
-          "prior_end": 90790,
-          "wow_pct": 26.93248155083159
+          "last_end": 115351,
+          "prior_end": 115242,
+          "wow_pct": 0.09458357196161121
         }
       }
     },
     "mau": {
-      "last_end": 11798,
-      "prior_end": 11715,
-      "wow_pct": 0.7084933845497225
+      "last_end": 11125,
+      "prior_end": 11798,
+      "wow_pct": -5.704356670622139
     },
     "domain_launches": {
-      "last_end": 554,
-      "prior_end": 533,
-      "wow_pct": 3.9399624765478425
+      "last_end": 560,
+      "prior_end": 554,
+      "wow_pct": 1.083032490974729
     },
     "nav": {
-      "last_end": 27579194.25,
-      "prior_end": 27542346.68,
-      "wow_pct": 0.13378515065587104
+      "last_end": 27591567.32,
+      "prior_end": 27579194.25,
+      "wow_pct": 0.04486378350230554
     }
   },
   "premium_domains": {
     "live": null,
     "upcoming": {
-      "name": "COINBAG.xyz",
-      "fdv_usd": 375812.5
+      "name": "FAVOURS.ai",
+      "fdv_usd": 4400.0
     }
   },
   "top_organic_movers": [
     {
-      "token": "SOFTWARE.ai",
-      "last_week_usd": 611057.140165,
-      "prior_week_usd": 376532.93261099997,
-      "delta_usd": 234524.20755400002,
-      "wow_pct": 62.285178066028394
+      "token": "RISKVAULT.xyz",
+      "last_week_usd": 13378.589103,
+      "prior_week_usd": 11288.507371,
+      "delta_usd": 2090.0817320000006,
+      "wow_pct": 18.51512926650859
     },
     {
-      "token": "BONER.com",
-      "last_week_usd": 121471.19416599999,
-      "prior_week_usd": 21769.301019000002,
-      "delta_usd": 99701.89314699998,
-      "wow_pct": 457.993084205971
+      "token": "ALERT.ai",
+      "last_week_usd": 3309.40568,
+      "prior_week_usd": 5780.579079,
+      "delta_usd": -2471.1733990000002,
+      "wow_pct": -42.749582095977416
     },
     {
-      "token": "BRAG.com",
-      "last_week_usd": 90502.759534,
-      "prior_week_usd": 30973.943583,
-      "delta_usd": 59528.815951,
-      "wow_pct": 192.1899799148349
+      "token": "HIGHTECH.xyz",
+      "last_week_usd": 14579.201240999999,
+      "prior_week_usd": 30023.036138000003,
+      "delta_usd": -15443.834897000004,
+      "wow_pct": -51.43995039679822
     },
     {
-      "token": "POINTPROGRAM.xyz",
-      "last_week_usd": 49751.121987,
-      "prior_week_usd": 0.0,
-      "delta_usd": 49751.121987,
-      "wow_pct": null
+      "token": "TERABYTES.ai",
+      "last_week_usd": 14648.127654,
+      "prior_week_usd": 32809.060753,
+      "delta_usd": -18160.933098999998,
+      "wow_pct": -55.353407510574336
     },
     {
       "token": "WINES.xyz",
-      "last_week_usd": 32302.297112999997,
-      "prior_week_usd": 7685.42789,
-      "delta_usd": 24616.869222999998,
-      "wow_pct": 320.30577315064755
+      "last_week_usd": 13283.527629,
+      "prior_week_usd": 32302.297112999997,
+      "delta_usd": -19018.769483999997,
+      "wow_pct": -58.87745201980057
     }
   ],
   "subdomain_clusters": {
-    "week_total_mints": 24452,
-    "week_distinct_stakers": 4547,
-    "week_distinct_parents": 165,
+    "week_total_mints": 109,
+    "week_distinct_stakers": 43,
+    "week_distinct_parents": 31,
     "daily": [
       {
-        "date": "2026-05-21",
-        "count": 3025,
-        "distinct_stakers": 787,
-        "distinct_parents": 44
+        "date": "2026-05-28",
+        "count": 47,
+        "distinct_stakers": 18,
+        "distinct_parents": 18
       },
       {
-        "date": "2026-05-22",
-        "count": 661,
-        "distinct_stakers": 213,
-        "distinct_parents": 43
+        "date": "2026-05-29",
+        "count": 61,
+        "distinct_stakers": 24,
+        "distinct_parents": 18
       },
       {
-        "date": "2026-05-23",
-        "count": 72,
-        "distinct_stakers": 33,
-        "distinct_parents": 24
-      },
-      {
-        "date": "2026-05-24",
-        "count": 31,
-        "distinct_stakers": 16,
-        "distinct_parents": 12
-      },
-      {
-        "date": "2026-05-25",
-        "count": 5280,
-        "distinct_stakers": 3340,
-        "distinct_parents": 143
-      },
-      {
-        "date": "2026-05-26",
-        "count": 14193,
-        "distinct_stakers": 3864,
-        "distinct_parents": 156
-      },
-      {
-        "date": "2026-05-27",
-        "count": 1190,
-        "distinct_stakers": 326,
-        "distinct_parents": 34
+        "date": "2026-05-30",
+        "count": 1,
+        "distinct_stakers": 1,
+        "distinct_parents": 1
       }
     ],
-    "clusters": [
-      {
-        "date": "2026-05-21",
-        "count": 3025,
-        "distinct_stakers": 787,
-        "distinct_parents": 44,
-        "top_parents": [
-          {
-            "parent": "mealprepsunday.xyz",
-            "count": 212
-          },
-          {
-            "parent": "2026lfg.com",
-            "count": 203
-          },
-          {
-            "parent": "brokenresolutions.xyz",
-            "count": 197
-          },
-          {
-            "parent": "buyhigh.xyz",
-            "count": 191
-          },
-          {
-            "parent": "crushday.xyz",
-            "count": 189
-          }
-        ]
-      },
-      {
-        "date": "2026-05-22",
-        "count": 661,
-        "distinct_stakers": 213,
-        "distinct_parents": 43,
-        "top_parents": [
-          {
-            "parent": "luckyirish.xyz",
-            "count": 56
-          },
-          {
-            "parent": "gboner.fun",
-            "count": 49
-          },
-          {
-            "parent": "2026lfg.com",
-            "count": 39
-          },
-          {
-            "parent": "bagsecured.xyz",
-            "count": 37
-          },
-          {
-            "parent": "brokenresolutions.xyz",
-            "count": 37
-          }
-        ]
-      },
-      {
-        "date": "2026-05-25",
-        "count": 5280,
-        "distinct_stakers": 3340,
-        "distinct_parents": 143,
-        "top_parents": [
-          {
-            "parent": "santanomics.xyz",
-            "count": 415
-          },
-          {
-            "parent": "2026lfg.com",
-            "count": 391
-          },
-          {
-            "parent": "lunarnewyears.xyz",
-            "count": 299
-          },
-          {
-            "parent": "activeincome.io",
-            "count": 291
-          },
-          {
-            "parent": "gboner.fun",
-            "count": 283
-          }
-        ]
-      },
-      {
-        "date": "2026-05-26",
-        "count": 14193,
-        "distinct_stakers": 3864,
-        "distinct_parents": 156,
-        "top_parents": [
-          {
-            "parent": "2026lfg.com",
-            "count": 1121
-          },
-          {
-            "parent": "santanomics.xyz",
-            "count": 1074
-          },
-          {
-            "parent": "gboner.fun",
-            "count": 760
-          },
-          {
-            "parent": "activeincome.io",
-            "count": 752
-          },
-          {
-            "parent": "crushday.xyz",
-            "count": 707
-          }
-        ]
-      },
-      {
-        "date": "2026-05-27",
-        "count": 1190,
-        "distinct_stakers": 326,
-        "distinct_parents": 34,
-        "top_parents": [
-          {
-            "parent": "brokenresolutions.xyz",
-            "count": 83
-          },
-          {
-            "parent": "omads.xyz",
-            "count": 82
-          },
-          {
-            "parent": "buyhigh.xyz",
-            "count": 81
-          },
-          {
-            "parent": "bagsecured.xyz",
-            "count": 81
-          },
-          {
-            "parent": "seeyouatethdenver2026.com",
-            "count": 80
-          }
-        ]
-      }
-    ]
+    "clusters": []
   }
 }
