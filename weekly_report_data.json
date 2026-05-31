@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-30T07:00:27.427355+00:00",
+  "generated": "2026-05-31T07:00:27.599732+00:00",
   "report_friday": "2026-06-05",
   "windows": {
     "last_week": {
@@ -15,54 +15,54 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 20842706.006391004,
-      "last_week_sum": 3128713.064182,
+      "headline_30d": 21828392.917159002,
+      "last_week_sum": 4114399.9749499997,
       "prior_week_sum": 7224003.77131,
-      "wow_pct": -56.69004110147856,
-      "rolling_30d_pct": -14.970954628036399,
-      "organic_last_week": 477615.1368319996,
+      "wow_pct": -43.045434288250725,
+      "rolling_30d_pct": -10.949786885587624,
+      "organic_last_week": 718578.2500070003,
       "organic_prior_week": 1432171.179716002,
-      "non_organic_last_week": 2651097.92735,
+      "non_organic_last_week": 3395821.7249429994,
       "non_organic_prior_week": 5791832.591593998,
-      "organic_wow_pct": -66.65097415752284,
-      "non_organic_wow_pct": -54.22695864521908
+      "organic_wow_pct": -49.82595235930571,
+      "non_organic_wow_pct": -41.36878662771537
     },
     "tokenized_assets": {
-      "last_end": 162445,
+      "last_end": 162459,
       "prior_end": 162420,
-      "wow_pct": 0.015392193079669991,
+      "wow_pct": 0.024011821204285185,
       "breakdown": {
         "domains": {
-          "last_end": 29741,
+          "last_end": 29744,
           "prior_end": 29731,
-          "wow_pct": 0.033634926507685584
+          "wow_pct": 0.043725404459991256
         },
         "name_tokens": {
-          "last_end": 17353,
+          "last_end": 17339,
           "prior_end": 17447,
-          "wow_pct": -0.5387745744254027
+          "wow_pct": -0.619017596148335
         },
         "subdomains": {
-          "last_end": 115351,
+          "last_end": 115376,
           "prior_end": 115242,
-          "wow_pct": 0.09458357196161121
+          "wow_pct": 0.11627705176932021
         }
       }
     },
     "mau": {
-      "last_end": 11125,
+      "last_end": 11168,
       "prior_end": 11798,
-      "wow_pct": -5.704356670622139
+      "wow_pct": -5.339888116629937
     },
     "domain_launches": {
-      "last_end": 560,
-      "prior_end": 554,
-      "wow_pct": 1.083032490974729
+      "last_end": 559,
+      "prior_end": 553,
+      "wow_pct": 1.0849909584086799
     },
     "nav": {
-      "last_end": 27591567.32,
+      "last_end": 27571648.46,
       "prior_end": 27579194.25,
-      "wow_pct": 0.04486378350230554
+      "wow_pct": -0.027360444005716758
     }
   },
   "premium_domains": {
@@ -82,37 +82,37 @@
     },
     {
       "token": "ALERT.ai",
-      "last_week_usd": 3309.40568,
+      "last_week_usd": 3646.2279829999998,
       "prior_week_usd": 5780.579079,
-      "delta_usd": -2471.1733990000002,
-      "wow_pct": -42.749582095977416
+      "delta_usd": -2134.3510960000003,
+      "wow_pct": -36.9227903784551
     },
     {
       "token": "HIGHTECH.xyz",
-      "last_week_usd": 14579.201240999999,
+      "last_week_usd": 20995.966159,
       "prior_week_usd": 30023.036138000003,
-      "delta_usd": -15443.834897000004,
-      "wow_pct": -51.43995039679822
+      "delta_usd": -9027.069979000004,
+      "wow_pct": -30.067145566182386
     },
     {
       "token": "TERABYTES.ai",
-      "last_week_usd": 14648.127654,
+      "last_week_usd": 21061.342079,
       "prior_week_usd": 32809.060753,
-      "delta_usd": -18160.933098999998,
-      "wow_pct": -55.353407510574336
+      "delta_usd": -11747.718674,
+      "wow_pct": -35.80632424207941
     },
     {
       "token": "WINES.xyz",
-      "last_week_usd": 13283.527629,
+      "last_week_usd": 19152.23395,
       "prior_week_usd": 32302.297112999997,
-      "delta_usd": -19018.769483999997,
-      "wow_pct": -58.87745201980057
+      "delta_usd": -13150.063162999995,
+      "wow_pct": -40.70937468316387
     }
   ],
   "subdomain_clusters": {
-    "week_total_mints": 109,
-    "week_distinct_stakers": 43,
-    "week_distinct_parents": 31,
+    "week_total_mints": 134,
+    "week_distinct_stakers": 52,
+    "week_distinct_parents": 37,
     "daily": [
       {
         "date": "2026-05-28",
@@ -128,9 +128,9 @@
       },
       {
         "date": "2026-05-30",
-        "count": 1,
-        "distinct_stakers": 1,
-        "distinct_parents": 1
+        "count": 26,
+        "distinct_stakers": 10,
+        "distinct_parents": 10
       }
     ],
     "clusters": []
