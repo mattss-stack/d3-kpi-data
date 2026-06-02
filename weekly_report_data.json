@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-01T07:00:38.401197+00:00",
+  "generated": "2026-06-02T07:00:33.485314+00:00",
   "report_friday": "2026-06-05",
   "windows": {
     "last_week": {
@@ -15,22 +15,22 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 22609962.403115004,
-      "last_week_sum": 4895969.460905999,
+      "headline_30d": 23818524.65274,
+      "last_week_sum": 6104531.710530999,
       "prior_week_sum": 7224003.77131,
-      "wow_pct": -32.2263717476138,
-      "rolling_30d_pct": -7.761328186303677,
-      "organic_last_week": 920355.852082002,
+      "wow_pct": -15.496559750217237,
+      "rolling_30d_pct": -2.8309273867771627,
+      "organic_last_week": 1151285.2937310005,
       "organic_prior_week": 1432171.179716002,
-      "non_organic_last_week": 3975613.608823997,
+      "non_organic_last_week": 4953246.416799999,
       "non_organic_prior_week": 5791832.591593998,
-      "organic_wow_pct": -35.73702186462741,
-      "non_organic_wow_pct": -31.35827830048089
+      "organic_wow_pct": -19.612591704345064,
+      "non_organic_wow_pct": -14.478770950857326
     },
     "tokenized_assets": {
-      "last_end": 163194,
+      "last_end": 169417,
       "prior_end": 162420,
-      "wow_pct": 0.47654229774658297,
+      "wow_pct": 4.307966999138038,
       "breakdown": {
         "domains": {
           "last_end": 29747,
@@ -38,31 +38,31 @@
           "wow_pct": 0.05381588241229693
         },
         "name_tokens": {
-          "last_end": 17329,
+          "last_end": 17319,
           "prior_end": 17447,
-          "wow_pct": -0.6763340402361437
+          "wow_pct": -0.7336504843239525
         },
         "subdomains": {
-          "last_end": 116118,
+          "last_end": 122351,
           "prior_end": 115242,
-          "wow_pct": 0.7601395324621232
+          "wow_pct": 6.1687579181201295
         }
       }
     },
     "mau": {
-      "last_end": 11203,
+      "last_end": 11233,
       "prior_end": 11798,
-      "wow_pct": -5.043227665706052
+      "wow_pct": -4.788947279199864
     },
     "domain_launches": {
-      "last_end": 560,
+      "last_end": 561,
       "prior_end": 553,
-      "wow_pct": 1.2658227848101267
+      "wow_pct": 1.4466546112115732
     },
     "nav": {
-      "last_end": 27589348.68,
+      "last_end": 27574260.68,
       "prior_end": 27579194.25,
-      "wow_pct": 0.03681916849329165
+      "wow_pct": -0.01788873871831951
     }
   },
   "premium_domains": {
@@ -75,44 +75,44 @@
   "top_organic_movers": [
     {
       "token": "RISKVAULT.xyz",
-      "last_week_usd": 13378.589103,
+      "last_week_usd": 13378.619103,
       "prior_week_usd": 11288.507371,
-      "delta_usd": 2090.0817320000006,
-      "wow_pct": 18.51512926650859
+      "delta_usd": 2090.111732000001,
+      "wow_pct": 18.515395023521585
     },
     {
       "token": "ALERT.ai",
-      "last_week_usd": 4870.32466,
+      "last_week_usd": 5361.975756000001,
       "prior_week_usd": 5780.579079,
-      "delta_usd": -910.2544189999999,
-      "wow_pct": -15.74676873302921
+      "delta_usd": -418.60332299999936,
+      "wow_pct": -7.241546517730795
     },
     {
       "token": "HIGHTECH.xyz",
-      "last_week_usd": 22766.692318,
+      "last_week_usd": 29137.095691,
       "prior_week_usd": 30023.036138000003,
-      "delta_usd": -7256.343820000002,
-      "wow_pct": -24.16925385775919
+      "delta_usd": -885.9404470000045,
+      "wow_pct": -2.9508689358657976
     },
     {
       "token": "TERABYTES.ai",
-      "last_week_usd": 22809.481711,
+      "last_week_usd": 30429.563949,
       "prior_week_usd": 32809.060753,
-      "delta_usd": -9999.579041999998,
-      "wow_pct": -30.478102123315598
+      "delta_usd": -2379.4968039999985,
+      "wow_pct": -7.252559961755144
     },
     {
       "token": "WINES.xyz",
-      "last_week_usd": 21301.375026,
+      "last_week_usd": 28174.362825,
       "prior_week_usd": 32302.297112999997,
-      "delta_usd": -11000.922086999995,
-      "wow_pct": -34.056160304997924
+      "delta_usd": -4127.934287999997,
+      "wow_pct": -12.77907349300777
     }
   ],
   "subdomain_clusters": {
-    "week_total_mints": 876,
-    "week_distinct_stakers": 765,
-    "week_distinct_parents": 98,
+    "week_total_mints": 7114,
+    "week_distinct_stakers": 4323,
+    "week_distinct_parents": 155,
     "daily": [
       {
         "date": "2026-05-28",
@@ -140,37 +140,71 @@
       },
       {
         "date": "2026-06-01",
-        "count": 734,
-        "distinct_stakers": 727,
-        "distinct_parents": 90
+        "count": 4700,
+        "distinct_stakers": 3936,
+        "distinct_parents": 142
+      },
+      {
+        "date": "2026-06-02",
+        "count": 2272,
+        "distinct_stakers": 980,
+        "distinct_parents": 94
       }
     ],
     "clusters": [
       {
         "date": "2026-06-01",
-        "count": 734,
-        "distinct_stakers": 727,
-        "distinct_parents": 90,
+        "count": 4700,
+        "distinct_stakers": 3936,
+        "distinct_parents": 142,
         "top_parents": [
           {
             "parent": "santanomics.xyz",
-            "count": 163
+            "count": 385
           },
           {
             "parent": "2026lfg.com",
-            "count": 146
+            "count": 347
           },
           {
-            "parent": "luckyirish.xyz",
-            "count": 69
+            "parent": "activeincome.io",
+            "count": 254
           },
           {
-            "parent": "jinglebells.io",
-            "count": 47
+            "parent": "gboner.fun",
+            "count": 230
+          },
+          {
+            "parent": "lunarnewyears.xyz",
+            "count": 222
+          }
+        ]
+      },
+      {
+        "date": "2026-06-02",
+        "count": 2272,
+        "distinct_stakers": 980,
+        "distinct_parents": 94,
+        "top_parents": [
+          {
+            "parent": "santanomics.xyz",
+            "count": 476
+          },
+          {
+            "parent": "2026lfg.com",
+            "count": 365
           },
           {
             "parent": "notclawd.com",
-            "count": 41
+            "count": 217
+          },
+          {
+            "parent": "luckyirish.xyz",
+            "count": 176
+          },
+          {
+            "parent": "gboner.fun",
+            "count": 111
           }
         ]
       }
