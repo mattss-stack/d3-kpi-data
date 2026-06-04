@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-04T07:00:38.135216+00:00",
+  "generated": "2026-06-04T18:12:49.522290+00:00",
   "report_friday": "2026-06-05",
   "windows": {
     "last_week": {
@@ -15,11 +15,11 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 27027209.159228,
+      "headline_30d": 28049792.470801,
       "last_week_sum": 8707104.189387,
       "prior_week_sum": 7224003.77131,
       "wow_pct": 20.530172256652275,
-      "rolling_30d_pct": 10.25908983089248,
+      "rolling_30d_pct": 14.430778611115741,
       "organic_last_week": 1559739.5061860015,
       "organic_prior_week": 1432171.179716002,
       "non_organic_last_week": 7147364.683200998,
@@ -66,7 +66,10 @@
     }
   },
   "premium_domains": {
-    "live": null,
+    "live": {
+      "name": "CRYPTOMART.xyz",
+      "fdv_usd": 1950.0
+    },
     "upcoming": {
       "name": "SEEDFUNDING.ai",
       "fdv_usd": 11250.0
