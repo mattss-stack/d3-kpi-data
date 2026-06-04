@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-03T07:00:36.286058+00:00",
+  "generated": "2026-06-04T07:00:38.135216+00:00",
   "report_friday": "2026-06-05",
   "windows": {
     "last_week": {
@@ -15,27 +15,27 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 25269620.914517,
-      "last_week_sum": 7555627.972308,
+      "headline_30d": 27027209.159228,
+      "last_week_sum": 8707104.189387,
       "prior_week_sum": 7224003.77131,
-      "wow_pct": 4.5905873182824095,
-      "rolling_30d_pct": 3.08890518409389,
-      "organic_last_week": 1377439.7430340012,
+      "wow_pct": 20.530172256652275,
+      "rolling_30d_pct": 10.25908983089248,
+      "organic_last_week": 1559739.5061860015,
       "organic_prior_week": 1432171.179716002,
-      "non_organic_last_week": 6178188.229273998,
+      "non_organic_last_week": 7147364.683200998,
       "non_organic_prior_week": 5791832.591593998,
-      "organic_wow_pct": -3.82157087484849,
-      "non_organic_wow_pct": 6.670697599939951
+      "organic_wow_pct": 8.907337913006753,
+      "non_organic_wow_pct": 23.40420014166774
     },
     "tokenized_assets": {
-      "last_end": 178381,
+      "last_end": 178453,
       "prior_end": 162420,
-      "wow_pct": 9.82699174978451,
+      "wow_pct": 9.87132126585396,
       "breakdown": {
         "domains": {
-          "last_end": 29741,
+          "last_end": 29738,
           "prior_end": 29731,
-          "wow_pct": 0.033634926507685584
+          "wow_pct": 0.023544448555379908
         },
         "name_tokens": {
           "last_end": 17307,
@@ -43,16 +43,16 @@
           "wow_pct": -0.8024302172293231
         },
         "subdomains": {
-          "last_end": 131333,
+          "last_end": 131408,
           "prior_end": 115242,
-          "wow_pct": 13.962791343433818
+          "wow_pct": 14.027871782856943
         }
       }
     },
     "mau": {
-      "last_end": 11303,
+      "last_end": 11409,
       "prior_end": 11798,
-      "wow_pct": -4.195626377352093
+      "wow_pct": -3.297169011696898
     },
     "domain_launches": {
       "last_end": 562,
@@ -60,9 +60,9 @@
       "wow_pct": 1.62748643761302
     },
     "nav": {
-      "last_end": 27408873.58,
+      "last_end": 27404373.58,
       "prior_end": 27579194.25,
-      "wow_pct": -0.6175694201073397
+      "wow_pct": -0.6338860679368897
     }
   },
   "premium_domains": {
@@ -74,44 +74,44 @@
   },
   "top_organic_movers": [
     {
-      "token": "BONER.com",
-      "last_week_usd": 147754.99348099998,
-      "prior_week_usd": 121471.19416599999,
-      "delta_usd": 26283.799314999997,
-      "wow_pct": 21.63788665737583
-    },
-    {
       "token": "SOFTWARE.ai",
-      "last_week_usd": 621374.846958,
+      "last_week_usd": 682709.1308980001,
       "prior_week_usd": 611057.140165,
-      "delta_usd": 10317.70679299999,
-      "wow_pct": 1.6885011424977316
+      "delta_usd": 71651.9907330001,
+      "wow_pct": 11.72590679713723
     },
     {
-      "token": "HIGHTECH.xyz",
-      "last_week_usd": 37414.685357,
-      "prior_week_usd": 30023.036138000003,
-      "delta_usd": 7391.649218999999,
-      "wow_pct": 24.619925796393478
+      "token": "BONER.com",
+      "last_week_usd": 184557.290926,
+      "prior_week_usd": 121471.19416599999,
+      "delta_usd": 63086.09676,
+      "wow_pct": 51.93502640122881
     },
     {
       "token": "BRAG.com",
-      "last_week_usd": 97880.99967700001,
+      "last_week_usd": 113931.76921200001,
       "prior_week_usd": 90502.759534,
-      "delta_usd": 7378.240143000017,
-      "wow_pct": 8.15250295238585
+      "delta_usd": 23429.009678000017,
+      "wow_pct": 25.88761911640741
+    },
+    {
+      "token": "HIGHTECH.xyz",
+      "last_week_usd": 43735.963914,
+      "prior_week_usd": 30023.036138000003,
+      "delta_usd": 13712.927775999997,
+      "wow_pct": 45.6746869735923
     },
     {
       "token": "TERABYTES.ai",
-      "last_week_usd": 38857.548963999994,
+      "last_week_usd": 44594.434452999994,
       "prior_week_usd": 32809.060753,
-      "delta_usd": 6048.488210999996,
-      "wow_pct": 18.435420192414178
+      "delta_usd": 11785.373699999996,
+      "wow_pct": 35.92109444621137
     }
   ],
   "subdomain_clusters": {
-    "week_total_mints": 16091,
-    "week_distinct_stakers": 4447,
+    "week_total_mints": 16166,
+    "week_distinct_stakers": 4472,
     "week_distinct_parents": 160,
     "daily": [
       {
@@ -152,9 +152,9 @@
       },
       {
         "date": "2026-06-03",
-        "count": 9,
-        "distinct_stakers": 3,
-        "distinct_parents": 3
+        "count": 84,
+        "distinct_stakers": 28,
+        "distinct_parents": 4
       }
     ],
     "clusters": [
