@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-04T18:12:49.522290+00:00",
+  "generated": "2026-06-05T07:00:33.130682+00:00",
   "report_friday": "2026-06-05",
   "windows": {
     "last_week": {
@@ -15,11 +15,11 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 28049792.470801,
+      "headline_30d": 28498257.347223,
       "last_week_sum": 8707104.189387,
       "prior_week_sum": 7224003.77131,
       "wow_pct": 20.530172256652275,
-      "rolling_30d_pct": 14.430778611115741,
+      "rolling_30d_pct": 16.26031745858236,
       "organic_last_week": 1559739.5061860015,
       "organic_prior_week": 1432171.179716002,
       "non_organic_last_week": 7147364.683200998,
