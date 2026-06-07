@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-06T07:00:48.775700+00:00",
+  "generated": "2026-06-07T07:00:47.909881+00:00",
   "report_friday": "2026-06-12",
   "windows": {
     "last_week": {
@@ -15,22 +15,22 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 25710416.393295,
-      "last_week_sum": 4536199.627041,
+      "headline_30d": 27702289.896972,
+      "last_week_sum": 6528073.130718,
       "prior_week_sum": 8707104.189387,
-      "wow_pct": -47.90231598962457,
-      "rolling_30d_pct": -9.78249624165057,
-      "organic_last_week": 2773571.088285,
+      "wow_pct": -25.025898522323846,
+      "rolling_30d_pct": -2.7930390288533236,
+      "organic_last_week": 3986961.637254,
       "organic_prior_week": 4471019.447337999,
-      "non_organic_last_week": 1762628.538756,
+      "non_organic_last_week": 2541111.493464,
       "non_organic_prior_week": 4236084.742049,
-      "organic_wow_pct": -37.96557762824411,
-      "non_organic_wow_pct": -58.3901492512774
+      "organic_wow_pct": -10.826564629957092,
+      "non_organic_wow_pct": -40.01273231765282
     },
     "tokenized_assets": {
-      "last_end": 178400,
+      "last_end": 178381,
       "prior_end": 178453,
-      "wow_pct": -0.029699696838943586,
+      "wow_pct": -0.04034675796988563,
       "breakdown": {
         "domains": {
           "last_end": 29740,
@@ -38,31 +38,31 @@
           "wow_pct": 0.006725401842760105
         },
         "name_tokens": {
-          "last_end": 17220,
+          "last_end": 17186,
           "prior_end": 17307,
-          "wow_pct": -0.5026867741376322
+          "wow_pct": -0.6991390766741781
         },
         "subdomains": {
-          "last_end": 131440,
+          "last_end": 131455,
           "prior_end": 131408,
-          "wow_pct": 0.0243516376476318
+          "wow_pct": 0.03576646779495921
         }
       }
     },
     "mau": {
-      "last_end": 11405,
+      "last_end": 11423,
       "prior_end": 11409,
-      "wow_pct": -0.035060040319046366
+      "wow_pct": 0.12271014111666229
     },
     "domain_launches": {
-      "last_end": 567,
+      "last_end": 566,
       "prior_end": 562,
-      "wow_pct": 0.8896797153024912
+      "wow_pct": 0.7117437722419928
     },
     "nav": {
-      "last_end": 30982961.58,
+      "last_end": 30880464.57,
       "prior_end": 27404373.58,
-      "wow_pct": 13.058455759089824
+      "wow_pct": 12.684438780738597
     }
   },
   "premium_domains": {
@@ -85,37 +85,37 @@
     },
     {
       "token": "RIDES.com",
-      "last_week_usd": 29114.696730999996,
+      "last_week_usd": 39191.674767,
       "prior_week_usd": 6862.933873999999,
-      "delta_usd": 22251.762856999998,
-      "wow_pct": 324.23105432066126
+      "delta_usd": 32328.740893,
+      "wow_pct": 471.0629810302613
     },
     {
       "token": "ALERT.ai",
-      "last_week_usd": 11348.737291,
+      "last_week_usd": 13457.201117999999,
       "prior_week_usd": 8672.282854000001,
-      "delta_usd": 2676.4544369999985,
-      "wow_pct": 30.862167229307
-    },
-    {
-      "token": "RISKVAULT.xyz",
-      "last_week_usd": 0.0,
-      "prior_week_usd": 13378.659103,
-      "delta_usd": -13378.659103,
-      "wow_pct": -100.0
+      "delta_usd": 4784.918263999998,
+      "wow_pct": 55.174840864340624
     },
     {
       "token": "WINES.xyz",
-      "last_week_usd": 20588.879088,
+      "last_week_usd": 30369.825492999997,
       "prior_week_usd": 42772.105576,
-      "delta_usd": -22183.226488,
-      "wow_pct": -51.863770065243884
+      "delta_usd": -12402.280083000005,
+      "wow_pct": -28.996187856505923
+    },
+    {
+      "token": "RISKVAULT.xyz",
+      "last_week_usd": 0.001,
+      "prior_week_usd": 13378.659103,
+      "delta_usd": -13378.658103,
+      "wow_pct": -99.99999252540937
     }
   ],
   "subdomain_clusters": {
-    "week_total_mints": 32,
-    "week_distinct_stakers": 22,
-    "week_distinct_parents": 17,
+    "week_total_mints": 47,
+    "week_distinct_stakers": 27,
+    "week_distinct_parents": 27,
     "daily": [
       {
         "date": "2026-06-04",
@@ -131,9 +131,9 @@
       },
       {
         "date": "2026-06-06",
-        "count": 3,
-        "distinct_stakers": 1,
-        "distinct_parents": 1
+        "count": 18,
+        "distinct_stakers": 14,
+        "distinct_parents": 16
       }
     ],
     "clusters": []
@@ -164,14 +164,14 @@
       "month": "2026-05",
       "launched": 112,
       "graduated": 12,
-      "still_on_curve": 25,
+      "still_on_curve": 24,
       "grad_pct": 11.0
     },
     {
       "month": "2026-06",
-      "launched": 7,
+      "launched": 6,
       "graduated": 0,
-      "still_on_curve": 7,
+      "still_on_curve": 6,
       "grad_pct": 0.0
     }
   ]
