@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-07T07:00:47.909881+00:00",
+  "generated": "2026-06-08T07:00:50.085565+00:00",
   "report_friday": "2026-06-12",
   "windows": {
     "last_week": {
@@ -15,60 +15,60 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 27702289.896972,
-      "last_week_sum": 6528073.130718,
+      "headline_30d": 28994690.905104,
+      "last_week_sum": 7820474.138850001,
       "prior_week_sum": 8707104.189387,
-      "wow_pct": -25.025898522323846,
-      "rolling_30d_pct": -2.7930390288533236,
-      "organic_last_week": 3986961.637254,
+      "wow_pct": -10.182834973052268,
+      "rolling_30d_pct": 1.741978647439564,
+      "organic_last_week": 4876547.741393001,
       "organic_prior_week": 4471019.447337999,
-      "non_organic_last_week": 2541111.493464,
+      "non_organic_last_week": 2943926.397457,
       "non_organic_prior_week": 4236084.742049,
-      "organic_wow_pct": -10.826564629957092,
-      "non_organic_wow_pct": -40.01273231765282
+      "organic_wow_pct": 9.070152765639374,
+      "non_organic_wow_pct": -30.503599981500408
     },
     "tokenized_assets": {
-      "last_end": 178381,
+      "last_end": 179062,
       "prior_end": 178453,
-      "wow_pct": -0.04034675796988563,
+      "wow_pct": 0.34126632782861593,
       "breakdown": {
         "domains": {
-          "last_end": 29740,
+          "last_end": 29738,
           "prior_end": 29738,
-          "wow_pct": 0.006725401842760105
+          "wow_pct": 0.0
         },
         "name_tokens": {
-          "last_end": 17186,
+          "last_end": 17149,
           "prior_end": 17307,
-          "wow_pct": -0.6991390766741781
+          "wow_pct": -0.9129254059051252
         },
         "subdomains": {
-          "last_end": 131455,
+          "last_end": 132175,
           "prior_end": 131408,
-          "wow_pct": 0.03576646779495921
+          "wow_pct": 0.5836783148666748
         }
       }
     },
     "mau": {
-      "last_end": 11423,
+      "last_end": 11434,
       "prior_end": 11409,
-      "wow_pct": 0.12271014111666229
+      "wow_pct": 0.2191252519940398
     },
     "domain_launches": {
-      "last_end": 566,
+      "last_end": 572,
       "prior_end": 562,
-      "wow_pct": 0.7117437722419928
+      "wow_pct": 1.7793594306049825
     },
     "nav": {
-      "last_end": 30880464.57,
+      "last_end": 31114852.77,
       "prior_end": 27404373.58,
-      "wow_pct": 12.684438780738597
+      "wow_pct": 13.539733645683288
     }
   },
   "premium_domains": {
     "live": {
-      "name": "ETHTRUSTS.com",
-      "fdv_usd": 2250.0
+      "name": "DISINTERMEDIATION.com",
+      "fdv_usd": 3750.0
     },
     "upcoming": {
       "name": "SMOOTHIE.com",
@@ -77,45 +77,45 @@
   },
   "top_organic_movers": [
     {
-      "token": "MIRAGEVAULT.xyz",
-      "last_week_usd": 32754.770748,
-      "prior_week_usd": 0.04,
-      "delta_usd": 32754.730747999998,
-      "wow_pct": 81886826.86999999
+      "token": "SOFTWARE.ai",
+      "last_week_usd": 815938.240955,
+      "prior_week_usd": 682709.1308980001,
+      "delta_usd": 133229.11005699995,
+      "wow_pct": 19.514769032275474
+    },
+    {
+      "token": "BONER.com",
+      "last_week_usd": 233741.513036,
+      "prior_week_usd": 184557.290926,
+      "delta_usd": 49184.22211,
+      "wow_pct": 26.649839658581076
     },
     {
       "token": "RIDES.com",
-      "last_week_usd": 39191.674767,
+      "last_week_usd": 47506.871838,
       "prior_week_usd": 6862.933873999999,
-      "delta_usd": 32328.740893,
-      "wow_pct": 471.0629810302613
+      "delta_usd": 40643.937964,
+      "wow_pct": 592.2239483900352
+    },
+    {
+      "token": "MIRAGEVAULT.xyz",
+      "last_week_usd": 32754.774663,
+      "prior_week_usd": 0.04,
+      "delta_usd": 32754.734663,
+      "wow_pct": 81886836.6575
     },
     {
       "token": "ALERT.ai",
-      "last_week_usd": 13457.201117999999,
+      "last_week_usd": 15001.102850999998,
       "prior_week_usd": 8672.282854000001,
-      "delta_usd": 4784.918263999998,
-      "wow_pct": 55.174840864340624
-    },
-    {
-      "token": "WINES.xyz",
-      "last_week_usd": 30369.825492999997,
-      "prior_week_usd": 42772.105576,
-      "delta_usd": -12402.280083000005,
-      "wow_pct": -28.996187856505923
-    },
-    {
-      "token": "RISKVAULT.xyz",
-      "last_week_usd": 0.001,
-      "prior_week_usd": 13378.659103,
-      "delta_usd": -13378.658103,
-      "wow_pct": -99.99999252540937
+      "delta_usd": 6328.819996999997,
+      "wow_pct": 72.97755508609701
     }
   ],
   "subdomain_clusters": {
-    "week_total_mints": 47,
-    "week_distinct_stakers": 27,
-    "week_distinct_parents": 27,
+    "week_total_mints": 767,
+    "week_distinct_stakers": 719,
+    "week_distinct_parents": 82,
     "daily": [
       {
         "date": "2026-06-04",
@@ -134,9 +134,50 @@
         "count": 18,
         "distinct_stakers": 14,
         "distinct_parents": 16
+      },
+      {
+        "date": "2026-06-07",
+        "count": 38,
+        "distinct_stakers": 20,
+        "distinct_parents": 19
+      },
+      {
+        "date": "2026-06-08",
+        "count": 682,
+        "distinct_stakers": 680,
+        "distinct_parents": 66
       }
     ],
-    "clusters": []
+    "clusters": [
+      {
+        "date": "2026-06-08",
+        "count": 682,
+        "distinct_stakers": 680,
+        "distinct_parents": 66,
+        "top_parents": [
+          {
+            "parent": "santanomics.xyz",
+            "count": 159
+          },
+          {
+            "parent": "2026lfg.com",
+            "count": 145
+          },
+          {
+            "parent": "crushday.xyz",
+            "count": 49
+          },
+          {
+            "parent": "overweights.xyz",
+            "count": 45
+          },
+          {
+            "parent": "notclawd.com",
+            "count": 34
+          }
+        ]
+      }
+    ]
   },
   "graduation_rates": [
     {
@@ -163,15 +204,15 @@
     {
       "month": "2026-05",
       "launched": 112,
-      "graduated": 12,
-      "still_on_curve": 24,
-      "grad_pct": 11.0
+      "graduated": 13,
+      "still_on_curve": 21,
+      "grad_pct": 12.0
     },
     {
       "month": "2026-06",
-      "launched": 6,
+      "launched": 12,
       "graduated": 0,
-      "still_on_curve": 6,
+      "still_on_curve": 12,
       "grad_pct": 0.0
     }
   ]
