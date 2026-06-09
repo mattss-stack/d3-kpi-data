@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-08T07:00:50.085565+00:00",
+  "generated": "2026-06-09T07:00:44.387844+00:00",
   "report_friday": "2026-06-12",
   "windows": {
     "last_week": {
@@ -15,60 +15,60 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 28994690.905104,
-      "last_week_sum": 7820474.138850001,
+      "headline_30d": 30638148.076442,
+      "last_week_sum": 9463931.310188001,
       "prior_week_sum": 8707104.189387,
-      "wow_pct": -10.182834973052268,
-      "rolling_30d_pct": 1.741978647439564,
-      "organic_last_week": 4876547.741393001,
+      "wow_pct": 8.692064598509004,
+      "rolling_30d_pct": 7.5088476574078005,
+      "organic_last_week": 5969621.977553001,
       "organic_prior_week": 4471019.447337999,
-      "non_organic_last_week": 2943926.397457,
+      "non_organic_last_week": 3494309.332635,
       "non_organic_prior_week": 4236084.742049,
-      "organic_wow_pct": 9.070152765639374,
-      "non_organic_wow_pct": -30.503599981500408
+      "organic_wow_pct": 33.5181393833403,
+      "non_organic_wow_pct": -17.510872765382935
     },
     "tokenized_assets": {
-      "last_end": 179062,
+      "last_end": 183314,
       "prior_end": 178453,
-      "wow_pct": 0.34126632782861593,
+      "wow_pct": 2.7239665346057507,
       "breakdown": {
         "domains": {
-          "last_end": 29738,
+          "last_end": 29737,
           "prior_end": 29738,
-          "wow_pct": 0.0
+          "wow_pct": -0.0033627009213800527
         },
         "name_tokens": {
-          "last_end": 17149,
+          "last_end": 17143,
           "prior_end": 17307,
-          "wow_pct": -0.9129254059051252
+          "wow_pct": -0.9475934592939272
         },
         "subdomains": {
-          "last_end": 132175,
+          "last_end": 136434,
           "prior_end": 131408,
-          "wow_pct": 0.5836783148666748
+          "wow_pct": 3.8247290880311704
         }
       }
     },
     "mau": {
-      "last_end": 11434,
+      "last_end": 11494,
       "prior_end": 11409,
-      "wow_pct": 0.2191252519940398
+      "wow_pct": 0.7450258567797353
     },
     "domain_launches": {
-      "last_end": 572,
+      "last_end": 575,
       "prior_end": 562,
-      "wow_pct": 1.7793594306049825
+      "wow_pct": 2.3131672597864767
     },
     "nav": {
-      "last_end": 31114852.77,
+      "last_end": 31148855.09,
       "prior_end": 27404373.58,
-      "wow_pct": 13.539733645683288
+      "wow_pct": 13.663809899062112
     }
   },
   "premium_domains": {
     "live": {
-      "name": "DISINTERMEDIATION.com",
-      "fdv_usd": 3750.0
+      "name": "FAVOURS.ai",
+      "fdv_usd": 4400.0
     },
     "upcoming": {
       "name": "SMOOTHIE.com",
@@ -78,44 +78,44 @@
   "top_organic_movers": [
     {
       "token": "SOFTWARE.ai",
-      "last_week_usd": 815938.240955,
+      "last_week_usd": 946796.4915390001,
       "prior_week_usd": 682709.1308980001,
-      "delta_usd": 133229.11005699995,
-      "wow_pct": 19.514769032275474
+      "delta_usd": 264087.360641,
+      "wow_pct": 38.682265797973606
     },
     {
       "token": "BONER.com",
-      "last_week_usd": 233741.513036,
+      "last_week_usd": 288344.709676,
       "prior_week_usd": 184557.290926,
-      "delta_usd": 49184.22211,
-      "wow_pct": 26.649839658581076
+      "delta_usd": 103787.41875000001,
+      "wow_pct": 56.23588113439234
     },
     {
       "token": "RIDES.com",
-      "last_week_usd": 47506.871838,
+      "last_week_usd": 53483.107569,
       "prior_week_usd": 6862.933873999999,
-      "delta_usd": 40643.937964,
-      "wow_pct": 592.2239483900352
+      "delta_usd": 46620.173695,
+      "wow_pct": 679.30384513275
     },
     {
       "token": "MIRAGEVAULT.xyz",
-      "last_week_usd": 32754.774663,
+      "last_week_usd": 32754.784663,
       "prior_week_usd": 0.04,
-      "delta_usd": 32754.734663,
-      "wow_pct": 81886836.6575
+      "delta_usd": 32754.744662999998,
+      "wow_pct": 81886861.65749998
     },
     {
       "token": "ALERT.ai",
-      "last_week_usd": 15001.102850999998,
+      "last_week_usd": 17151.793330999997,
       "prior_week_usd": 8672.282854000001,
-      "delta_usd": 6328.819996999997,
-      "wow_pct": 72.97755508609701
+      "delta_usd": 8479.510476999996,
+      "wow_pct": 97.77714380117237
     }
   ],
   "subdomain_clusters": {
-    "week_total_mints": 767,
-    "week_distinct_stakers": 719,
-    "week_distinct_parents": 82,
+    "week_total_mints": 5028,
+    "week_distinct_stakers": 2602,
+    "week_distinct_parents": 168,
     "daily": [
       {
         "date": "2026-06-04",
@@ -143,37 +143,71 @@
       },
       {
         "date": "2026-06-08",
-        "count": 682,
-        "distinct_stakers": 680,
-        "distinct_parents": 66
+        "count": 3816,
+        "distinct_stakers": 2554,
+        "distinct_parents": 165
+      },
+      {
+        "date": "2026-06-09",
+        "count": 1127,
+        "distinct_stakers": 349,
+        "distinct_parents": 110
       }
     ],
     "clusters": [
       {
         "date": "2026-06-08",
-        "count": 682,
-        "distinct_stakers": 680,
-        "distinct_parents": 66,
+        "count": 3816,
+        "distinct_stakers": 2554,
+        "distinct_parents": 165,
         "top_parents": [
           {
-            "parent": "santanomics.xyz",
-            "count": 159
+            "parent": "2026lfg.com",
+            "count": 267
           },
           {
-            "parent": "2026lfg.com",
-            "count": 145
+            "parent": "santanomics.xyz",
+            "count": 266
           },
           {
             "parent": "crushday.xyz",
-            "count": 49
+            "count": 155
           },
           {
+            "parent": "bitcoinholland.com",
+            "count": 139
+          },
+          {
+            "parent": "seeyouatethdenver2026.com",
+            "count": 137
+          }
+        ]
+      },
+      {
+        "date": "2026-06-09",
+        "count": 1127,
+        "distinct_stakers": 349,
+        "distinct_parents": 110,
+        "top_parents": [
+          {
             "parent": "overweights.xyz",
-            "count": 45
+            "count": 108
           },
           {
             "parent": "notclawd.com",
-            "count": 34
+            "count": 72
+          },
+          {
+            "parent": "bitcoinholland.com",
+            "count": 72
+          },
+          {
+            "parent": "santanomics.xyz",
+            "count": 70
+          },
+          {
+            "parent": "2026lfg.com",
+            "count": 69
           }
         ]
       }
@@ -204,15 +238,15 @@
     {
       "month": "2026-05",
       "launched": 112,
-      "graduated": 13,
-      "still_on_curve": 21,
-      "grad_pct": 12.0
+      "graduated": 15,
+      "still_on_curve": 16,
+      "grad_pct": 13.0
     },
     {
       "month": "2026-06",
-      "launched": 12,
+      "launched": 15,
       "graduated": 0,
-      "still_on_curve": 12,
+      "still_on_curve": 15,
       "grad_pct": 0.0
     }
   ]
