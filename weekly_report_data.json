@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-11T07:01:00.662078+00:00",
+  "generated": "2026-06-11T21:01:17.644173+00:00",
   "report_friday": "2026-06-12",
   "windows": {
     "last_week": {
@@ -15,11 +15,12 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 35111558.725141004,
+      "headline_30d": 35854924.445151,
+      "prior_30d_total": 28498257.347223,
       "last_week_sum": 13829017.449278,
       "prior_week_sum": 8707104.189387,
       "wow_pct": 58.824531652372436,
-      "rolling_30d_pct": 23.205985184783362,
+      "rolling_30d_pct": 25.814445452907208,
       "organic_last_week": 8503061.758665001,
       "organic_prior_week": 4471019.447337999,
       "non_organic_last_week": 5325955.690613,
@@ -28,9 +29,9 @@
       "non_organic_wow_pct": 25.728261234850258
     },
     "tokenized_assets": {
-      "last_end": 197854,
-      "prior_end": 178453,
-      "wow_pct": 10.871770157968765,
+      "last_end": 187316,
+      "prior_end": 168062,
+      "wow_pct": 11.456486296723828,
       "breakdown": {
         "domains": {
           "last_end": 29741,
@@ -43,9 +44,9 @@
           "wow_pct": -1.0169295660715318
         },
         "subdomains": {
-          "last_end": 150982,
-          "prior_end": 131408,
-          "wow_pct": 14.89559235358578
+          "last_end": 140444,
+          "prior_end": 121017,
+          "wow_pct": 16.053116504292785
         }
       }
     },
@@ -273,15 +274,77 @@
       "month": "2026-05",
       "launched": 112,
       "graduated": 16,
-      "still_on_curve": 9,
+      "still_on_curve": 8,
       "grad_pct": 14.0
     },
     {
       "month": "2026-06",
       "launched": 19,
-      "graduated": 1,
-      "still_on_curve": 18,
-      "grad_pct": 5.0
+      "graduated": 3,
+      "still_on_curve": 16,
+      "grad_pct": 16.0
     }
-  ]
+  ],
+  "graduation_by_channel": {
+    "white_glove": {
+      "q1": {
+        "launches": 185,
+        "graduated": 93,
+        "failed": 88,
+        "on_curve": 0,
+        "rate": 51.38121546961326
+      },
+      "q2": {
+        "launches": 151,
+        "graduated": 29,
+        "failed": 108,
+        "on_curve": 14,
+        "rate": 21.16788321167883
+      },
+      "l30": {
+        "launches": 41,
+        "graduated": 8,
+        "failed": 19,
+        "on_curve": 14,
+        "rate": 29.629629629629626
+      },
+      "all": {
+        "launches": 336,
+        "graduated": 122,
+        "failed": 196,
+        "on_curve": 14,
+        "rate": 38.36477987421384
+      }
+    },
+    "self_serve": {
+      "q1": {
+        "launches": 150,
+        "graduated": 40,
+        "failed": 110,
+        "on_curve": 0,
+        "rate": 26.666666666666668
+      },
+      "q2": {
+        "launches": 93,
+        "graduated": 16,
+        "failed": 66,
+        "on_curve": 10,
+        "rate": 19.51219512195122
+      },
+      "l30": {
+        "launches": 30,
+        "graduated": 2,
+        "failed": 22,
+        "on_curve": 6,
+        "rate": 8.333333333333332
+      },
+      "all": {
+        "launches": 243,
+        "graduated": 56,
+        "failed": 176,
+        "on_curve": 10,
+        "rate": 24.137931034482758
+      }
+    }
+  }
 }
