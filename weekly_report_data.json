@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-12T07:01:29.716672+00:00",
+  "generated": "2026-06-12T15:53:33.004937+00:00",
   "report_friday": "2026-06-12",
   "windows": {
     "last_week": {
@@ -274,14 +274,14 @@
       "month": "2026-05",
       "launched": 112,
       "graduated": 16,
-      "still_on_curve": 8,
+      "still_on_curve": 6,
       "grad_pct": 14.0
     },
     {
       "month": "2026-06",
       "launched": 19,
       "graduated": 4,
-      "still_on_curve": 15,
+      "still_on_curve": 14,
       "grad_pct": 21.0
     }
   ],
@@ -297,23 +297,23 @@
       "q2": {
         "launches": 151,
         "graduated": 30,
-        "failed": 108,
-        "on_curve": 13,
-        "rate": 21.73913043478261
+        "failed": 110,
+        "on_curve": 11,
+        "rate": 21.428571428571427
       },
       "l30": {
         "launches": 41,
         "graduated": 9,
-        "failed": 19,
-        "on_curve": 13,
-        "rate": 32.142857142857146
+        "failed": 21,
+        "on_curve": 11,
+        "rate": 30.0
       },
       "all": {
         "launches": 336,
         "graduated": 123,
-        "failed": 196,
-        "on_curve": 13,
-        "rate": 38.557993730407524
+        "failed": 198,
+        "on_curve": 11,
+        "rate": 38.31775700934579
       }
     },
     "self_serve": {
@@ -327,9 +327,9 @@
       "q2": {
         "launches": 93,
         "graduated": 16,
-        "failed": 66,
-        "on_curve": 10,
-        "rate": 19.51219512195122
+        "failed": 67,
+        "on_curve": 9,
+        "rate": 19.27710843373494
       },
       "l30": {
         "launches": 30,
@@ -341,9 +341,9 @@
       "all": {
         "launches": 243,
         "graduated": 56,
-        "failed": 176,
-        "on_curve": 10,
-        "rate": 24.137931034482758
+        "failed": 177,
+        "on_curve": 9,
+        "rate": 24.034334763948497
       }
     }
   }
