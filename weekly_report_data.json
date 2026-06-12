@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-11T21:01:17.644173+00:00",
+  "generated": "2026-06-12T07:01:29.716672+00:00",
   "report_friday": "2026-06-12",
   "windows": {
     "last_week": {
@@ -15,12 +15,12 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 35854924.445151,
+      "headline_30d": 36137570.77502601,
       "prior_30d_total": 28498257.347223,
       "last_week_sum": 13829017.449278,
       "prior_week_sum": 8707104.189387,
       "wow_pct": 58.824531652372436,
-      "rolling_30d_pct": 25.814445452907208,
+      "rolling_30d_pct": 26.806247605688842,
       "organic_last_week": 8503061.758665001,
       "organic_prior_week": 4471019.447337999,
       "non_organic_last_week": 5325955.690613,
@@ -280,9 +280,9 @@
     {
       "month": "2026-06",
       "launched": 19,
-      "graduated": 3,
-      "still_on_curve": 16,
-      "grad_pct": 16.0
+      "graduated": 4,
+      "still_on_curve": 15,
+      "grad_pct": 21.0
     }
   ],
   "graduation_by_channel": {
@@ -296,24 +296,24 @@
       },
       "q2": {
         "launches": 151,
-        "graduated": 29,
+        "graduated": 30,
         "failed": 108,
-        "on_curve": 14,
-        "rate": 21.16788321167883
+        "on_curve": 13,
+        "rate": 21.73913043478261
       },
       "l30": {
         "launches": 41,
-        "graduated": 8,
+        "graduated": 9,
         "failed": 19,
-        "on_curve": 14,
-        "rate": 29.629629629629626
+        "on_curve": 13,
+        "rate": 32.142857142857146
       },
       "all": {
         "launches": 336,
-        "graduated": 122,
+        "graduated": 123,
         "failed": 196,
-        "on_curve": 14,
-        "rate": 38.36477987421384
+        "on_curve": 13,
+        "rate": 38.557993730407524
       }
     },
     "self_serve": {
