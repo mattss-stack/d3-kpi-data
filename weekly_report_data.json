@@ -1,252 +1,140 @@
 {
-  "generated": "2026-06-12T15:53:33.004937+00:00",
-  "report_friday": "2026-06-12",
+  "generated": "2026-06-13T07:01:25.193984+00:00",
+  "report_friday": "2026-06-19",
   "windows": {
     "last_week": {
+      "start": "2026-06-11",
+      "end": "2026-06-17",
+      "label": "6/11-17"
+    },
+    "prior_week": {
       "start": "2026-06-04",
       "end": "2026-06-10",
       "label": "6/4-10"
-    },
-    "prior_week": {
-      "start": "2026-05-28",
-      "end": "2026-06-03",
-      "label": "5/28-3"
     }
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 36137570.77502601,
-      "prior_30d_total": 28498257.347223,
-      "last_week_sum": 13829017.449278,
-      "prior_week_sum": 8707104.189387,
-      "wow_pct": 58.824531652372436,
-      "rolling_30d_pct": 26.806247605688842,
-      "organic_last_week": 8503061.758665001,
-      "organic_prior_week": 4471019.447337999,
-      "non_organic_last_week": 5325955.690613,
-      "non_organic_prior_week": 4236084.742049,
-      "organic_wow_pct": 90.18172161446626,
-      "non_organic_wow_pct": 25.728261234850258
+      "headline_30d": 34713364.765512995,
+      "prior_30d_total": 36137570.77502601,
+      "last_week_sum": 3850712.76003,
+      "prior_week_sum": 13829017.449278,
+      "wow_pct": -72.15483475848067,
+      "rolling_30d_pct": -3.941067368305937,
+      "organic_last_week": 2347664.750854,
+      "organic_prior_week": 8503061.758665001,
+      "non_organic_last_week": 1503048.009176,
+      "non_organic_prior_week": 5325955.690613,
+      "organic_wow_pct": -72.3903598787622,
+      "non_organic_wow_pct": -71.778811231473
     },
     "tokenized_assets": {
-      "last_end": 187316,
-      "prior_end": 168062,
-      "wow_pct": 11.456486296723828,
+      "last_end": 186611,
+      "prior_end": 187316,
+      "wow_pct": -0.37636934378269876,
       "breakdown": {
         "domains": {
-          "last_end": 29741,
-          "prior_end": 29738,
-          "wow_pct": 0.010088102764140157
+          "last_end": 29764,
+          "prior_end": 29741,
+          "wow_pct": 0.07733431962610537
         },
         "name_tokens": {
-          "last_end": 17131,
-          "prior_end": 17307,
-          "wow_pct": -1.0169295660715318
+          "last_end": 17115,
+          "prior_end": 17131,
+          "wow_pct": -0.09339793357071974
         },
         "subdomains": {
-          "last_end": 140444,
-          "prior_end": 121017,
-          "wow_pct": 16.053116504292785
+          "last_end": 139732,
+          "prior_end": 140444,
+          "wow_pct": -0.5069636296317394
         }
       }
     },
     "mau": {
-      "last_end": 11774,
-      "prior_end": 11409,
-      "wow_pct": 3.1992286791129807
+      "last_end": 12554,
+      "prior_end": 11774,
+      "wow_pct": 6.624766434516732
     },
     "domain_launches": {
       "last_end": 579,
-      "prior_end": 562,
-      "wow_pct": 3.0249110320284696
+      "prior_end": 579,
+      "wow_pct": 0.0
     },
     "nav": {
-      "last_end": 31236268.0,
-      "prior_end": 27404373.58,
-      "wow_pct": 13.982784203454878
+      "last_end": 31208468.0,
+      "prior_end": 31236268.0,
+      "wow_pct": -0.08899910834418504
     }
   },
   "premium_domains": {
     "live": {
-      "name": "FAVOURS.ai",
-      "fdv_usd": 4400.0
+      "name": "SEEDFUNDING.ai",
+      "fdv_usd": 11250.0
     },
-    "upcoming": {
-      "name": "SMOOTHIE.com",
-      "fdv_usd": 325000.0
-    }
+    "upcoming": null
   },
   "top_organic_movers": [
     {
-      "token": "SOFTWARE.ai",
-      "last_week_usd": 1278754.93342,
-      "prior_week_usd": 682709.1308980001,
-      "delta_usd": 596045.8025219998,
-      "wow_pct": 87.3059661202996
+      "token": "RISKVAULT.xyz",
+      "last_week_usd": 0.0,
+      "prior_week_usd": 13486.773502,
+      "delta_usd": -13486.773502,
+      "wow_pct": -100.0
     },
     {
-      "token": "BONER.com",
-      "last_week_usd": 381098.232437,
-      "prior_week_usd": 184557.290926,
-      "delta_usd": 196540.94151100004,
-      "wow_pct": 106.49318730507646
+      "token": "ALERT.ai",
+      "last_week_usd": 6573.629063,
+      "prior_week_usd": 21364.544283,
+      "delta_usd": -14790.915219999999,
+      "wow_pct": -69.23112903357968
     },
     {
-      "token": "RIDES.com",
-      "last_week_usd": 72762.19706,
-      "prior_week_usd": 6862.933873999999,
-      "delta_usd": 65899.26318600001,
-      "wow_pct": 960.2199933130233
-    },
-    {
-      "token": "BRAG.com",
-      "last_week_usd": 147371.92280499998,
-      "prior_week_usd": 113931.76921200001,
-      "delta_usd": 33440.153592999966,
-      "wow_pct": 29.35103511890153
+      "token": "INVESTORS.xyz",
+      "last_week_usd": 31774.515360999998,
+      "prior_week_usd": 61045.507570999995,
+      "delta_usd": -29270.992209999997,
+      "wow_pct": -47.94946159790035
     },
     {
       "token": "MIRAGEVAULT.xyz",
-      "last_week_usd": 32755.786836,
-      "prior_week_usd": 0.04,
-      "delta_usd": 32755.746836,
-      "wow_pct": 81889367.08999999
+      "last_week_usd": 1.907844,
+      "prior_week_usd": 32755.786836,
+      "delta_usd": -32753.878991999998,
+      "wow_pct": -99.99417555130165
+    },
+    {
+      "token": "TERABYTES.ai",
+      "last_week_usd": 22990.342200000003,
+      "prior_week_usd": 64006.302666999996,
+      "delta_usd": -41015.960467,
+      "wow_pct": -64.08112757331126
     }
   ],
   "subdomain_clusters": {
-    "week_total_mints": 19574,
-    "week_distinct_stakers": 4673,
-    "week_distinct_parents": 171,
+    "week_total_mints": 60,
+    "week_distinct_stakers": 28,
+    "week_distinct_parents": 18,
     "daily": [
       {
-        "date": "2026-06-04",
-        "count": 14,
-        "distinct_stakers": 10,
-        "distinct_parents": 9
+        "date": "2026-06-11",
+        "count": 40,
+        "distinct_stakers": 22,
+        "distinct_parents": 14
       },
       {
-        "date": "2026-06-05",
-        "count": 15,
+        "date": "2026-06-12",
+        "count": 19,
         "distinct_stakers": 13,
-        "distinct_parents": 9
+        "distinct_parents": 12
       },
       {
-        "date": "2026-06-06",
-        "count": 18,
-        "distinct_stakers": 14,
-        "distinct_parents": 16
-      },
-      {
-        "date": "2026-06-07",
-        "count": 38,
-        "distinct_stakers": 20,
-        "distinct_parents": 19
-      },
-      {
-        "date": "2026-06-08",
-        "count": 3816,
-        "distinct_stakers": 2554,
-        "distinct_parents": 165
-      },
-      {
-        "date": "2026-06-09",
-        "count": 12649,
-        "distinct_stakers": 3724,
-        "distinct_parents": 166
-      },
-      {
-        "date": "2026-06-10",
-        "count": 3024,
-        "distinct_stakers": 856,
-        "distinct_parents": 22
+        "date": "2026-06-13",
+        "count": 1,
+        "distinct_stakers": 1,
+        "distinct_parents": 1
       }
     ],
-    "clusters": [
-      {
-        "date": "2026-06-08",
-        "count": 3816,
-        "distinct_stakers": 2554,
-        "distinct_parents": 165,
-        "top_parents": [
-          {
-            "parent": "2026lfg.com",
-            "count": 267
-          },
-          {
-            "parent": "santanomics.xyz",
-            "count": 266
-          },
-          {
-            "parent": "crushday.xyz",
-            "count": 155
-          },
-          {
-            "parent": "bitcoinholland.com",
-            "count": 139
-          },
-          {
-            "parent": "seeyouatethdenver2026.com",
-            "count": 137
-          }
-        ]
-      },
-      {
-        "date": "2026-06-09",
-        "count": 12649,
-        "distinct_stakers": 3724,
-        "distinct_parents": 166,
-        "top_parents": [
-          {
-            "parent": "santanomics.xyz",
-            "count": 938
-          },
-          {
-            "parent": "2026lfg.com",
-            "count": 900
-          },
-          {
-            "parent": "gboner.fun",
-            "count": 616
-          },
-          {
-            "parent": "crushday.xyz",
-            "count": 549
-          },
-          {
-            "parent": "verystablecoins.com",
-            "count": 520
-          }
-        ]
-      },
-      {
-        "date": "2026-06-10",
-        "count": 3024,
-        "distinct_stakers": 856,
-        "distinct_parents": 22,
-        "top_parents": [
-          {
-            "parent": "bagsecured.xyz",
-            "count": 220
-          },
-          {
-            "parent": "verystablecoins.com",
-            "count": 217
-          },
-          {
-            "parent": "seeyouatethdenver2026.com",
-            "count": 216
-          },
-          {
-            "parent": "crushday.xyz",
-            "count": 211
-          },
-          {
-            "parent": "gboner.fun",
-            "count": 211
-          }
-        ]
-      }
-    ]
+    "clusters": []
   },
   "graduation_rates": [
     {
@@ -274,7 +162,7 @@
       "month": "2026-05",
       "launched": 112,
       "graduated": 16,
-      "still_on_curve": 6,
+      "still_on_curve": 5,
       "grad_pct": 14.0
     },
     {
@@ -302,11 +190,11 @@
         "rate": 21.428571428571427
       },
       "l30": {
-        "launches": 41,
+        "launches": 34,
         "graduated": 9,
-        "failed": 21,
+        "failed": 14,
         "on_curve": 11,
-        "rate": 30.0
+        "rate": 39.130434782608695
       },
       "all": {
         "launches": 336,
@@ -327,23 +215,23 @@
       "q2": {
         "launches": 93,
         "graduated": 16,
-        "failed": 67,
-        "on_curve": 9,
-        "rate": 19.27710843373494
+        "failed": 68,
+        "on_curve": 8,
+        "rate": 19.047619047619047
       },
       "l30": {
-        "launches": 30,
-        "graduated": 2,
-        "failed": 22,
+        "launches": 13,
+        "graduated": 1,
+        "failed": 6,
         "on_curve": 6,
-        "rate": 8.333333333333332
+        "rate": 14.285714285714285
       },
       "all": {
         "launches": 243,
         "graduated": 56,
-        "failed": 177,
-        "on_curve": 9,
-        "rate": 24.034334763948497
+        "failed": 178,
+        "on_curve": 8,
+        "rate": 23.931623931623932
       }
     }
   }
