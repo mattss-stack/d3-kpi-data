@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-14T07:01:41.052272+00:00",
+  "generated": "2026-06-15T07:01:15.334857+00:00",
   "report_friday": "2026-06-19",
   "windows": {
     "last_week": {
@@ -15,45 +15,45 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 37412055.955241,
+      "headline_30d": 40307280.534725,
       "prior_30d_total": 36137570.77502601,
-      "last_week_sum": 6549403.949758,
+      "last_week_sum": 9444628.529242,
       "prior_week_sum": 13829017.449278,
-      "wow_pct": -52.64013532573901,
-      "rolling_30d_pct": 3.526759416534346,
-      "organic_last_week": 3783710.946538,
+      "wow_pct": -31.704269201460196,
+      "rolling_30d_pct": 11.538434018317032,
+      "organic_last_week": 5564190.82953,
       "organic_prior_week": 8503061.758665001,
-      "non_organic_last_week": 2765693.00322,
+      "non_organic_last_week": 3880437.699712,
       "non_organic_prior_week": 5325955.690613,
-      "organic_wow_pct": -55.50178213533227,
-      "non_organic_wow_pct": -48.0714229730725
+      "organic_wow_pct": -34.56250245554385,
+      "non_organic_wow_pct": -27.141006701364905
     },
     "tokenized_assets": {
-      "last_end": 186644,
+      "last_end": 187463,
       "prior_end": 187316,
-      "wow_pct": -0.3587520553503171,
+      "wow_pct": 0.07847701210788187,
       "breakdown": {
         "domains": {
-          "last_end": 29766,
+          "last_end": 29769,
           "prior_end": 29741,
-          "wow_pct": 0.08405904307185366
+          "wow_pct": 0.0941461282404761
         },
         "name_tokens": {
-          "last_end": 17097,
+          "last_end": 17090,
           "prior_end": 17131,
-          "wow_pct": -0.19847060883777948
+          "wow_pct": -0.23933220477496933
         },
         "subdomains": {
-          "last_end": 139781,
+          "last_end": 140604,
           "prior_end": 140444,
-          "wow_pct": -0.4720742787160719
+          "wow_pct": 0.11392441115319984
         }
       }
     },
     "mau": {
-      "last_end": 12620,
+      "last_end": 12713,
       "prior_end": 11774,
-      "wow_pct": 7.185323594360455
+      "wow_pct": 7.975199592322066
     },
     "domain_launches": {
       "last_end": 579,
@@ -76,44 +76,44 @@
   "top_organic_movers": [
     {
       "token": "RISKVAULT.xyz",
-      "last_week_usd": 0.0,
+      "last_week_usd": 12942.733739000001,
       "prior_week_usd": 13486.773502,
-      "delta_usd": -13486.773502,
-      "wow_pct": -100.0
-    },
-    {
-      "token": "ALERT.ai",
-      "last_week_usd": 6784.919192,
-      "prior_week_usd": 21364.544283,
-      "delta_usd": -14579.625090999998,
-      "wow_pct": -68.24215343830743
+      "delta_usd": -544.0397629999989,
+      "wow_pct": -4.033876322749257
     },
     {
       "token": "INVESTORS.xyz",
-      "last_week_usd": 42880.000284,
+      "last_week_usd": 56426.726324,
       "prior_week_usd": 61045.507570999995,
-      "delta_usd": -18165.507286999993,
-      "wow_pct": -29.757320415220228
+      "delta_usd": -4618.781246999992,
+      "wow_pct": -7.566128009711511
+    },
+    {
+      "token": "ALERT.ai",
+      "last_week_usd": 7105.512861,
+      "prior_week_usd": 21364.544283,
+      "delta_usd": -14259.031422,
+      "wow_pct": -66.74156599420688
     },
     {
       "token": "HIGHTECH.xyz",
-      "last_week_usd": 34121.951568,
+      "last_week_usd": 46807.172269,
       "prior_week_usd": 63641.264703,
-      "delta_usd": -29519.313135000004,
-      "wow_pct": -46.38391973000575
+      "delta_usd": -16834.092434,
+      "wow_pct": -26.451536613172383
     },
     {
       "token": "TERABYTES.ai",
-      "last_week_usd": 34017.438746,
+      "last_week_usd": 46687.09030899999,
       "prior_week_usd": 64006.302666999996,
-      "delta_usd": -29988.863920999996,
-      "wow_pct": -46.85298583331776
+      "delta_usd": -17319.212358000004,
+      "wow_pct": -27.05860460040187
     }
   ],
   "subdomain_clusters": {
-    "week_total_mints": 111,
-    "week_distinct_stakers": 45,
-    "week_distinct_parents": 26,
+    "week_total_mints": 955,
+    "week_distinct_stakers": 810,
+    "week_distinct_parents": 123,
     "daily": [
       {
         "date": "2026-06-11",
@@ -135,12 +135,47 @@
       },
       {
         "date": "2026-06-14",
-        "count": 12,
-        "distinct_stakers": 4,
-        "distinct_parents": 1
+        "count": 83,
+        "distinct_stakers": 34,
+        "distinct_parents": 15
+      },
+      {
+        "date": "2026-06-15",
+        "count": 773,
+        "distinct_stakers": 764,
+        "distinct_parents": 116
       }
     ],
-    "clusters": []
+    "clusters": [
+      {
+        "date": "2026-06-15",
+        "count": 773,
+        "distinct_stakers": 764,
+        "distinct_parents": 116,
+        "top_parents": [
+          {
+            "parent": "santanomics.xyz",
+            "count": 151
+          },
+          {
+            "parent": "2026lfg.com",
+            "count": 144
+          },
+          {
+            "parent": "notclawd.com",
+            "count": 84
+          },
+          {
+            "parent": "luckyirish.xyz",
+            "count": 39
+          },
+          {
+            "parent": "seeyouatethdenver2026.com",
+            "count": 36
+          }
+        ]
+      }
+    ]
   },
   "graduation_rates": [
     {
