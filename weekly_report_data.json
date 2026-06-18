@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-18T07:01:35.311580+00:00",
+  "generated": "2026-06-18T21:32:46.979887+00:00",
   "report_friday": "2026-06-19",
   "windows": {
     "last_week": {
@@ -15,12 +15,12 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 47684735.403483,
+      "headline_30d": 48352213.616900004,
       "prior_30d_total": 36137570.77502601,
       "last_week_sum": 16131080.03475,
       "prior_week_sum": 13829017.449278,
       "wow_pct": 16.646609883279794,
-      "rolling_30d_pct": 31.953350435046456,
+      "rolling_30d_pct": 33.80039825564397,
       "organic_last_week": 8827001.773098,
       "organic_prior_week": 8503061.758665001,
       "non_organic_last_week": 7304078.261652,
@@ -235,49 +235,49 @@
     {
       "month": "2026-06",
       "launched": 19,
-      "graduated": 4,
-      "still_on_curve": 13,
-      "grad_pct": 21.0
+      "graduated": 5,
+      "still_on_curve": 11,
+      "grad_pct": 26.0
     }
   ],
   "graduation_by_channel": {
     "white_glove": {
       "q1": {
-        "launches": 185,
+        "launches": 184,
         "graduated": 93,
-        "failed": 88,
+        "failed": 87,
         "on_curve": 0,
-        "rate": 51.38121546961326
+        "rate": 51.66666666666667
       },
       "q2": {
         "launches": 148,
-        "graduated": 30,
-        "failed": 108,
-        "on_curve": 10,
-        "rate": 21.73913043478261
+        "graduated": 31,
+        "failed": 109,
+        "on_curve": 8,
+        "rate": 22.142857142857142
       },
       "l30": {
         "launches": 34,
-        "graduated": 9,
-        "failed": 15,
-        "on_curve": 10,
-        "rate": 37.5
+        "graduated": 10,
+        "failed": 16,
+        "on_curve": 8,
+        "rate": 38.46153846153847
       },
       "all": {
-        "launches": 333,
-        "graduated": 123,
+        "launches": 332,
+        "graduated": 124,
         "failed": 196,
-        "on_curve": 10,
-        "rate": 38.557993730407524
+        "on_curve": 8,
+        "rate": 38.75
       }
     },
     "self_serve": {
       "q1": {
-        "launches": 150,
+        "launches": 151,
         "graduated": 40,
-        "failed": 110,
+        "failed": 111,
         "on_curve": 0,
-        "rate": 26.666666666666668
+        "rate": 26.490066225165563
       },
       "q2": {
         "launches": 96,
@@ -294,12 +294,185 @@
         "rate": 11.11111111111111
       },
       "all": {
-        "launches": 246,
+        "launches": 247,
         "graduated": 56,
-        "failed": 185,
+        "failed": 186,
         "on_curve": 4,
-        "rate": 23.236514522821576
+        "rate": 23.140495867768596
       }
+    }
+  },
+  "premium_lp_gap": {
+    "names": [
+      {
+        "domain": "software.ai",
+        "launch_month": "2025-12",
+        "channel": "white-glove",
+        "cash_out_to_owner": 16843.75,
+        "volume_total": 17909104.0,
+        "volume_locked_03": 7406823.0,
+        "fees_owner_03": 22220.47,
+        "volume_other_tiers": 10502281.0,
+        "fees_missed_other": 5330.41,
+        "pct_volume_in_locked": 41.35786469272835
+      },
+      {
+        "domain": "brag.com",
+        "launch_month": "2025-12",
+        "channel": "white-glove",
+        "cash_out_to_owner": 21437.5,
+        "volume_total": 5980560.0,
+        "volume_locked_03": 2172121.0,
+        "fees_owner_03": 6516.36,
+        "volume_other_tiers": 3808439.0,
+        "fees_missed_other": 1935.26,
+        "pct_volume_in_locked": 36.31969247027034
+      },
+      {
+        "domain": "boner.com",
+        "launch_month": "2025-12",
+        "channel": "white-glove",
+        "cash_out_to_owner": 13475.0,
+        "volume_total": 3671800.0,
+        "volume_locked_03": 3271148.0,
+        "fees_owner_03": 9813.44,
+        "volume_other_tiers": 400652.0,
+        "fees_missed_other": 200.32,
+        "pct_volume_in_locked": 89.08840350781632
+      },
+      {
+        "domain": "rides.com",
+        "launch_month": "2026-03",
+        "channel": "white-glove",
+        "cash_out_to_owner": 15618.75,
+        "volume_total": 1910592.0,
+        "volume_locked_03": 153541.0,
+        "fees_owner_03": 460.62,
+        "volume_other_tiers": 1757051.0,
+        "fees_missed_other": 878.72,
+        "pct_volume_in_locked": 8.036304977724182
+      },
+      {
+        "domain": "investors.xyz",
+        "launch_month": "2025-12",
+        "channel": "white-glove",
+        "cash_out_to_owner": 857.5,
+        "volume_total": 853904.0,
+        "volume_locked_03": 451735.0,
+        "fees_owner_03": 1355.2,
+        "volume_other_tiers": 402169.0,
+        "fees_missed_other": 210.69,
+        "pct_volume_in_locked": 52.902316888081096
+      },
+      {
+        "domain": "wines.xyz",
+        "launch_month": "2026-01",
+        "channel": "white-glove",
+        "cash_out_to_owner": 5635.0,
+        "volume_total": 552565.0,
+        "volume_locked_03": 467525.0,
+        "fees_owner_03": 1402.57,
+        "volume_other_tiers": 85041.0,
+        "fees_missed_other": 42.58,
+        "pct_volume_in_locked": 84.60995538986364
+      },
+      {
+        "domain": "depin.ai",
+        "launch_month": "2025-12",
+        "channel": "white-glove",
+        "cash_out_to_owner": 3920.0,
+        "volume_total": 538310.0,
+        "volume_locked_03": 535776.0,
+        "fees_owner_03": 1607.33,
+        "volume_other_tiers": 2534.0,
+        "fees_missed_other": 5.91,
+        "pct_volume_in_locked": 99.52926752243131
+      },
+      {
+        "domain": "hightech.xyz",
+        "launch_month": "2025-12",
+        "channel": "white-glove",
+        "cash_out_to_owner": 857.5,
+        "volume_total": 444916.0,
+        "volume_locked_03": 430021.0,
+        "fees_owner_03": 1290.06,
+        "volume_other_tiers": 14895.0,
+        "fees_missed_other": 12.78,
+        "pct_volume_in_locked": 96.6521770401604
+      },
+      {
+        "domain": "terabytes.ai",
+        "launch_month": "2026-02",
+        "channel": "white-glove",
+        "cash_out_to_owner": 1212.75,
+        "volume_total": 417887.0,
+        "volume_locked_03": 397691.0,
+        "fees_owner_03": 1193.07,
+        "volume_other_tiers": 20196.0,
+        "fees_missed_other": 10.1,
+        "pct_volume_in_locked": 95.16711455489164
+      },
+      {
+        "domain": "swimsuits.ai",
+        "launch_month": "2025-12",
+        "channel": "white-glove",
+        "cash_out_to_owner": 5390.0,
+        "volume_total": 205536.0,
+        "volume_locked_03": 205438.0,
+        "fees_owner_03": 616.31,
+        "volume_other_tiers": 99.0,
+        "fees_missed_other": 0.99,
+        "pct_volume_in_locked": 99.95231978826094
+      }
+    ],
+    "monthly_tier_split": [
+      {
+        "month": "2025-12",
+        "volume_locked_03": 1828756.0,
+        "volume_other_tiers": 79169.0,
+        "pct_in_locked": 95.85051823315906
+      },
+      {
+        "month": "2026-01",
+        "volume_locked_03": 2910643.0,
+        "volume_other_tiers": 1789266.0,
+        "pct_in_locked": 61.92977353391311
+      },
+      {
+        "month": "2026-02",
+        "volume_locked_03": 1158169.0,
+        "volume_other_tiers": 1434996.0,
+        "pct_in_locked": 44.662372043429556
+      },
+      {
+        "month": "2026-03",
+        "volume_locked_03": 2392196.0,
+        "volume_other_tiers": 1149174.0,
+        "pct_in_locked": 67.55001595427758
+      },
+      {
+        "month": "2026-04",
+        "volume_locked_03": 2009404.0,
+        "volume_other_tiers": 5165777.0,
+        "pct_in_locked": 28.004924196337345
+      },
+      {
+        "month": "2026-05",
+        "volume_locked_03": 1642871.0,
+        "volume_other_tiers": 4044838.0,
+        "pct_in_locked": 28.884582526989337
+      },
+      {
+        "month": "2026-06",
+        "volume_locked_03": 3549778.0,
+        "volume_other_tiers": 3330186.0,
+        "pct_in_locked": 51.59588044356046
+      }
+    ],
+    "totals": {
+      "cash_out_to_owner": 85247.75,
+      "fees_owner_03": 46475.43,
+      "fees_missed_other": 8627.76
     }
   }
 }
