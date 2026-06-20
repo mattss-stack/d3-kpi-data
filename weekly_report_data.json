@@ -1,59 +1,59 @@
 {
-  "generated": "2026-06-19T07:01:33.311171+00:00",
-  "report_friday": "2026-06-19",
+  "generated": "2026-06-20T07:01:41.836618+00:00",
+  "report_friday": "2026-06-26",
   "windows": {
     "last_week": {
+      "start": "2026-06-18",
+      "end": "2026-06-24",
+      "label": "6/18-24"
+    },
+    "prior_week": {
       "start": "2026-06-11",
       "end": "2026-06-17",
       "label": "6/11-17"
-    },
-    "prior_week": {
-      "start": "2026-06-04",
-      "end": "2026-06-10",
-      "label": "6/4-10"
     }
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 48435915.934464,
-      "prior_30d_total": 36137570.77502601,
-      "last_week_sum": 16131080.03475,
-      "prior_week_sum": 13829017.449278,
-      "wow_pct": 16.646609883279794,
-      "rolling_30d_pct": 34.032019573205915,
-      "organic_last_week": 8827001.773098,
-      "organic_prior_week": 8503061.758665001,
-      "non_organic_last_week": 7304078.261652,
-      "non_organic_prior_week": 5325955.690613,
-      "organic_wow_pct": 3.80968671788005,
-      "non_organic_wow_pct": 37.14117589309732
+      "headline_30d": 42215801.442248,
+      "prior_30d_total": 48435915.934464,
+      "last_week_sum": 2189374.600419,
+      "prior_week_sum": 16131080.03475,
+      "wow_pct": -86.42760065846433,
+      "rolling_30d_pct": -12.8419466674938,
+      "organic_last_week": 1661978.9778269997,
+      "organic_prior_week": 8827001.773098,
+      "non_organic_last_week": 527395.622592,
+      "non_organic_prior_week": 7304078.261652,
+      "organic_wow_pct": -81.1716478533832,
+      "non_organic_wow_pct": -92.77943631353264
     },
     "tokenized_assets": {
-      "last_end": 197165,
-      "prior_end": 187316,
-      "wow_pct": 5.257959811228085,
+      "last_end": 197181,
+      "prior_end": 197165,
+      "wow_pct": 0.008115030558161944,
       "breakdown": {
         "domains": {
-          "last_end": 29770,
-          "prior_end": 29741,
-          "wow_pct": 0.09750848996335025
+          "last_end": 29783,
+          "prior_end": 29770,
+          "wow_pct": 0.043668122270742356
         },
         "name_tokens": {
-          "last_end": 17069,
-          "prior_end": 17131,
-          "wow_pct": -0.36191699258653903
+          "last_end": 17052,
+          "prior_end": 17069,
+          "wow_pct": -0.0995957583924073
         },
         "subdomains": {
-          "last_end": 150326,
-          "prior_end": 140444,
-          "wow_pct": 7.036256443849506
+          "last_end": 150346,
+          "prior_end": 150326,
+          "wow_pct": 0.01330441839734976
         }
       }
     },
     "mau": {
-      "last_end": 13556,
-      "prior_end": 11774,
-      "wow_pct": 15.135043315780534
+      "last_end": 12733,
+      "prior_end": 13556,
+      "wow_pct": -6.071112422543523
     },
     "domain_launches": {
       "last_end": 579,
@@ -61,147 +61,52 @@
       "wow_pct": 0.0
     },
     "nav": {
-      "last_end": 31186897.12,
-      "prior_end": 31236268.0,
-      "wow_pct": -0.15805626971826134
+      "last_end": 31095268.0,
+      "prior_end": 31186897.12,
+      "wow_pct": -0.29380646509152
     }
   },
   "premium_domains": {
     "live": {
-      "name": "SEEDFUNDING.ai",
-      "fdv_usd": 11250.0
+      "name": "WARRIORS.xyz",
+      "fdv_usd": 2250.0
     },
     "upcoming": null
   },
   "top_organic_movers": [
     {
-      "token": "POINTPROGRAM.xyz",
-      "last_week_usd": 64761.846108,
-      "prior_week_usd": 0.0,
-      "delta_usd": 64761.846108,
-      "wow_pct": null
-    },
-    {
-      "token": "BONER.com",
-      "last_week_usd": 0.0,
-      "prior_week_usd": 68895.915843,
-      "delta_usd": -68895.915843,
-      "wow_pct": -100.0
-    },
-    {
       "token": "SOFTWARE.ai",
-      "last_week_usd": 942193.624128,
-      "prior_week_usd": 1278754.93342,
-      "delta_usd": -336561.3092919999,
-      "wow_pct": -26.319453438343704
+      "last_week_usd": 348975.550496,
+      "prior_week_usd": 942193.624128,
+      "delta_usd": -593218.073632,
+      "wow_pct": -62.961376349900824
     }
   ],
   "subdomain_clusters": {
-    "week_total_mints": 10849,
-    "week_distinct_stakers": 3962,
-    "week_distinct_parents": 172,
+    "week_total_mints": 32,
+    "week_distinct_stakers": 17,
+    "week_distinct_parents": 13,
     "daily": [
       {
-        "date": "2026-06-11",
-        "count": 40,
-        "distinct_stakers": 22,
-        "distinct_parents": 14
+        "date": "2026-06-18",
+        "count": 15,
+        "distinct_stakers": 12,
+        "distinct_parents": 10
       },
       {
-        "date": "2026-06-12",
-        "count": 19,
-        "distinct_stakers": 13,
-        "distinct_parents": 12
+        "date": "2026-06-19",
+        "count": 16,
+        "distinct_stakers": 12,
+        "distinct_parents": 6
       },
       {
-        "date": "2026-06-13",
-        "count": 40,
-        "distinct_stakers": 23,
-        "distinct_parents": 19
-      },
-      {
-        "date": "2026-06-14",
-        "count": 83,
-        "distinct_stakers": 34,
-        "distinct_parents": 15
-      },
-      {
-        "date": "2026-06-15",
-        "count": 2527,
-        "distinct_stakers": 2497,
-        "distinct_parents": 172
-      },
-      {
-        "date": "2026-06-16",
-        "count": 8084,
-        "distinct_stakers": 3097,
-        "distinct_parents": 168
-      },
-      {
-        "date": "2026-06-17",
-        "count": 56,
-        "distinct_stakers": 25,
-        "distinct_parents": 17
+        "date": "2026-06-20",
+        "count": 1,
+        "distinct_stakers": 1,
+        "distinct_parents": 1
       }
     ],
-    "clusters": [
-      {
-        "date": "2026-06-15",
-        "count": 2527,
-        "distinct_stakers": 2497,
-        "distinct_parents": 172,
-        "top_parents": [
-          {
-            "parent": "2026lfg.com",
-            "count": 199
-          },
-          {
-            "parent": "santanomics.xyz",
-            "count": 196
-          },
-          {
-            "parent": "notclawd.com",
-            "count": 192
-          },
-          {
-            "parent": "software.ai",
-            "count": 102
-          },
-          {
-            "parent": "seeyouatethdenver2026.com",
-            "count": 85
-          }
-        ]
-      },
-      {
-        "date": "2026-06-16",
-        "count": 8084,
-        "distinct_stakers": 3097,
-        "distinct_parents": 168,
-        "top_parents": [
-          {
-            "parent": "2026lfg.com",
-            "count": 601
-          },
-          {
-            "parent": "santanomics.xyz",
-            "count": 591
-          },
-          {
-            "parent": "notclawd.com",
-            "count": 452
-          },
-          {
-            "parent": "software.ai",
-            "count": 299
-          },
-          {
-            "parent": "gboner.fun",
-            "count": 249
-          }
-        ]
-      }
-    ]
+    "clusters": []
   },
   "graduation_rates": [
     {
@@ -235,9 +140,9 @@
     {
       "month": "2026-06",
       "launched": 19,
-      "graduated": 5,
-      "still_on_curve": 11,
-      "grad_pct": 26.0
+      "graduated": 6,
+      "still_on_curve": 9,
+      "grad_pct": 32.0
     }
   ],
   "graduation_by_channel": {
@@ -251,24 +156,24 @@
       },
       "q2": {
         "launches": 148,
-        "graduated": 31,
-        "failed": 109,
-        "on_curve": 8,
-        "rate": 22.142857142857142
+        "graduated": 32,
+        "failed": 110,
+        "on_curve": 6,
+        "rate": 22.535211267605636
       },
       "l30": {
-        "launches": 34,
-        "graduated": 10,
-        "failed": 16,
-        "on_curve": 8,
-        "rate": 38.46153846153847
+        "launches": 29,
+        "graduated": 11,
+        "failed": 12,
+        "on_curve": 6,
+        "rate": 47.82608695652174
       },
       "all": {
         "launches": 332,
-        "graduated": 124,
-        "failed": 196,
-        "on_curve": 8,
-        "rate": 38.75
+        "graduated": 125,
+        "failed": 197,
+        "on_curve": 6,
+        "rate": 38.81987577639752
       }
     },
     "self_serve": {
@@ -287,11 +192,11 @@
         "rate": 17.582417582417584
       },
       "l30": {
-        "launches": 13,
+        "launches": 10,
         "graduated": 1,
-        "failed": 8,
+        "failed": 5,
         "on_curve": 4,
-        "rate": 11.11111111111111
+        "rate": 16.666666666666664
       },
       "all": {
         "launches": 247,
@@ -308,161 +213,161 @@
         "domain": "software.ai",
         "launch_date": "2025-12-01",
         "cash_out_to_owner": 16843.75,
-        "volume_total": 17982375.0,
+        "volume_total": 18169857.0,
         "fees_q1": 13477.45,
         "fees_q2": 8743.02,
-        "fees_t30d": 4368.53,
+        "fees_t30d": 3751.02,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 81.0840716568259,
-        "pct_q2": 23.42368960933911,
-        "pct_t30d": 27.46248737423036
+        "pct_q2": 23.075967088305436,
+        "pct_t30d": 26.30378720023227
       },
       {
         "domain": "brag.com",
         "launch_date": "2025-12-12",
         "cash_out_to_owner": 21437.5,
-        "volume_total": 5980908.0,
+        "volume_total": 5983309.0,
         "fees_q1": 4003.94,
-        "fees_q2": 2512.87,
-        "fees_t30d": 2045.41,
+        "fees_q2": 2515.93,
+        "fees_t30d": 1776.92,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 29.453554167310294,
-        "pct_q2": 57.78501960980015,
-        "pct_t30d": 86.66864671099655
+        "pct_q2": 57.759727200280786,
+        "pct_t30d": 87.58816369517515
       },
       {
         "domain": "boner.com",
         "launch_date": "2025-12-17",
         "cash_out_to_owner": 13475.0,
-        "volume_total": 3675582.0,
+        "volume_total": 3678588.0,
         "fees_q1": 5533.44,
-        "fees_q2": 4285.65,
-        "fees_t30d": 3613.17,
+        "fees_q2": 4288.52,
+        "fees_t30d": 3202.48,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 99.9912733582507,
-        "pct_q2": 78.02262301039667,
-        "pct_t30d": 81.92178414979847
+        "pct_q2": 77.94686419704678,
+        "pct_t30d": 80.20083809345056
       },
       {
         "domain": "rides.com",
         "launch_date": "2026-04-03",
         "cash_out_to_owner": 15618.75,
-        "volume_total": 1911627.0,
+        "volume_total": 1921191.0,
         "fees_q1": 0.0,
-        "fees_q2": 461.93,
-        "fees_t30d": 304.34,
+        "fees_q2": 464.98,
+        "fees_t30d": 301.14,
         "live_q1": false,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": null,
-        "pct_q2": 8.054750300585438,
-        "pct_t30d": 37.22511798605164
+        "pct_q2": 8.067496838008909,
+        "pct_t30d": 38.511637253113314
       },
       {
         "domain": "investors.xyz",
         "launch_date": "2025-12-12",
         "cash_out_to_owner": 857.5,
-        "volume_total": 854141.0,
+        "volume_total": 854231.0,
         "fees_q1": 332.67,
-        "fees_q2": 1022.53,
-        "fees_t30d": 908.72,
+        "fees_q2": 1022.57,
+        "fees_t30d": 801.33,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 50.09297049261585,
-        "pct_q2": 53.86529755744959,
-        "pct_t30d": 89.96126886390383
+        "pct_q2": 53.85982602888384,
+        "pct_t30d": 92.74065377774548
       },
       {
         "domain": "wines.xyz",
         "launch_date": "2026-01-15",
         "cash_out_to_owner": 5635.0,
-        "volume_total": 552565.0,
+        "volume_total": 552579.0,
         "fees_q1": 249.55,
-        "fees_q2": 1153.02,
-        "fees_t30d": 941.29,
+        "fees_q2": 1153.06,
+        "fees_t30d": 830.14,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 49.6115831472904,
-        "pct_q2": 99.85609103616132,
-        "pct_t30d": 99.96472507211308
+        "pct_q2": 99.8560962961498,
+        "pct_t30d": 99.97309269116825
       },
       {
         "domain": "depin.ai",
         "launch_date": "2025-12-30",
         "cash_out_to_owner": 3920.0,
-        "volume_total": 538377.0,
+        "volume_total": 538430.0,
         "fees_q1": 427.59,
-        "fees_q2": 1179.94,
-        "fees_t30d": 971.74,
+        "fees_q2": 1180.1,
+        "fees_t30d": 823.93,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 98.26135505353658,
-        "pct_q2": 99.99684607524401,
-        "pct_t30d": 99.99999942268605
+        "pct_q2": 99.99684649824658,
+        "pct_t30d": 99.99999931911478
       },
       {
         "domain": "hightech.xyz",
         "launch_date": "2025-12-16",
         "cash_out_to_owner": 857.5,
-        "volume_total": 444918.0,
+        "volume_total": 444944.0,
         "fees_q1": 255.06,
-        "fees_q2": 1035.01,
-        "fees_t30d": 933.06,
+        "fees_q2": 1035.08,
+        "fees_t30d": 829.55,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 89.36913589833844,
-        "pct_q2": 98.63304663275379,
-        "pct_t30d": 99.79643493530173
+        "pct_q2": 98.63314615700229,
+        "pct_t30d": 99.92863822999509
       },
       {
         "domain": "terabytes.ai",
         "launch_date": "2026-02-24",
         "cash_out_to_owner": 1212.75,
-        "volume_total": 417893.0,
+        "volume_total": 417896.0,
         "fees_q1": 125.42,
         "fees_q2": 1067.65,
-        "fees_t30d": 920.3,
+        "fees_t30d": 808.28,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 100.0,
-        "pct_q2": 94.6283139458871,
-        "pct_t30d": 94.13652328228585
+        "pct_q2": 94.62762452785903,
+        "pct_t30d": 97.32677208562643
       },
       {
         "domain": "swimsuits.ai",
         "launch_date": "2025-12-05",
         "cash_out_to_owner": 5390.0,
-        "volume_total": 205536.0,
+        "volume_total": 205782.0,
         "fees_q1": 464.17,
-        "fees_q2": 152.14,
-        "fees_t30d": 40.34,
+        "fees_q2": 152.88,
+        "fees_t30d": 5.56,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 99.94186876967983,
-        "pct_q2": 99.9829359770144,
-        "pct_t30d": 99.98646906414848
+        "pct_q2": 99.98281614275122,
+        "pct_t30d": 99.97887481527547
       }
     ],
     "totals": {
       "cash_out_to_owner": 85247.75,
       "fees_q1": 24869.29,
-      "fees_q2": 21613.76,
-      "fees_t30d": 15046.9,
+      "fees_q2": 21623.79,
+      "fees_t30d": 13130.35,
       "pct_q1": 65.05669574926854,
-      "pct_q2": 36.347229834814165,
-      "pct_t30d": 53.0347361799585
+      "pct_q2": 35.995664561832015,
+      "pct_t30d": 52.00412194139433
     }
   }
 }
