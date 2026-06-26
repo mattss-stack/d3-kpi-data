@@ -205,9 +205,9 @@ def _lpgap_table(d):
         f'<td {TD % "right"}><b>{pf(t["pct_t30d"])}</b></td></tr>'
     )
     table = '<table style="border-collapse:collapse;font-size:10pt">' + "".join(rows) + "</table>"
-    # Lead with dollars: Q2 earned vs. possible pool fees and the gap. "Possible" = what
-    # Q2 would have earned with 100% of volume in the 0.3% pool, i.e. actual Q2 fees
-    # grossed up by the Q2 capture rate. Q2-only so the figure ties to the Q2 column.
+    # earned = Q2 fees (the Q2 fees TOTAL cell, same timeframe as the table column).
+    # possible = what Q2 would have earned at 100% capture = Q2 fees / Q2 capture rate.
+    # Both come from the same snapshot the table renders from, so they always agree.
     earned = t["fees_q2"]
     possible = t["fees_q2"] / (t["pct_q2"] / 100) if t["pct_q2"] else 0
     gap = possible - earned
