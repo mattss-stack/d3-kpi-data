@@ -213,9 +213,10 @@ def _lpgap_table(d):
     gap = possible - earned
     intro = (
         f"Top 10 names by volume. Owners earned {money(earned)} of a possible {money(possible)} in Q2 pool "
-        f"fees &mdash; a {money(gap)} gap, because trading keeps migrating from their locked 0.3% pool to the "
-        f"cheaper 0.05% tier where they earn nothing (e.g. rides.com: high volume, low capture). The % columns "
-        f"are each name&rsquo;s share of volume that still lands in the 0.3% pool."
+        f"fees, a {money(gap)} gap, because only {pf(t['pct_q2'])} of trading volume lands in their fee-earning "
+        f"0.3% pool (down from {pf(t['pct_q1'])} in Q1); the rest migrates to the cheaper 0.05% tier where "
+        f"owners earn nothing (e.g. rides.com: high volume, low capture). The % columns are each name&rsquo;s "
+        f"share of volume in the 0.3% pool."
     )
     caveat = (
         f"Launch = first-trade date; &ldquo;&mdash;&rdquo; = not live that period. Cohort fee capture fell "
