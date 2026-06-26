@@ -215,12 +215,8 @@ def _lpgap_table(d):
         f"{pf(t['pct_q2'])} of trading volume hit their fee-earning 0.3% pool (down from {pf(t['pct_q1'])} "
         f"in Q1); the rest hit the cheaper 0.05% tier where they don&rsquo;t earn."
     )
-    # Capture decline is in the intro now; caveat keeps only the legend, the 30d caveat, and the ask.
-    caveat = (
-        f"Launch = first-trade date; &ldquo;&mdash;&rdquo; = not live that period. The 30d figure "
-        f"({pf(t['pct_t30d'])}) is fresh launches seeding new 0.3% liquidity, not recovery. Escalate the "
-        f"locked-tier default to leadership."
-    )
+    # Footnote is a pure legend (no live stats, no interpretation): just explains the table notation.
+    caveat = "Launch = first-trade date; &ldquo;&mdash;&rdquo; = not live that period."
     return (
         "<p><b>Premium Domain Economics &mdash; owner fees vs. the LP tier gap (Top 10)</b></p>"
         f"<p>{intro}</p>" + table +
