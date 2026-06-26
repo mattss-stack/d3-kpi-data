@@ -205,17 +205,24 @@ def _lpgap_table(d):
         f'<td {TD % "right"}><b>{pf(t["pct_t30d"])}</b></td></tr>'
     )
     table = '<table style="border-collapse:collapse;font-size:10pt">' + "".join(rows) + "</table>"
+    # Lead with dollars: earned vs. possible pool fees and the gap. "Possible" = what
+    # each period would have earned with 100% of volume in the 0.3% pool, i.e. its
+    # actual fees grossed up by its capture rate, summed across Q1+Q2.
+    earned = t["fees_q1"] + t["fees_q2"]
+    possible = ((t["fees_q1"] / (t["pct_q1"] / 100) if t["pct_q1"] else 0)
+                + (t["fees_q2"] / (t["pct_q2"] / 100) if t["pct_q2"] else 0))
+    gap = possible - earned
     intro = (
-        "Top 10 names by total trading volume. Owners earn trading fees only on their locked 0.3% pool; "
-        "&ldquo;% volume in pool&rdquo; is the share of the name&rsquo;s trading volume that lands there &mdash; "
-        "the rest earns the owner nothing. A falling share means trading is migrating to the cheaper 0.05% "
-        "tier; high volume with a low share (e.g. rides.com) is the LP gap in action."
+        f"Top 10 names by volume. Owners earned {money(earned)} of a possible {money(possible)} in pool fees "
+        f"this quarter &mdash; a {money(gap)} gap, because trading keeps migrating from their locked 0.3% pool "
+        f"to the cheaper 0.05% tier where they earn nothing (e.g. rides.com: high volume, low capture). The % "
+        f"columns are each name&rsquo;s share of volume that still lands in the 0.3% pool."
     )
     caveat = (
-        f"Launch = actual first-trade date; &ldquo;&mdash;&rdquo; = not live that period. Cohort fee capture "
-        f"fell {pf(t['pct_q1'])} &rarr; {pf(t['pct_q2'])} Q1&rarr;Q2 (TOTAL row) as trading migrated to the "
-        f"0.05% tier; the 30d figure ({pf(t['pct_t30d'])}) reflects fresh launches seeding new 0.3% liquidity, "
-        f"not recovery. Escalate the locked-tier default to leadership."
+        f"Launch = first-trade date; &ldquo;&mdash;&rdquo; = not live that period. Cohort fee capture fell "
+        f"{pf(t['pct_q1'])} &rarr; {pf(t['pct_q2'])} Q1&rarr;Q2 (TOTAL row); the 30d figure "
+        f"({pf(t['pct_t30d'])}) is fresh launches seeding new 0.3% liquidity, not recovery. Escalate the "
+        f"locked-tier default to leadership."
     )
     return (
         "<p><b>Premium Domain Economics &mdash; owner fees vs. the LP tier gap</b></p>"
