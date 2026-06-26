@@ -210,22 +210,19 @@ def _lpgap_table(d):
     # Both come from the same snapshot the table renders from, so they always agree.
     earned = t["fees_q2"]
     possible = t["fees_q2"] / (t["pct_q2"] / 100) if t["pct_q2"] else 0
-    gap = possible - earned
     intro = (
-        f"Top 10 names by volume. Owners earned {money(earned)} of a possible {money(possible)} in Q2 pool "
-        f"fees, a {money(gap)} gap, because only {pf(t['pct_q2'])} of trading volume lands in their fee-earning "
-        f"0.3% pool (down from {pf(t['pct_q1'])} in Q1); the rest migrates to the cheaper 0.05% tier where "
-        f"owners earn nothing (e.g. rides.com: high volume, low capture). The % columns are each name&rsquo;s "
-        f"share of volume in the 0.3% pool."
+        f"Owners earned {money(earned)} of a possible {money(possible)} in Q2 pool fees, because only "
+        f"{pf(t['pct_q2'])} of trading volume hit their fee-earning 0.3% pool (down from {pf(t['pct_q1'])} "
+        f"in Q1); the rest hit the cheaper 0.05% tier where they don&rsquo;t earn."
     )
+    # Capture decline is in the intro now; caveat keeps only the legend, the 30d caveat, and the ask.
     caveat = (
-        f"Launch = first-trade date; &ldquo;&mdash;&rdquo; = not live that period. Cohort fee capture fell "
-        f"{pf(t['pct_q1'])} &rarr; {pf(t['pct_q2'])} Q1&rarr;Q2 (TOTAL row); the 30d figure "
+        f"Launch = first-trade date; &ldquo;&mdash;&rdquo; = not live that period. The 30d figure "
         f"({pf(t['pct_t30d'])}) is fresh launches seeding new 0.3% liquidity, not recovery. Escalate the "
         f"locked-tier default to leadership."
     )
     return (
-        "<p><b>Premium Domain Economics &mdash; owner fees vs. the LP tier gap</b></p>"
+        "<p><b>Premium Domain Economics &mdash; owner fees vs. the LP tier gap (Top 10)</b></p>"
         f"<p>{intro}</p>" + table +
         f'<p style="font-size:9pt;color:#666">{caveat}</p>'
     )
