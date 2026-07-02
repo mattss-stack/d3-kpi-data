@@ -9,7 +9,13 @@ dependency on the weekly_report module.
 Run: python3 render_weekly.py <data.json> <narrative.json> > out.html
 """
 import json
+import math
 import sys
+
+
+def _trunc1(x):
+    """Truncate toward zero to 1 decimal (Matt's convention: never round up)."""
+    return math.floor(abs(x) * 10) / 10.0
 
 
 # --- Inlined formatters (copies of weekly_report's, with None guards) ---------
@@ -17,10 +23,22 @@ def fmt_money_dollars(usd):
     if usd is None:
         return "—"
     if usd >= 1_000_000:
-        return f"${usd / 1_000_000:.1f}M"
+        return f"${_trunc1(usd / 1_000_000):.1f}M"
     if usd >= 1_000:
-        return f"${usd / 1_000:.1f}K"
-    return f"${usd:.0f}"
+        return f"${_trunc1(usd / 1_000):.1f}K"
+    return f"${int(usd)}"
+
+
+def fmt_money_nav(usd):
+    """NAV-only: 2-decimal truncation (Matt's documented exception to the 1-decimal
+    money format). Ex 30977403 -> $30.97M."""
+    if usd is None:
+        return "—"
+    if usd >= 1_000_000:
+        return f"${math.floor(usd / 10_000) / 100:.2f}M"
+    if usd >= 1_000:
+        return f"${math.floor(usd / 10) / 100:.2f}K"
+    return f"${int(usd)}"
 
 
 def fmt_count(n):
@@ -32,8 +50,8 @@ def fmt_count(n):
 def fmt_pct(p):
     if p is None:
         return "  —"
-    sign = "+" if p >= 0 else ""
-    return f"{sign}{p:.1f}%"
+    sign = "+" if p >= 0 else "-"
+    return f"{sign}{_trunc1(p):.1f}%"
 
 
 def _pct(p):
@@ -41,7 +59,14 @@ def _pct(p):
 
 
 def _goal(v, target, suffix):
-    return f"{v / target * 100:.0f}% to {suffix}" if v is not None else ""
+    """Progress vs. goal. Reads 'X% to <goal>' under 100%, 'X% of <goal> goal'
+    once the goal is met/exceeded (so an over-100% metric doesn't read as 'to')."""
+    if v is None:
+        return ""
+    pct = int(v / target * 100)  # truncate toward zero
+    if pct >= 100:
+        return f"{pct}% of {suffix} goal"
+    return f"{pct}% to {suffix}"
 
 
 TH = 'style="border:1px solid #ccc;padding:5px 9px;background:#f3f3f3;text-align:%s;font-weight:bold"'
@@ -63,7 +88,7 @@ def _kpi_table(d):
     rows = [
         f"<tr>{''.join(f'<th {TH % a}>{h}</th>' for h,a in [('Metric','left'),('This wk','right'),('Last wk','right'),('WoW','right'),('Goal','left')])}</tr>",
         row("Monthly Volume", money(mv["headline_30d"]), money(mv["prior_30d_total"]), mv["rolling_30d_pct"], _goal(mv["headline_30d"], 100_000_000, "$100M/mo")),
-        row("Network Asset Value", money(nav["last_end"]), money(nav["prior_end"]), nav["wow_pct"], nav_goal),
+        row("Network Asset Value", fmt_money_nav(nav["last_end"]), fmt_money_nav(nav["prior_end"]), nav["wow_pct"], nav_goal),
         row("MAU", cnt(mau["last_end"]), cnt(mau["prior_end"]), mau["wow_pct"], _goal(mau["last_end"], 20_000, "20K")),
         row("Total Domains Onchain", cnt(ta["last_end"]), cnt(ta["prior_end"]), ta["wow_pct"], _goal(ta["last_end"], 1_000_000, "1M")),
         row("domains", cnt(bd["domains"]["last_end"]), cnt(bd["domains"]["prior_end"]), bd["domains"]["wow_pct"], "", indent=True),
@@ -224,6 +249,49 @@ def _lpgap_table(d):
     )
 
 
+def _quarter_label(report_friday):
+    """Derive the quarter label from report_friday ('YYYY-MM-DD') so the heading
+    tracks the calendar (Q2 -> Q3 on Jul 1) instead of being hard-coded."""
+    try:
+        q = (int(report_friday[5:7]) - 1) // 3 + 1
+        return f"Q{q}"
+    except Exception:
+        return "Q"
+
+
+def _feegap_headline(d):
+    """One-line, deterministic fee-gap summary for Key Updates. Reuses the exact
+    earned/possible/capture figures the LP-gap table renders from, so the two
+    always agree. Returns '' when there's no LP-gap data."""
+    lg = d.get("premium_lp_gap")
+    if not lg or not lg.get("names"):
+        return ""
+    t = lg["totals"]
+    earned = t["fees_q2"]
+    possible = t["fees_q2"] / (t["pct_q2"] / 100) if t["pct_q2"] else 0
+    money = fmt_money_dollars
+
+    def pf(x):
+        return "—" if x is None else f"{int(x)}%"
+    return (
+        f"LP fee gap: owners earned {money(earned)} of a possible {money(possible)} "
+        f"in Q2 pool fees, because only {pf(t['pct_q2'])} of trading volume hit their "
+        f"fee-earning 0.3% pool (see Premium Domain Economics below)."
+    )
+
+
+def _key_updates_with_feegap(d, narrative):
+    """Model-authored Key Updates plus the deterministic fee-gap headline appended
+    as the final bullet, so the strongest quantified number is always surfaced up
+    top rather than buried in the LP-gap section. The prompt tells the model NOT to
+    author its own fee-gap line, so this never duplicates."""
+    items = list(narrative.get("key_updates", []))
+    fg = _feegap_headline(d)
+    if fg:
+        items.append(fg)
+    return items
+
+
 def build_html(d, narrative):
     pd = d["premium_domains"]
     prem = []
@@ -248,10 +316,10 @@ def build_html(d, narrative):
         "<p>Hi team,</p>",
         f'<p>Weekly Commercial KPI report in GDrive and below. Live Daily Dashboard: '
         f'<a href="{DASHBOARD_URL}">{DASHBOARD_URL}</a> [user: d3, pw: d3demo]</p>',
-        f"<p><b>Q2 KPIs &middot; Week ending {narrative['week_ending']}</b></p>",
+        f"<p><b>{_quarter_label(d['report_friday'])} KPIs &middot; Week ending {narrative['week_ending']}</b></p>",
         f"<p><b>TLDR:</b> {narrative['tldr']}</p>",
         "<p><b>Key Wins</b></p>", ul(narrative.get("key_wins", [])),
-        "<p><b>Key Updates</b></p>", ul(narrative.get("key_updates", [])),
+        "<p><b>Key Updates</b></p>", ul(_key_updates_with_feegap(d, narrative)),
         _kpi_table(d),
         _definitions(),
         "<p><b>Fractional Performance</b></p>",
