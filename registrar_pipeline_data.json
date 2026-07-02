@@ -1,6 +1,6 @@
 {
-  "snapshot_date": "2026-07-01",
-  "prior_snapshot_date": "2026-06-30",
+  "snapshot_date": "2026-07-02",
+  "prior_snapshot_date": "2026-07-01",
   "top_25": {
     "total_in_pipeline": 25,
     "qualified_or_above": 13,
