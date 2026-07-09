@@ -184,21 +184,23 @@ def _quarter_label(report_friday):
 def build_html(d, narrative):
     pd = d["premium_domains"]
     prem = []
+    # Label is driven by the fractional_token.status field carried in the JSON,
+    # never assumed: GRADUATION_SUCCESSFUL -> Graduated, GRADUATION_FAILED ->
+    # Graduation failed, FRACTIONALIZED (on the bonding curve) -> Bonding Now.
+    # Fallbacks cover data snapshots written before the status field existed.
+    STATUS_LABEL = {
+        "GRADUATION_SUCCESSFUL": "Graduated",
+        "GRADUATION_FAILED": "Graduation failed",
+        "FRACTIONALIZED": "Bonding Now",
+    }
     if pd["live"]:
-        prem.append(f"Graduated: {pd['live']['name']} (FDV {fmt_money_dollars(pd['live']['fdv_usd'])})")
+        lbl = STATUS_LABEL.get(pd["live"].get("status"), "Graduated")
+        prem.append(f"{lbl}: {pd['live']['name']} (FDV {fmt_money_dollars(pd['live']['fdv_usd'])})")
     if pd["upcoming"]:
-        prem.append(f"Bonding Now: {pd['upcoming']['name']} (Blended FDV {fmt_money_dollars(pd['upcoming']['fdv_usd'])})")
+        lbl = STATUS_LABEL.get(pd["upcoming"].get("status"), "Bonding Now")
+        prem.append(f"{lbl}: {pd['upcoming']['name']} (Blended FDV {fmt_money_dollars(pd['upcoming']['fdv_usd'])})")
     def ul(items):
         return "<ul>" + "".join(f"<li>{x}</li>" for x in items) + "</ul>"
-
-    def _tlds_section(s):
-        """Render narrative['tlds'] like '15 partners; 7 in flight, ...' as a heading + 2-bullet ul.
-        Splits on the first ';' into a count line and a status line. Omitted if no value."""
-        if not s:
-            return ""
-        parts = [p.strip() for p in s.split(";", 1)]
-        bullets = [parts[0]] + ([parts[1]] if len(parts) > 1 else [])
-        return "<p><b>TLDs</b></p>" + ul(bullets)
 
     parts = [
         '<div style="font-family:Arial,sans-serif;font-size:11pt">',
@@ -210,12 +212,12 @@ def build_html(d, narrative):
         "<p><b>Key Wins</b></p>", ul(narrative.get("key_wins", [])),
         "<p><b>Key Updates</b></p>", ul(narrative.get("key_updates", [])),
         _kpi_table(d),
+        '<p style="font-size:9pt;color:#666">Goal column reflects Q2 targets; Q3 goals coming soon.</p>',
         _definitions(),
         "<p><b>Fractional Performance</b></p>",
         _frac_table(d),
         _frac_launch_table(d),
         "<p><b>Premium Domains</b></p>", ul(prem),
-        _tlds_section(narrative.get("tlds")),
         "<p><b>Registrars &ndash; BD</b></p>", ul(narrative.get("reg_bd", [])),
         "<p><b>Registrars &ndash; Integrations</b></p>", ul(narrative.get("reg_int", [])),
         "<p><b>Ecosystem Partners</b></p>", ul(narrative.get("ecosystem", [])),
