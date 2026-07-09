@@ -171,84 +171,6 @@ def _definitions():
     return "<p><b>Definitions</b></p>" + "".join(f"<p>{x}</p>" for x in items)
 
 
-def _lpgap_table(d):
-    """Premium Domain Economics — owner fees vs. the LP tier gap (Bob, ICANN Seville).
-    Returns the full HTML section (heading + intro + native table + caveat), or "" if no data."""
-    lg = d.get("premium_lp_gap")
-    if not lg or not lg.get("names"):
-        return ""
-    MONTHS = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    money = fmt_money_dollars
-
-    def ll(dt):                                   # 'YYYY-MM-DD' -> "Dec '25"
-        if not dt:
-            return "&mdash;"
-        try:
-            return f"{MONTHS[int(dt[5:7])]} &rsquo;{dt[2:4]}"
-        except Exception:
-            return dt
-
-    def pf(x):                                    # absolute %, "—" when not live
-        return "&mdash;" if x is None else f"{x:.0f}%"
-
-    def fee(n, key, live):                        # period fee, "—" if not live
-        return "&mdash;" if not live else money(n[key])
-
-    # Single-row header only: Google Docs' HTML import does not reliably honor
-    # rowspan/colspan, so grouped headers collapse and misalign. The "owner fees"
-    # vs "% volume in pool" grouping is carried in the intro text instead.
-    cols = ["Domain", "Launch", "Volume", "Raise",
-            "Q1 fees", "Q2 fees", "30d fees", "Q1 %", "Q2 %", "30d %"]
-    head = "<tr>" + "".join(
-        f'<th {TH % ("left" if i == 0 else "right")}>{c}</th>' for i, c in enumerate(cols)
-    ) + "</tr>"
-    rows = [head]
-    for n in lg["names"]:
-        rows.append(
-            f'<tr><td {TD % "left"}>{n["domain"]}</td>'
-            f'<td {TD % "right"}>{ll(n["launch_date"])}</td>'
-            f'<td {TD % "right"}>{money(n["volume_total"])}</td>'
-            f'<td {TD % "right"}>{money(n["cash_out_to_owner"] or 0)}</td>'
-            f'<td {TD % "right"}>{fee(n, "fees_q1", n["live_q1"])}</td>'
-            f'<td {TD % "right"}>{fee(n, "fees_q2", n["live_q2"])}</td>'
-            f'<td {TD % "right"}>{fee(n, "fees_t30d", n["live_t30d"])}</td>'
-            f'<td {TD % "right"}>{pf(n["pct_q1"])}</td>'
-            f'<td {TD % "right"}>{pf(n["pct_q2"])}</td>'
-            f'<td {TD % "right"}>{pf(n["pct_t30d"])}</td></tr>'
-        )
-    t = lg["totals"]
-    tot_vol = sum(n["volume_total"] for n in lg["names"])
-    rows.append(
-        f'<tr><td {TD % "left"}><b>TOTAL</b></td><td {TD % "right"}></td>'
-        f'<td {TD % "right"}><b>{money(tot_vol)}</b></td>'
-        f'<td {TD % "right"}><b>{money(t["cash_out_to_owner"])}</b></td>'
-        f'<td {TD % "right"}><b>{money(t["fees_q1"])}</b></td>'
-        f'<td {TD % "right"}><b>{money(t["fees_q2"])}</b></td>'
-        f'<td {TD % "right"}><b>{money(t["fees_t30d"])}</b></td>'
-        f'<td {TD % "right"}><b>{pf(t["pct_q1"])}</b></td>'
-        f'<td {TD % "right"}><b>{pf(t["pct_q2"])}</b></td>'
-        f'<td {TD % "right"}><b>{pf(t["pct_t30d"])}</b></td></tr>'
-    )
-    table = '<table style="border-collapse:collapse;font-size:10pt">' + "".join(rows) + "</table>"
-    # earned = Q2 fees (the Q2 fees TOTAL cell, same timeframe as the table column).
-    # possible = what Q2 would have earned at 100% capture = Q2 fees / Q2 capture rate.
-    # Both come from the same snapshot the table renders from, so they always agree.
-    earned = t["fees_q2"]
-    possible = t["fees_q2"] / (t["pct_q2"] / 100) if t["pct_q2"] else 0
-    intro = (
-        f"Owners earned {money(earned)} of a possible {money(possible)} in Q2 pool fees, because only "
-        f"{pf(t['pct_q2'])} of trading volume hit their fee-earning 0.3% pool (down from {pf(t['pct_q1'])} "
-        f"in Q1); the rest hit the cheaper 0.05% tier where they don&rsquo;t earn."
-    )
-    # Footnote is a pure legend (no live stats, no interpretation): just explains the table notation.
-    caveat = "Launch = first-trade date; &ldquo;&mdash;&rdquo; = not live that period."
-    return (
-        "<p><b>Premium Domain Economics &mdash; owner fees vs. the LP tier gap (Top 10)</b></p>"
-        f"<p>{intro}</p>" + table +
-        f'<p style="font-size:9pt;color:#666">{caveat}</p>'
-    )
-
-
 def _quarter_label(report_friday):
     """Derive the quarter label from report_friday ('YYYY-MM-DD') so the heading
     tracks the calendar (Q2 -> Q3 on Jul 1) instead of being hard-coded."""
@@ -259,46 +181,13 @@ def _quarter_label(report_friday):
         return "Q"
 
 
-def _feegap_headline(d):
-    """One-line, deterministic fee-gap summary for Key Updates. Reuses the exact
-    earned/possible/capture figures the LP-gap table renders from, so the two
-    always agree. Returns '' when there's no LP-gap data."""
-    lg = d.get("premium_lp_gap")
-    if not lg or not lg.get("names"):
-        return ""
-    t = lg["totals"]
-    earned = t["fees_q2"]
-    possible = t["fees_q2"] / (t["pct_q2"] / 100) if t["pct_q2"] else 0
-    money = fmt_money_dollars
-
-    def pf(x):
-        return "—" if x is None else f"{int(x)}%"
-    return (
-        f"LP fee gap: owners earned {money(earned)} of a possible {money(possible)} "
-        f"in Q2 pool fees, because only {pf(t['pct_q2'])} of trading volume hit their "
-        f"fee-earning 0.3% pool (see Premium Domain Economics below)."
-    )
-
-
-def _key_updates_with_feegap(d, narrative):
-    """Model-authored Key Updates plus the deterministic fee-gap headline appended
-    as the final bullet, so the strongest quantified number is always surfaced up
-    top rather than buried in the LP-gap section. The prompt tells the model NOT to
-    author its own fee-gap line, so this never duplicates."""
-    items = list(narrative.get("key_updates", []))
-    fg = _feegap_headline(d)
-    if fg:
-        items.append(fg)
-    return items
-
-
 def build_html(d, narrative):
     pd = d["premium_domains"]
     prem = []
     if pd["live"]:
-        prem.append(f"Live: {pd['live']['name']} (FDV {fmt_money_dollars(pd['live']['fdv_usd'])})")
+        prem.append(f"Graduated: {pd['live']['name']} (FDV {fmt_money_dollars(pd['live']['fdv_usd'])})")
     if pd["upcoming"]:
-        prem.append(f"Upcoming: {pd['upcoming']['name']} (Blended FDV {fmt_money_dollars(pd['upcoming']['fdv_usd'])})")
+        prem.append(f"Bonding Now: {pd['upcoming']['name']} (Blended FDV {fmt_money_dollars(pd['upcoming']['fdv_usd'])})")
     def ul(items):
         return "<ul>" + "".join(f"<li>{x}</li>" for x in items) + "</ul>"
 
@@ -319,20 +208,18 @@ def build_html(d, narrative):
         f"<p><b>{_quarter_label(d['report_friday'])} KPIs &middot; Week ending {narrative['week_ending']}</b></p>",
         f"<p><b>TLDR:</b> {narrative['tldr']}</p>",
         "<p><b>Key Wins</b></p>", ul(narrative.get("key_wins", [])),
-        "<p><b>Key Updates</b></p>", ul(_key_updates_with_feegap(d, narrative)),
+        "<p><b>Key Updates</b></p>", ul(narrative.get("key_updates", [])),
         _kpi_table(d),
         _definitions(),
         "<p><b>Fractional Performance</b></p>",
         _frac_table(d),
         _frac_launch_table(d),
         "<p><b>Premium Domains</b></p>", ul(prem),
-        _lpgap_table(d),
         _tlds_section(narrative.get("tlds")),
         "<p><b>Registrars &ndash; BD</b></p>", ul(narrative.get("reg_bd", [])),
         "<p><b>Registrars &ndash; Integrations</b></p>", ul(narrative.get("reg_int", [])),
         "<p><b>Ecosystem Partners</b></p>", ul(narrative.get("ecosystem", [])),
         "<p><b>Next Steps</b></p>", ul(narrative.get("next_steps", [])),
-        "<p>Let me know any feedback, thanks!</p>",
         "</div>",
     ]
     return "".join(parts)
