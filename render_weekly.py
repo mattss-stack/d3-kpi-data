@@ -106,8 +106,12 @@ def _frac_table(d):
     ss = gc.get("self_serve", {})
 
     def rate(ch, per):
-        r = gc.get(ch, {}).get(per, {}).get("rate")
-        return f"{r:.0f}%" if r is not None else "&mdash;"
+        # Cohort rate computed from counts (graduated / launches), same basis as the Total row,
+        # so segments and Total always foot. Never trust a precomputed `rate` field, which has
+        # shipped a resolved-only value that made the rows impossible (WG 83 / SS 14 / Total 14).
+        x = gc.get(ch, {}).get(per, {})
+        g, l = x.get("graduated", 0), x.get("launches", 0)
+        return f"{g / l * 100:.0f}%" if l else "&mdash;"
 
     def total_rate(per):
         wl = wg.get(per, {}).get("launches", 0)
