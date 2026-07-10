@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-09T07:03:12.286603+00:00",
+  "generated": "2026-07-10T07:03:08.676888+00:00",
   "report_friday": "2026-07-10",
   "windows": {
     "last_week": {
@@ -15,12 +15,12 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 71855269.269685,
+      "headline_30d": 72978032.154421,
       "prior_30d_total": 69092622.52974501,
       "last_week_sum": 18492573.843778003,
       "prior_week_sum": 21269900.642335,
       "wow_pct": -13.057544768352544,
-      "rolling_30d_pct": 3.9984684888037685,
+      "rolling_30d_pct": 5.623479732591254,
       "organic_last_week": 9207824.030336004,
       "organic_prior_week": 11607431.783441002,
       "non_organic_last_week": 9284749.813442,
@@ -69,11 +69,13 @@
   "premium_domains": {
     "live": {
       "name": "SMOOTHIE.com",
-      "fdv_usd": 325000.0
+      "fdv_usd": 325000.0,
+      "status": "GRADUATION_SUCCESSFUL"
     },
     "upcoming": {
       "name": "MILLISECONDS.com",
-      "fdv_usd": 9750.0
+      "fdv_usd": 9750.0,
+      "status": "FRACTIONALIZED"
     }
   },
   "top_organic_movers": [
@@ -190,7 +192,7 @@
       "month": "2026-06",
       "launched": 34,
       "graduated": 13,
-      "still_on_curve": 7,
+      "still_on_curve": 6,
       "grad_pct": 38.0
     },
     {
@@ -204,18 +206,18 @@
   "graduation_by_channel": {
     "white_glove": {
       "q1": {
-        "launches": 187,
+        "launches": 182,
         "graduated": 91,
-        "failed": 90,
+        "failed": 85,
         "on_curve": 0,
-        "rate": 50.27624309392266
+        "rate": 51.70454545454546
       },
       "q2": {
-        "launches": 162,
+        "launches": 159,
         "graduated": 39,
-        "failed": 115,
+        "failed": 112,
         "on_curve": 8,
-        "rate": 25.324675324675322
+        "rate": 25.82781456953642
       },
       "l30": {
         "launches": 14,
@@ -225,41 +227,41 @@
         "rate": 83.33333333333334
       },
       "all": {
-        "launches": 349,
+        "launches": 341,
         "graduated": 130,
-        "failed": 205,
+        "failed": 197,
         "on_curve": 8,
-        "rate": 38.80597014925373
+        "rate": 39.75535168195719
       }
     },
     "self_serve": {
       "q1": {
-        "launches": 148,
+        "launches": 153,
         "graduated": 40,
-        "failed": 108,
+        "failed": 113,
         "on_curve": 0,
-        "rate": 27.027027027027028
+        "rate": 26.143790849673206
       },
       "q2": {
-        "launches": 122,
+        "launches": 125,
         "graduated": 18,
-        "failed": 80,
-        "on_curve": 23,
-        "rate": 18.367346938775512
+        "failed": 84,
+        "on_curve": 22,
+        "rate": 17.647058823529413
       },
       "l30": {
         "launches": 30,
         "graduated": 1,
-        "failed": 6,
-        "on_curve": 23,
-        "rate": 14.285714285714285
+        "failed": 7,
+        "on_curve": 22,
+        "rate": 12.5
       },
       "all": {
-        "launches": 270,
+        "launches": 278,
         "graduated": 58,
-        "failed": 188,
-        "on_curve": 23,
-        "rate": 23.577235772357724
+        "failed": 197,
+        "on_curve": 22,
+        "rate": 22.745098039215687
       }
     }
   },
@@ -269,161 +271,161 @@
         "domain": "software.ai",
         "launch_date": "2025-12-01",
         "cash_out_to_owner": 16843.75,
-        "volume_total": 20525245.0,
+        "volume_total": 20607931.0,
         "fees_q1": 13477.45,
-        "fees_q2": 10095.3,
-        "fees_t30d": 2758.16,
+        "fees_q2": 10161.46,
+        "fees_t30d": 2824.32,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 81.0840716568259,
-        "pct_q2": 22.456880123747403,
-        "pct_t30d": 19.742279035219156
+        "pct_q2": 22.48000986028582,
+        "pct_t30d": 19.863167074231587
       },
       {
         "domain": "brag.com",
         "launch_date": "2025-12-12",
         "cash_out_to_owner": 21437.5,
-        "volume_total": 6507379.0,
+        "volume_total": 6531133.0,
         "fees_q1": 4003.94,
-        "fees_q2": 3961.81,
-        "fees_t30d": 2293.72,
+        "fees_q2": 4027.67,
+        "fees_t30d": 2359.57,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 29.453554167310294,
-        "pct_q2": 66.83145563921191,
-        "pct_t30d": 90.29611329715246
+        "pct_q2": 67.13529180354627,
+        "pct_t30d": 90.35380314791928
       },
       {
         "domain": "boner.com",
         "launch_date": "2025-12-17",
         "cash_out_to_owner": 13475.0,
-        "volume_total": 4294057.0,
+        "volume_total": 4319751.0,
         "fees_q1": 5533.44,
-        "fees_q2": 5842.55,
-        "fees_t30d": 2755.87,
+        "fees_q2": 5908.51,
+        "fees_t30d": 2821.83,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 99.9912733582507,
-        "pct_q2": 79.50937326742068,
-        "pct_t30d": 81.41136591421406
+        "pct_q2": 79.57238181996833,
+        "pct_t30d": 81.50415431492662
       },
       {
         "domain": "rides.com",
         "launch_date": "2026-04-03",
         "cash_out_to_owner": 15618.75,
-        "volume_total": 2037532.0,
+        "volume_total": 2040381.0,
         "fees_q1": 0.0,
-        "fees_q2": 561.33,
-        "fees_t30d": 221.55,
+        "fees_q2": 562.07,
+        "fees_t30d": 222.28,
         "live_q1": false,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": null,
-        "pct_q2": 9.18317613112877,
-        "pct_t30d": 33.598778946807386
+        "pct_q2": 9.182383652298574,
+        "pct_t30d": 33.27909950407505
       },
       {
         "domain": "investors.xyz",
         "launch_date": "2025-12-12",
         "cash_out_to_owner": 857.5,
-        "volume_total": 1105077.0,
+        "volume_total": 1117552.0,
         "fees_q1": 332.67,
-        "fees_q2": 1688.45,
-        "fees_t30d": 1066.61,
+        "fees_q2": 1716.86,
+        "fees_t30d": 1095.02,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 50.09297049261585,
-        "pct_q2": 63.68804175663257,
-        "pct_t30d": 88.83416238500868
+        "pct_q2": 63.85823445973811,
+        "pct_t30d": 88.44360458433505
       },
       {
         "domain": "wines.xyz",
         "launch_date": "2026-01-15",
         "cash_out_to_owner": 5635.0,
-        "volume_total": 790236.0,
+        "volume_total": 800022.0,
         "fees_q1": 249.55,
-        "fees_q2": 1866.02,
-        "fees_t30d": 1121.71,
+        "fees_q2": 1895.38,
+        "fees_t30d": 1151.07,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 49.6115831472904,
-        "pct_q2": 99.91055417272995,
-        "pct_t30d": 99.99715080428957
+        "pct_q2": 99.91193840877422,
+        "pct_t30d": 99.99722347149496
       },
       {
         "domain": "depin.ai",
         "launch_date": "2025-12-30",
         "cash_out_to_owner": 3920.0,
-        "volume_total": 765065.0,
+        "volume_total": 774731.0,
         "fees_q1": 427.59,
-        "fees_q2": 1860.0,
-        "fees_t30d": 1081.75,
+        "fees_q2": 1889.0,
+        "fees_t30d": 1110.75,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 98.26135505353658,
-        "pct_q2": 99.99799920663972,
-        "pct_t30d": 99.99999948139416
+        "pct_q2": 99.99802992083303,
+        "pct_t30d": 99.99999949493358
       },
       {
         "domain": "hightech.xyz",
         "launch_date": "2025-12-16",
         "cash_out_to_owner": 857.5,
-        "volume_total": 676264.0,
+        "volume_total": 686640.0,
         "fees_q1": 255.06,
-        "fees_q2": 1728.67,
-        "fees_t30d": 1101.42,
+        "fees_q2": 1759.8,
+        "fees_t30d": 1132.54,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 89.36913589833844,
-        "pct_q2": 99.15603415273964,
-        "pct_t30d": 99.91495279250668
+        "pct_q2": 99.1706614190086,
+        "pct_t30d": 99.91701115647636
       },
       {
         "domain": "terabytes.ai",
         "launch_date": "2026-02-24",
         "cash_out_to_owner": 1212.75,
-        "volume_total": 668073.0,
+        "volume_total": 679408.0,
         "fees_q1": 125.42,
-        "fees_q2": 1797.75,
-        "fees_t30d": 1125.81,
+        "fees_q2": 1831.75,
+        "fees_t30d": 1159.82,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 100.0,
-        "pct_q2": 95.68602960338899,
-        "pct_t30d": 97.40117912773947
+        "pct_q2": 95.7627172578384,
+        "pct_t30d": 97.47544681927972
       },
       {
         "domain": "swimsuits.ai",
         "launch_date": "2025-12-05",
         "cash_out_to_owner": 5390.0,
-        "volume_total": 207399.0,
+        "volume_total": 207636.0,
         "fees_q1": 464.17,
-        "fees_q2": 157.73,
-        "fees_t30d": 8.11,
+        "fees_q2": 158.44,
+        "fees_t30d": 8.82,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 99.94186876967983,
-        "pct_q2": 99.9826570268723,
-        "pct_t30d": 99.98232709478084
+        "pct_q2": 99.98273470661194,
+        "pct_t30d": 99.98374891811964
       }
     ],
     "totals": {
       "cash_out_to_owner": 85247.75,
       "fees_q1": 24869.29,
-      "fees_q2": 29559.61,
-      "fees_t30d": 13534.71,
+      "fees_q2": 29910.94,
+      "fees_t30d": 13886.02,
       "pct_q1": 65.05669574926854,
-      "pct_q2": 39.676338966717395,
-      "pct_t30d": 51.60787255794841
+      "pct_q2": 39.844888590815955,
+      "pct_t30d": 51.8278093942566
     }
   }
 }
