@@ -100,26 +100,29 @@ def _kpi_table(d):
 
 
 def _frac_table(d):
-    """Graduation Rates table: rate per channel per period, plus a volume-weighted Total row."""
+    """Graduation Rates table: resolved-only rate per channel per period, plus a Total row on the
+    same basis. rate = graduated / resolved, where resolved = graduated + failed. Launches still
+    bonding (FRACTIONALIZED) are excluded from both numerator and denominator so recent windows
+    (Q2, trailing-30d) aren't dragged toward zero by launches that simply haven't finished bonding
+    yet — the cohort basis (grad / all launches) put ~3/4 of trailing-30d launches in the
+    denominator as automatic non-graduations (e.g. self-serve 30d read 3%). Segments and the Total
+    still foot because both divide by the same resolved base. Recomputed from counts, never a
+    precomputed `rate` field."""
     gc = d["graduation_by_channel"]
     wg = gc.get("white_glove", {})
     ss = gc.get("self_serve", {})
 
     def rate(ch, per):
-        # Cohort rate computed from counts (graduated / launches), same basis as the Total row,
-        # so segments and Total always foot. Never trust a precomputed `rate` field, which has
-        # shipped a resolved-only value that made the rows impossible (WG 83 / SS 14 / Total 14).
         x = gc.get(ch, {}).get(per, {})
-        g, l = x.get("graduated", 0), x.get("launches", 0)
-        return f"{g / l * 100:.0f}%" if l else "&mdash;"
+        g, f = x.get("graduated", 0), x.get("failed", 0)
+        resolved = g + f
+        return f"{g / resolved * 100:.0f}%" if resolved else "&mdash;"
 
     def total_rate(per):
-        wl = wg.get(per, {}).get("launches", 0)
-        sl = ss.get(per, {}).get("launches", 0)
-        wgr = wg.get(per, {}).get("graduated", 0)
-        sgr = ss.get(per, {}).get("graduated", 0)
-        tl = wl + sl
-        return f"{100 * (wgr + sgr) / tl:.0f}%" if tl else "&mdash;"
+        g = wg.get(per, {}).get("graduated", 0) + ss.get(per, {}).get("graduated", 0)
+        f = wg.get(per, {}).get("failed", 0) + ss.get(per, {}).get("failed", 0)
+        resolved = g + f
+        return f"{100 * g / resolved:.0f}%" if resolved else "&mdash;"
 
     pers = ["q1", "q2", "l30", "all"]
     head = ['Graduation Rates', 'Q1', 'Q2', 'Trailing 30d', 'All time']
@@ -130,6 +133,18 @@ def _frac_table(d):
     rows.append(f"<tr><td {TD % 'left'}><b>Total</b></td>"
                 + "".join(f"<td {TD % 'right'}>{total_rate(p)}</td>" for p in pers) + "</tr>")
     return '<table style="border-collapse:collapse;font-size:10pt">' + "".join(rows) + "</table>"
+
+
+def _frac_caveat(d):
+    """One-line note that the rate excludes launches still bonding, with the trailing-30d count."""
+    gc = d["graduation_by_channel"]
+    wg = gc.get("white_glove", {}).get("l30", {})
+    ss = gc.get("self_serve", {}).get("l30", {})
+    bonding = wg.get("on_curve", 0) + ss.get("on_curve", 0)
+    launches = wg.get("launches", 0) + ss.get("launches", 0)
+    return ('<p style="font-size:9pt;color:#666">Rate is of launches that have finished bonding '
+            f'(graduated or failed); launches still bonding are excluded. {bonding} of {launches} '
+            'trailing-30d launches are still bonding.</p>')
 
 
 def _frac_launch_table(d):
@@ -170,7 +185,7 @@ def _definitions():
         "<b>Network Asset Value:</b> implied value of the underlying domain assets, derived from token prices (bonding curve pre-graduation, pool price post-graduation). Distinct from TVL.",
         "<b>MAU:</b> unique active wallets over the trailing 30 days.",
         "<b>Fractional Launches:</b> cumulative launches since inception.",
-        "<b>Graduation rate:</b> of launches in the period, the share that have graduated (incl. buyouts).",
+        "<b>Graduation rate:</b> of launches that have finished bonding in the period (graduated or failed), the share that graduated. Launches still bonding are excluded.",
     ]
     return "<p><b>Definitions</b></p>" + "".join(f"<p>{x}</p>" for x in items)
 
@@ -220,6 +235,7 @@ def build_html(d, narrative):
         _definitions(),
         "<p><b>Fractional Performance</b></p>",
         _frac_table(d),
+        _frac_caveat(d),
         _frac_launch_table(d),
         "<p><b>Premium Domains</b></p>", ul(prem),
         "<p><b>Registrars &ndash; BD</b></p>", ul(narrative.get("reg_bd", [])),
