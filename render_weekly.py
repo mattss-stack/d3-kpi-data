@@ -200,7 +200,7 @@ def _quarter_label(report_friday):
         return "Q"
 
 
-def build_html(d, narrative):
+def build_html(d, narrative, email=False):
     pd = d["premium_domains"]
     prem = []
     # Label is driven by the fractional_token.status field carried in the JSON,
@@ -221,21 +221,28 @@ def build_html(d, narrative):
     def ul(items):
         return "<ul>" + "".join(f"<li>{x}</li>" for x in items) + "</ul>"
 
-    parts = [
+    # Single link in the whole report: an italic note under the TLDR pointing at
+    # the dashboard's Weekly tab (which renders this full report). No links-first
+    # banner up top — the reader hits the scorecard, not logistics.
+    note = ('<p><i>Full report, including fractional, registrar and ecosystem detail, '
+            'in the <a href="' + WEEKLY_TAB_URL + '">live dashboard’s Weekly tab</a>. '
+            '(user d3 / pw d3demo)</i></p>')
+
+    # Shared top block (header through Next Steps). The email is this block only;
+    # the full Doc appends the detail tail below.
+    head = [
         '<div style="font-family:Arial,sans-serif;font-size:11pt">',
-        "<p>Hi team,</p>",
-        f'<p>Weekly Commercial KPI report in GDrive and below. Live Daily Dashboard: '
-        f'<a href="{DASHBOARD_URL}">{DASHBOARD_URL}</a> [user: d3, pw: d3demo]</p>',
+        (f"<p><b>Subject:</b> {narrative['subject']}</p>" if narrative.get("subject") else ""),
         f"<p><b>{_quarter_label(d['report_friday'])} KPIs &middot; Week ending {narrative['week_ending']}</b></p>",
         f"<p><b>TLDR:</b> {narrative['tldr']}</p>",
+        note,
         "<p><b>Key Wins</b></p>", ul(narrative.get("key_wins", [])),
         "<p><b>Key Updates</b></p>", ul(narrative.get("key_updates", [])),
         _kpi_table(d),
         '<p style="font-size:9pt;color:#666">Goal column reflects Q2 targets; Q3 goals coming soon.</p>',
         "<p><b>Next Steps</b></p>", ul(narrative.get("next_steps", [])),
-        f'<p><b>Additional Details</b><br>Full report: <a href="{FOLDER_URL}">GDrive folder</a>'
-        f' &middot; Live daily dashboard: <a href="{DASHBOARD_URL}">{DASHBOARD_URL}</a>'
-        f' (user d3 / pw d3demo)</p>',
+    ]
+    tail = [
         "<p><b>Fractional Performance</b></p>",
         _frac_table(d),
         _frac_caveat(d),
@@ -245,19 +252,21 @@ def build_html(d, narrative):
         "<p><b>Registrars &ndash; Integrations</b></p>", ul(narrative.get("reg_int", [])),
         "<p><b>Ecosystem Partners</b></p>", ul(narrative.get("ecosystem", [])),
         _definitions(),
-        "</div>",
     ]
+    parts = head + ([] if email else tail) + ["</div>"]
     return "".join(parts)
 
 
 DASHBOARD_URL = "https://d3-kpi-dashboard-one.vercel.app"
-FOLDER_URL = "https://drive.google.com/drive/folders/1NfXpDXkiv_YTD94TNolCkFKWXPlKvTTZ"
+WEEKLY_TAB_URL = "https://d3-kpi-dashboard-one.vercel.app/#weekly"
 
 
 def main():
-    data = json.load(open(sys.argv[1]))
-    narrative = json.load(open(sys.argv[2]))
-    sys.stdout.write(build_html(data, narrative))
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    email = "--email" in sys.argv[1:]
+    data = json.load(open(args[0]))
+    narrative = json.load(open(args[1]))
+    sys.stdout.write(build_html(data, narrative, email=email))
 
 
 if __name__ == "__main__":
