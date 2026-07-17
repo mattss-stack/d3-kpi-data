@@ -79,7 +79,10 @@ def _kpi_table(d):
     money = fmt_money_dollars; cnt = fmt_count
 
     def row(label, this_wk, last_wk, wow, goal, indent=False):
-        lbl = ("&nbsp;&nbsp;&nbsp;&nbsp;" + label) if indent else f"<b>{label}</b>"
+        # No in-cell <b> on main rows: Drive's HTML->Doc turns it into literal "**"
+        # asterisks in the table. Indentation marks sub-rows; the dashboard renderer
+        # bolds main rows itself (render_weekly_from_doc.KPI_SUBMETRICS).
+        lbl = ("&nbsp;&nbsp;&nbsp;&nbsp;" + label) if indent else label
         return (f"<tr><td {TD % 'left'}>{lbl}</td>"
                 f"<td {TD % 'right'}>{this_wk}</td><td {TD % 'right'}>{last_wk}</td>"
                 f"<td {TD % 'right'}>{_pct(wow)}</td><td {TD % 'left'}>{goal}</td></tr>")
