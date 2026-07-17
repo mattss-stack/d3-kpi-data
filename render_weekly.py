@@ -253,7 +253,12 @@ def build_html(d, narrative, email=False):
         "<p><b>Ecosystem Partners</b></p>", ul(narrative.get("ecosystem", [])),
         _definitions(),
     ]
-    parts = head + ([] if email else tail) + ["</div>"]
+    # In the full Doc, mark where the page-1 email ends so Matt can copy the top
+    # for the team post; the email render itself just stops after Next Steps.
+    divider = ['<hr><p style="text-align:center;color:#999;font-size:9pt">'
+               '&mdash; EMAIL ENDS HERE &mdash; everything below goes to the full report only '
+               '(dashboard Weekly tab) &mdash;</p><hr>']
+    parts = head + ([] if email else (divider + tail)) + ["</div>"]
     return "".join(parts)
 
 
