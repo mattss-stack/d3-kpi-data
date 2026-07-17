@@ -232,7 +232,10 @@ def build_html(d, narrative):
         "<p><b>Key Updates</b></p>", ul(narrative.get("key_updates", [])),
         _kpi_table(d),
         '<p style="font-size:9pt;color:#666">Goal column reflects Q2 targets; Q3 goals coming soon.</p>',
-        _definitions(),
+        "<p><b>Next Steps</b></p>", ul(narrative.get("next_steps", [])),
+        f'<p><b>Additional Details</b><br>Full report: <a href="{FOLDER_URL}">GDrive folder</a>'
+        f' &middot; Live daily dashboard: <a href="{DASHBOARD_URL}">{DASHBOARD_URL}</a>'
+        f' (user d3 / pw d3demo)</p>',
         "<p><b>Fractional Performance</b></p>",
         _frac_table(d),
         _frac_caveat(d),
@@ -241,13 +244,14 @@ def build_html(d, narrative):
         "<p><b>Registrars &ndash; BD</b></p>", ul(narrative.get("reg_bd", [])),
         "<p><b>Registrars &ndash; Integrations</b></p>", ul(narrative.get("reg_int", [])),
         "<p><b>Ecosystem Partners</b></p>", ul(narrative.get("ecosystem", [])),
-        "<p><b>Next Steps</b></p>", ul(narrative.get("next_steps", [])),
+        _definitions(),
         "</div>",
     ]
     return "".join(parts)
 
 
 DASHBOARD_URL = "https://d3-kpi-dashboard-one.vercel.app"
+FOLDER_URL = "https://drive.google.com/drive/folders/1NfXpDXkiv_YTD94TNolCkFKWXPlKvTTZ"
 
 
 def main():
