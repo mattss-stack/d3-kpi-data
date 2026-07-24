@@ -179,6 +179,22 @@ def _frac_launch_table(d):
     return '<table style="border-collapse:collapse;font-size:10pt">' + "".join(rows) + "</table>"
 
 
+def _product_section(narrative, ul):
+    """Product update: 'shipped this week' + 'in development'. Content is sourced from
+    the GitHub release feed, which isn't wired up yet, so when the narrative carries no
+    product items we emit a [MATT: ...] placeholder for Matt to fill before send. Lives
+    in the full-report tail, above Definitions (Definitions stays last)."""
+    shipped = narrative.get("product_shipped", [])
+    dev = narrative.get("product_dev", [])
+    out = ["<p><b>Product &mdash; shipped this week</b></p>"]
+    out.append(ul(shipped) if shipped
+               else ul(["[MATT: product releases shipped this week, pending GitHub feed]"]))
+    out.append("<p><b>Product &mdash; in development</b></p>")
+    out.append(ul(dev) if dev
+               else ul(["[MATT: product in development, pending GitHub feed]"]))
+    return out
+
+
 def _definitions():
     """Definitions section: a heading followed by plain <p> lines (no table)."""
     items = [
@@ -245,6 +261,8 @@ def build_html(d, narrative, email=False):
         '<p style="font-size:9pt;color:#666">Goal column reflects Q2 targets; Q3 goals coming soon.</p>',
         "<p><b>Next Steps</b></p>", ul(narrative.get("next_steps", [])),
     ]
+    reg_int = narrative.get("reg_int", [])
+    ecosystem = narrative.get("ecosystem", [])
     tail = [
         "<p><b>Fractional Performance</b></p>",
         _frac_table(d),
@@ -252,10 +270,17 @@ def build_html(d, narrative, email=False):
         _frac_launch_table(d),
         "<p><b>Premium Domains</b></p>", ul(prem),
         "<p><b>Registrars &ndash; BD</b></p>", ul(narrative.get("reg_bd", [])),
-        "<p><b>Registrars &ndash; Integrations</b></p>", ul(narrative.get("reg_int", [])),
-        "<p><b>Ecosystem Partners</b></p>", ul(narrative.get("ecosystem", [])),
-        _definitions(),
     ]
+    # Omit Integrations / Ecosystem entirely when quiet (empty array), rather than
+    # leaving an empty header for Matt to hand-delete. Matches the prompt's
+    # omit-when-quiet rule for these sections.
+    if reg_int:
+        tail += ["<p><b>Registrars &ndash; Integrations</b></p>", ul(reg_int)]
+    if ecosystem:
+        tail += ["<p><b>Ecosystem Partners</b></p>", ul(ecosystem)]
+    # Product section, then Definitions last.
+    tail += _product_section(narrative, ul)
+    tail += [_definitions()]
     # In the full Doc, mark where the page-1 email ends so Matt can copy the top
     # for the team post; the email render itself just stops after Next Steps.
     divider = ['<hr><p style="text-align:center;color:#999;font-size:9pt">'
