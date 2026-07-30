@@ -220,46 +220,76 @@ def _volume_driver_section(d, narrative):
                 "<p>[MATT: volume_driver missing from the data JSON &mdash; "
                 "run volume_diagnosis.py before sending]</p>")
 
-    m, p = fmt_money_dollars, fmt_pct
-    t = vd["total"]
-    lines = [f"Week volume {m(t['last'])}, {p(t['wow_pct'])} WoW."]
+    m = fmt_money_dollars
+    p = fmt_pct
 
+    def mag(x):
+        """Unsigned percent for prose: 'declined 30.7%', not 'declined -30.7%'."""
+        return f"{_trunc1(abs(x)):.1f}%" if x is not None else "an unknown amount"
+
+    t = vd["total"]
+    down = (t["wow_pct"] or 0) < 0
+    verb = "declined" if down else "grew"
+    # Prefer the pipeline's own short window labels ("7/23-29") over ISO dates so the
+    # sentence reads the way the rest of the report does.
+    wins = d.get("windows", {})
+    lw_lbl = (wins.get("last_week") or {}).get("label")
+    pw_lbl = (wins.get("prior_week") or {}).get("label")
+    if not (lw_lbl and pw_lbl):
+        win = vd.get("window", {})
+        lw, pw = win.get("last") or ["", ""], win.get("prior") or ["", ""]
+        lw_lbl, pw_lbl = f"{lw[0]} to {lw[1]}", f"{pw[0]} to {pw[1]}"
+
+    # Lead by naming the window. Monthly Volume in the table is a rolling 30 days
+    # and the weekly figure is 7 days; they measure different things and can move
+    # in opposite directions, so the two must never read as competing headlines.
+    lines = [f"Week over week, volume {verb} {mag(t['wow_pct'])} to {m(t['last'])} "
+             f"({lw_lbl} vs {pw_lbl}). This is the 7-day window, a different measure "
+             f"from the rolling 30-day Monthly Volume in the table above. The two can "
+             f"move in opposite directions."]
+
+    # Attribution, as one sentence rather than a stack of stat lines.
     co = vd.get("cohorts", {})
-    parts = []
-    for key, label in (("non_organic", "Non-organic"), ("organic", "Organic")):
-        c = co.get(key)
-        if c:
-            parts.append(f"{label} {m(c['last'])} ({p(c['wow_pct'])}), "
-                         f"{c['share_of_delta_pct']}% of the move")
-    if parts:
-        lines.append("; ".join(parts) + ".")
+    no, og = co.get("non_organic"), co.get("organic")
+    if no and og:
+        lead, second = (no, og) if abs(no["share_of_delta_pct"] or 0) >= abs(og["share_of_delta_pct"] or 0) else (og, no)
+        lead_name = "Non-organic" if lead is no else "Organic"
+        second_name = "organic" if lead is no else "non-organic"
+        lines.append(
+            f"{lead_name} accounts for {abs(lead['share_of_delta_pct'])}% of the change "
+            f"({p(lead['wow_pct'])} to {m(lead['last'])}); {second_name} "
+            f"{abs(second['share_of_delta_pct'])}% ({p(second['wow_pct'])} to {m(second['last'])}).")
 
     to = vd.get("true_organic") or {}
     if to.get("excluded_wallets"):
         lines.append(
-            f"True organic {m(to['last'])}, {p(to['wow_pct'])}, "
-            f"{to['share_of_delta_pct']}% of the move "
-            f"({to['excluded_wallets']} machine-frequency wallet(s) removed from organic: "
-            f"third-party automation, not on D3's internal wallet list).")
+            f"With {to['excluded_wallets']} machine-frequency wallets removed from organic "
+            f"(third-party automation, not on D3's internal wallet list), true organic "
+            f"{'fell' if (to['wow_pct'] or 0) < 0 else 'rose'} {mag(to['wow_pct'])} to "
+            f"{m(to['last'])} and accounts for {abs(to['share_of_delta_pct'])}% of the change. "
+            f"The headline organic figure overstates the move in user activity.")
 
+    # Mechanism: what kind of change this was, in one sentence.
+    mech = []
     cliff = vd.get("cliff")
     if cliff:
-        lines.append(f"Break: {cliff['cohort'].replace('_', '-')} run rate went "
-                     f"{m(cliff['before_per_day'])}/day to {m(cliff['after_per_day'])}/day "
-                     f"on {cliff['date']} ({p(cliff['pct'])}).")
+        mech.append(f"The change has a date: the {cliff['cohort'].replace('_', '-')} run rate went "
+                    f"from {m(cliff['before_per_day'])}/day to {m(cliff['after_per_day'])}/day "
+                    f"on {cliff['date']}, a {mag(cliff['pct'])} shift.")
     else:
-        lines.append("Break: none. The move was gradual, with no single break date.")
-
+        mech.append("The change was gradual, with no single break date.")
     cs = vd.get("count_vs_size") or {}
     if cs.get("reading"):
-        lines.append(f"Reading: {cs['reading']} (swaps {p(cs['swaps_pct'])}, "
-                     f"average size {p(cs['avg_size_pct'])}).")
-
+        shape = cs["reading"].split(":", 1)
+        detail = shape[1].strip() if len(shape) > 1 else cs["reading"]
+        mech.append(f"Swap count moved {p(cs['swaps_pct'])} against average size "
+                    f"{p(cs['avg_size_pct'])}, so {detail}.")
     bi = vd.get("base_inflation")
     if bi:
-        lines.append(f"Base: the prior week ran {bi['ratio']}x its trailing 30-day rate "
-                     f"({m(bi['prior_week_per_day'])}/day vs {m(bi['trailing_30d_per_day'])}/day), "
-                     f"so part of the WoW move is the comparison base.")
+        mech.append(f"The prior week also ran {bi['ratio']}x its trailing 30-day rate "
+                    f"({m(bi['prior_week_per_day'])}/day vs {m(bi['trailing_30d_per_day'])}/day), "
+                    f"so part of the percentage reflects the comparison base.")
+    lines.append(" ".join(mech))
 
     # Cause and fix come from the narrative (human), never from the diagnosis.
     cause = (narrative.get("volume_cause") or "").strip()
