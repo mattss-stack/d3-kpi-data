@@ -203,7 +203,7 @@ def _read_section(narrative):
     generated judgment reads as real judgment and the reader can't tell.
     Supporting candidates live in the scratch block, not here."""
     read = (narrative.get("read") or "").strip()
-    body = read if read else "[MATT: the read &mdash; what mattered most this week and why]"
+    body = read if read else "[MATT: the read. What mattered most this week and why.]"
     return f"<p><b>The Read</b></p><p>{body}</p>"
 
 
