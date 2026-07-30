@@ -286,8 +286,12 @@ def _volume_driver_section(d, narrative):
     if cs.get("reading"):
         shape = cs["reading"].split(":", 1)
         detail = shape[1].strip() if len(shape) > 1 else cs["reading"]
-        mech.append(f"Swap count moved {p(cs['swaps_pct'])} against average size "
-                    f"{p(cs['avg_size_pct'])}, so {detail}.")
+        # Name the cohort. count_vs_size runs on the primary driver only, and an
+        # unlabelled "swap count moved -X%" reads as a total-volume claim, which is a
+        # different number (a fact-check flagged exactly this).
+        cohort_label = vd.get("primary_driver", "").replace("_", "-") or "the driver"
+        mech.append(f"Within {cohort_label}, swap count moved {p(cs['swaps_pct'])} against "
+                    f"average size {p(cs['avg_size_pct'])}, so {detail}.")
     bi = vd.get("base_inflation")
     if bi:
         mech.append(f"The prior week also ran {bi['ratio']}x its trailing 30-day rate "
