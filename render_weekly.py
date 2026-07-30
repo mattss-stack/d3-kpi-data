@@ -260,14 +260,18 @@ def _volume_driver_section(d, narrative):
             f"({p(lead['wow_pct'])} to {m(lead['last'])}); {second_name} "
             f"{abs(second['share_of_delta_pct'])}% ({p(second['wow_pct'])} to {m(second['last'])}).")
 
-    to = vd.get("true_organic") or {}
-    if to.get("excluded_wallets"):
+    # Organic stays organic: D3's definition of non-organic is the 13 internal trade
+    # wallets and nothing else. These third-party high-frequency wallets are inside the
+    # organic number by definition, so we attribute rather than reclassify.
+    to = vd.get("organic_ex_hf") or {}
+    if to.get("wallets") and to.get("hf_share_of_organic_delta_pct") is not None:
         lines.append(
-            f"With {to['excluded_wallets']} machine-frequency wallets removed from organic "
-            f"(third-party automation, not on D3's internal wallet list), true organic "
-            f"{'fell' if (to['wow_pct'] or 0) < 0 else 'rose'} {mag(to['wow_pct'])} to "
-            f"{m(to['last'])} and accounts for {abs(to['share_of_delta_pct'])}% of the change. "
-            f"The headline organic figure overstates the move in user activity.")
+            f"Within organic, {to['wallets']} high-frequency third-party wallets account for "
+            f"{abs(to['hf_share_of_organic_delta_pct'])}% of the organic change "
+            f"({m(abs(to['hf_delta']))} of it). Excluding them, organic "
+            f"{'fell' if (to['wow_pct'] or 0) < 0 else 'rose'} {mag(to['wow_pct'])}. "
+            f"They stay in the reported organic figure, which excludes D3's 13 internal "
+            f"trade wallets only.")
 
     # Mechanism: what kind of change this was, in one sentence.
     mech = []
