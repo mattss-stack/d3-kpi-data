@@ -195,6 +195,86 @@ def _product_section(narrative, ul):
     return out
 
 
+def _read_section(narrative):
+    """The read: what mattered most this week, written by Matt.
+
+    Deliberately never generated. The routine emits a placeholder and Matt fills
+    it before send; a visible placeholder is the correct failure mode, because
+    generated judgment reads as real judgment and the reader can't tell.
+    Supporting candidates live in the scratch block, not here."""
+    read = (narrative.get("read") or "").strip()
+    body = read if read else "[MATT: the read &mdash; what mattered most this week and why]"
+    return f"<p><b>The Read</b></p><p>{body}</p>"
+
+
+def _volume_driver_section(d, narrative):
+    """Why volume moved: direction, cause, fix, by when — every week, never omitted.
+
+    Direction, cohort attribution, the break date and the count-vs-size reading are
+    computed in volume_diagnosis.py. Cause and fix are human-owned and render as
+    placeholders when absent, so an unexplained move is visible rather than quiet.
+    """
+    vd = d.get("volume_driver")
+    if not vd:
+        return ("<p><b>Volume Driver</b></p>"
+                "<p>[MATT: volume_driver missing from the data JSON &mdash; "
+                "run volume_diagnosis.py before sending]</p>")
+
+    m, p = fmt_money_dollars, fmt_pct
+    t = vd["total"]
+    lines = [f"Week volume {m(t['last'])}, {p(t['wow_pct'])} WoW."]
+
+    co = vd.get("cohorts", {})
+    parts = []
+    for key, label in (("non_organic", "Non-organic"), ("organic", "Organic")):
+        c = co.get(key)
+        if c:
+            parts.append(f"{label} {m(c['last'])} ({p(c['wow_pct'])}), "
+                         f"{c['share_of_delta_pct']}% of the move")
+    if parts:
+        lines.append("; ".join(parts) + ".")
+
+    to = vd.get("true_organic") or {}
+    if to.get("excluded_wallets"):
+        lines.append(
+            f"True organic {m(to['last'])}, {p(to['wow_pct'])}, "
+            f"{to['share_of_delta_pct']}% of the move "
+            f"({to['excluded_wallets']} machine-frequency wallet(s) removed from organic: "
+            f"third-party automation, not on D3's internal wallet list).")
+
+    cliff = vd.get("cliff")
+    if cliff:
+        lines.append(f"Break: {cliff['cohort'].replace('_', '-')} run rate went "
+                     f"{m(cliff['before_per_day'])}/day to {m(cliff['after_per_day'])}/day "
+                     f"on {cliff['date']} ({p(cliff['pct'])}).")
+    else:
+        lines.append("Break: none. The move was gradual, with no single break date.")
+
+    cs = vd.get("count_vs_size") or {}
+    if cs.get("reading"):
+        lines.append(f"Reading: {cs['reading']} (swaps {p(cs['swaps_pct'])}, "
+                     f"average size {p(cs['avg_size_pct'])}).")
+
+    bi = vd.get("base_inflation")
+    if bi:
+        lines.append(f"Base: the prior week ran {bi['ratio']}x its trailing 30-day rate "
+                     f"({m(bi['prior_week_per_day'])}/day vs {m(bi['trailing_30d_per_day'])}/day), "
+                     f"so part of the WoW move is the comparison base.")
+
+    # Cause and fix come from the narrative (human), never from the diagnosis.
+    cause = (narrative.get("volume_cause") or "").strip()
+    lines.append(f"Cause: {cause}" if cause
+                 else "Cause: [MATT: cause + source link, or 'unconfirmed' + who is investigating]")
+    owner = (narrative.get("volume_fix_owner") or "").strip()
+    eta = (narrative.get("volume_fix_eta") or "").strip()
+    if owner or eta:
+        lines.append(f"Fix: {owner or '[MATT: owner]'} by {eta or '[MATT: ETA needed]'}.")
+    else:
+        lines.append("Fix: [MATT: owner] by [MATT: ETA needed].")
+
+    return "<p><b>Volume Driver</b></p>" + "".join(f"<p>{x}</p>" for x in lines)
+
+
 def _definitions():
     """Definitions section: a heading followed by plain <p> lines (no table)."""
     items = [
@@ -249,16 +329,33 @@ def build_html(d, narrative, email=False):
 
     # Shared top block (header through Next Steps). The email is this block only;
     # the full Doc appends the detail tail below.
+    # Candidates scratch block, when the pipeline attached one. Renders first so it
+    # is impossible to miss, and is marked for deletion before send.
+    candidates_html = ""
+    cand = d.get("candidates")
+    if cand:
+        try:
+            from build_candidates import render_block
+            candidates_html = render_block(cand)
+        except Exception:  # renderer must stay stdlib-only and never hard-fail
+            candidates_html = ('<div style="border:2px dashed #c00;padding:10px">'
+                               '<p><b>CANDIDATES present in data but could not render '
+                               '&mdash; run build_candidates.py directly. '
+                               'DELETE BEFORE SENDING.</b></p></div>')
+
     head = [
+        candidates_html,
         '<div style="font-family:Arial,sans-serif;font-size:11pt">',
         (f"<p><b>Subject:</b> {narrative['subject']}</p>" if narrative.get("subject") else ""),
         f"<p><b>{_quarter_label(d['report_friday'])} KPIs &middot; Week ending {narrative['week_ending']}</b></p>",
         f"<p><b>TLDR:</b> {narrative['tldr']}</p>",
         note,
+        _read_section(narrative),
         "<p><b>Key Wins</b></p>", ul(narrative.get("key_wins", [])),
         "<p><b>Key Updates</b></p>", ul(narrative.get("key_updates", [])),
         _kpi_table(d),
         '<p style="font-size:9pt;color:#666">Goal column reflects Q2 targets; Q3 goals coming soon.</p>',
+        _volume_driver_section(d, narrative),
         "<p><b>Next Steps</b></p>", ul(narrative.get("next_steps", [])),
     ]
     reg_int = narrative.get("reg_int", [])
