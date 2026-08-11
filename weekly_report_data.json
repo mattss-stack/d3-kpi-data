@@ -11,42 +11,42 @@
       ]
     },
     "total": {
-      "last": 11130217,
+      "last": 13442842,
       "prior": 17048311,
-      "delta": -5918094,
-      "wow_pct": -34.7
+      "delta": -3605469,
+      "wow_pct": -21.1
     },
     "cohorts": {
       "organic": {
-        "last": 3660285,
+        "last": 4250657,
         "prior": 6337692,
-        "wow_pct": -42.2,
-        "share_of_delta_pct": 45.2
+        "wow_pct": -32.9,
+        "share_of_delta_pct": 57.9
       },
       "non_organic": {
-        "last": 7469932,
+        "last": 9192184,
         "prior": 10710619,
-        "wow_pct": -30.3,
-        "share_of_delta_pct": 54.8
+        "wow_pct": -14.2,
+        "share_of_delta_pct": 42.1
       }
     },
     "organic_ex_hf": {
       "prior": 2284438,
-      "last": 1546458,
-      "wow_pct": -32.3,
+      "last": 1813789,
+      "wow_pct": -20.6,
       "wallets": 11,
-      "hf_delta": -1939427,
-      "hf_share_of_organic_delta_pct": 72.4,
+      "hf_delta": -1616386,
+      "hf_share_of_organic_delta_pct": 77.4,
       "note": "high-frequency third-party wallets inside organic. Organic as reported excludes D3's 13 internal trade wallets only, per the standing definition; these are not reclassified"
     },
     "unlisted_bots": [
       {
         "wallet": "0x581a9a1125846a0b302bab91a517dd24e14691fc",
         "prior": 2548849,
-        "last": 1461393,
-        "delta": -1087456,
+        "last": 1781045,
+        "delta": -767804,
         "prior_swaps_per_day": 2126,
-        "last_swaps_per_day": 1174
+        "last_swaps_per_day": 1406
       },
       {
         "wallet": "0x68298bf52db7ac70824bfae931c6d5a7eb007d61",
@@ -67,58 +67,50 @@
       {
         "wallet": "0x283006fe34a71d74d11baf66bce8c765b43bb8cc",
         "prior": 52040,
-        "last": 9112,
-        "delta": -42928,
+        "last": 10184,
+        "delta": -41856,
         "prior_swaps_per_day": 524,
-        "last_swaps_per_day": 136
+        "last_swaps_per_day": 166
       },
       {
         "wallet": "0x0372b63390591007e61d0e15ecb40579f0d08de3",
         "prior": 49358,
-        "last": 10761,
-        "delta": -38597,
+        "last": 11689,
+        "delta": -37669,
         "prior_swaps_per_day": 1068,
-        "last_swaps_per_day": 783
+        "last_swaps_per_day": 877
       },
       {
         "wallet": "0x02139ab36e4b3dd88c286c5c53306f08258e4d53",
         "prior": 50752,
-        "last": 12370,
-        "delta": -38382,
+        "last": 13271,
+        "delta": -37481,
         "prior_swaps_per_day": 1035,
-        "last_swaps_per_day": 791
+        "last_swaps_per_day": 882
       },
       {
         "wallet": "0xc523c027ce74da9a3a09bcedd43e703711d2d72b",
         "prior": 37070,
-        "last": 0,
-        "delta": -37070,
+        "last": 6,
+        "delta": -37064,
         "prior_swaps_per_day": 531,
         "last_swaps_per_day": 0
       },
       {
         "wallet": "0x37c47f6b082c0c5c46de1dc77ed1346c698dc263",
         "prior": 16410,
-        "last": 2680,
-        "delta": -13730,
+        "last": 3149,
+        "delta": -13261,
         "prior_swaps_per_day": 544,
-        "last_swaps_per_day": 116
+        "last_swaps_per_day": 146
       },
       {
         "wallet": "0xb47be79970dad1cc6be4ec03539009f8520059b7",
         "prior": 44468,
-        "last": 59439,
-        "delta": 14971,
+        "last": 59445,
+        "delta": 14977,
         "prior_swaps_per_day": 638,
         "last_swaps_per_day": 941
-      },
-      {
-        "wallet": "0x13956b28f15efd9b1d37373c9d4bc5d0f8efa759",
-        "prior": 44465,
-        "last": 59439,
-        "delta": 14975,
-        "prior_swaps_per_day": 638,
-        "last_swaps_per_day": 944
       },
       {
         "wallet": "0xa45f8728a81ce5771a5690bb24917c95a02f346e",
@@ -127,25 +119,33 @@
         "delta": 14980,
         "prior_swaps_per_day": 637,
         "last_swaps_per_day": 945
+      },
+      {
+        "wallet": "0x13956b28f15efd9b1d37373c9d4bc5d0f8efa759",
+        "prior": 44465,
+        "last": 59446,
+        "delta": 14981,
+        "prior_swaps_per_day": 638,
+        "last_swaps_per_day": 944
       }
     ],
-    "primary_driver": "non_organic",
+    "primary_driver": "organic",
     "cliff": {
-      "cohort": "non_organic",
+      "cohort": "organic",
       "date": "2026-08-12",
-      "before_per_day": 1554344,
+      "before_per_day": 852762,
       "after_per_day": 0,
-      "drop_per_day": 1554344,
+      "drop_per_day": 852762,
       "pct": -100.0
     },
     "base_inflation": null,
     "count_vs_size": {
-      "swaps_prior": 166556,
-      "swaps_last": 116252,
-      "swaps_pct": -30.2,
-      "avg_size_prior": 64.31,
-      "avg_size_last": 64.26,
-      "avg_size_pct": -0.1,
+      "swaps_prior": 222727,
+      "swaps_last": 172260,
+      "swaps_pct": -22.7,
+      "avg_size_prior": 28.45,
+      "avg_size_last": 24.68,
+      "avg_size_pct": -13.3,
       "reading": "throughput: swap count fell while average size held"
     },
     "top_wallet_deltas": [
@@ -153,10 +153,10 @@
         "wallet": "0x581a9a1125846a0b302bab91a517dd24e14691fc",
         "cohort": "organic",
         "prior_per_day": 364121,
-        "last_per_day": 208770,
-        "delta_per_day": -155351,
+        "last_per_day": 254435,
+        "delta_per_day": -109686,
         "prior_swaps_per_day": 2126,
-        "last_swaps_per_day": 1174
+        "last_swaps_per_day": 1406
       },
       {
         "wallet": "0x88b860e1fef67a04ba4cc17acbf9b96ca631a7b8",
@@ -177,85 +177,85 @@
         "last_swaps_per_day": 317
       },
       {
+        "wallet": "0x4b345c99fa4ec52227d41a4825ea671968d01cb2",
+        "cohort": "organic",
+        "prior_per_day": 23687,
+        "last_per_day": 1,
+        "delta_per_day": -23685,
+        "prior_swaps_per_day": 100,
+        "last_swaps_per_day": 0
+      },
+      {
         "wallet": "0xbabcf6cb39f081d03b4a57ac28257553fc67437c",
         "cohort": "non_organic",
         "prior_per_day": 130452,
-        "last_per_day": 87376,
-        "delta_per_day": -43076,
+        "last_per_day": 107351,
+        "delta_per_day": -23102,
         "prior_swaps_per_day": 2033,
-        "last_swaps_per_day": 1365
-      },
-      {
-        "wallet": "0x75a67144abb03b3097aed4d555f8b8bd365d2dbe",
-        "cohort": "non_organic",
-        "prior_per_day": 152140,
-        "last_per_day": 111771,
-        "delta_per_day": -40369,
-        "prior_swaps_per_day": 2368,
-        "last_swaps_per_day": 1742
+        "last_swaps_per_day": 1680
       },
       {
         "wallet": "0xf1087f19f17d8460beee6fb2ebd242b8d4723b4a",
         "cohort": "non_organic",
         "prior_per_day": 126405,
-        "last_per_day": 86671,
-        "delta_per_day": -39733,
+        "last_per_day": 106190,
+        "delta_per_day": -20215,
         "prior_swaps_per_day": 1968,
-        "last_swaps_per_day": 1347
-      },
-      {
-        "wallet": "0x350f1c5db3e95ab8de2e362bade24c492582904b",
-        "cohort": "non_organic",
-        "prior_per_day": 145002,
-        "last_per_day": 105794,
-        "delta_per_day": -39208,
-        "prior_swaps_per_day": 2259,
-        "last_swaps_per_day": 1645
+        "last_swaps_per_day": 1651
       },
       {
         "wallet": "0xea92c2a6eaad288285bcb10d6abba6f013095d11",
         "cohort": "non_organic",
         "prior_per_day": 126461,
-        "last_per_day": 88750,
-        "delta_per_day": -37711,
+        "last_per_day": 108525,
+        "delta_per_day": -17936,
         "prior_swaps_per_day": 1965,
-        "last_swaps_per_day": 1380
+        "last_swaps_per_day": 1693
       },
       {
         "wallet": "0xdd55567adf44c97e946bd4f9a136aae96f298e37",
         "cohort": "non_organic",
         "prior_per_day": 125126,
-        "last_per_day": 88066,
-        "delta_per_day": -37060,
+        "last_per_day": 108509,
+        "delta_per_day": -16617,
         "prior_swaps_per_day": 1957,
-        "last_swaps_per_day": 1383
+        "last_swaps_per_day": 1703
+      },
+      {
+        "wallet": "0x350f1c5db3e95ab8de2e362bade24c492582904b",
+        "cohort": "non_organic",
+        "prior_per_day": 145002,
+        "last_per_day": 130236,
+        "delta_per_day": -14766,
+        "prior_swaps_per_day": 2259,
+        "last_swaps_per_day": 2021
+      },
+      {
+        "wallet": "0x75a67144abb03b3097aed4d555f8b8bd365d2dbe",
+        "cohort": "non_organic",
+        "prior_per_day": 152140,
+        "last_per_day": 138824,
+        "delta_per_day": -13317,
+        "prior_swaps_per_day": 2368,
+        "last_swaps_per_day": 2160
       },
       {
         "wallet": "0x3953cd979883333bb6a7eb0b2230b322f65651e9",
         "cohort": "non_organic",
         "prior_per_day": 130118,
-        "last_per_day": 96482,
-        "delta_per_day": -33635,
+        "last_per_day": 118901,
+        "delta_per_day": -11217,
         "prior_swaps_per_day": 2018,
-        "last_swaps_per_day": 1498
+        "last_swaps_per_day": 1850
       },
       {
-        "wallet": "0x2830296cb306f9c7b399e88ce5dcfc09547cf2ff",
-        "cohort": "non_organic",
-        "prior_per_day": 115834,
-        "last_per_day": 91219,
-        "delta_per_day": -24615,
-        "prior_swaps_per_day": 1787,
-        "last_swaps_per_day": 1409
-      },
-      {
-        "wallet": "0xf0819cadb1394084be76f8a05a32c2cac8447d8d",
-        "cohort": "non_organic",
-        "prior_per_day": 112230,
-        "last_per_day": 87822,
-        "delta_per_day": -24408,
-        "prior_swaps_per_day": 1743,
-        "last_swaps_per_day": 1368
+        "wallet": "0x9f9ebce72c0715cdbad4d589986eb22f6782a1ce",
+        "cohort": "organic",
+        "prior_per_day": 8529,
+        "last_per_day": 0,
+        "delta_per_day": -8529,
+        "prior_swaps_per_day": 11,
+        "last_swaps_per_day": 0
       }
     ],
     "daily": {
@@ -441,12 +441,22 @@
       },
       "2026-08-10": {
         "non_organic": {
-          "vol": 822502.947555,
-          "swaps": 12844
+          "vol": 1657691.029109,
+          "swaps": 25799
         },
         "organic": {
-          "vol": 523224.245829,
-          "swaps": 18871
+          "vol": 796210.23068,
+          "swaps": 26360
+        }
+      },
+      "2026-08-11": {
+        "non_organic": {
+          "vol": 887064.632492,
+          "swaps": 13838
+        },
+        "organic": {
+          "vol": 317386.118168,
+          "swaps": 16375
         }
       }
     },
@@ -455,7 +465,7 @@
     "fix_owner": null,
     "fix_eta": null
   },
-  "generated": "2026-08-10T12:01:59.499221+00:00",
+  "generated": "2026-08-11T12:01:50.888404+00:00",
   "report_friday": "2026-08-14",
   "windows": {
     "last_week": {
@@ -471,55 +481,55 @@
   },
   "kpis": {
     "monthly_volume": {
-      "headline_30d": 71616941.23956299,
+      "headline_30d": 73929440.91314799,
       "prior_30d_total": 75165274.51261799,
-      "last_week_sum": 11128179.543139,
+      "last_week_sum": 13440679.216724,
       "prior_week_sum": 17048310.692842,
-      "wow_pct": -34.725617431342684,
-      "rolling_30d_pct": -4.720708194126722,
-      "organic_last_week": 3658247.862558999,
+      "wow_pct": -21.161225537922178,
+      "rolling_30d_pct": -1.6441549738004948,
+      "organic_last_week": 4248494.822098,
       "organic_prior_week": 6337591.849802999,
-      "non_organic_last_week": 7469931.68058,
+      "non_organic_last_week": 9192184.394626,
       "non_organic_prior_week": 10710718.843039,
-      "organic_wow_pct": -42.27700443232686,
-      "non_organic_wow_pct": -30.25741978620995
+      "organic_wow_pct": -32.963577920688245,
+      "non_organic_wow_pct": -14.177708057381318
     },
     "tokenized_assets": {
-      "last_end": 246617,
+      "last_end": 247538,
       "prior_end": 244363,
-      "wow_pct": 0.9223982354120714,
+      "wow_pct": 1.29929653834664,
       "breakdown": {
         "domains": {
-          "last_end": 30788,
+          "last_end": 30799,
           "prior_end": 30758,
-          "wow_pct": 0.09753560049418038
+          "wow_pct": 0.13329865400871319
         },
         "name_tokens": {
-          "last_end": 14898,
+          "last_end": 14795,
           "prior_end": 15216,
-          "wow_pct": -2.089905362776025
+          "wow_pct": -2.7668243953732916
         },
         "subdomains": {
-          "last_end": 200931,
+          "last_end": 201944,
           "prior_end": 198389,
-          "wow_pct": 1.2813210409851352
+          "wow_pct": 1.7919340286003762
         }
       }
     },
     "mau": {
-      "last_end": 8610,
+      "last_end": 8618,
       "prior_end": 9906,
-      "wow_pct": -13.08298001211387
+      "wow_pct": -13.002220876236626
     },
     "domain_launches": {
-      "last_end": 683,
+      "last_end": 687,
       "prior_end": 674,
-      "wow_pct": 1.3353115727002967
+      "wow_pct": 1.9287833827893175
     },
     "nav": {
-      "last_end": 76947531.0,
+      "last_end": 76839931.0,
       "prior_end": 76740840.0,
-      "wow_pct": 0.2693363794297795
+      "wow_pct": 0.12912420557293874
     }
   },
   "premium_domains": {
@@ -529,8 +539,8 @@
       "status": "GRADUATION_SUCCESSFUL"
     },
     "upcoming": {
-      "name": "SUPREMACY.ai",
-      "fdv_usd": 12500.0,
+      "name": "BICWALLET.com",
+      "fdv_usd": 32500.0,
       "status": "FRACTIONALIZED"
     }
   },
@@ -544,9 +554,9 @@
     }
   ],
   "subdomain_clusters": {
-    "week_total_mints": 2651,
-    "week_distinct_stakers": 2238,
-    "week_distinct_parents": 176,
+    "week_total_mints": 3680,
+    "week_distinct_stakers": 3100,
+    "week_distinct_parents": 185,
     "daily": [
       {
         "date": "2026-08-06",
@@ -574,37 +584,37 @@
       },
       {
         "date": "2026-08-10",
-        "count": 2480,
-        "distinct_stakers": 2178,
-        "distinct_parents": 176
+        "count": 3509,
+        "distinct_stakers": 3044,
+        "distinct_parents": 185
       }
     ],
     "clusters": [
       {
         "date": "2026-08-10",
-        "count": 2480,
-        "distinct_stakers": 2178,
-        "distinct_parents": 176,
+        "count": 3509,
+        "distinct_stakers": 3044,
+        "distinct_parents": 185,
         "top_parents": [
           {
             "parent": "santanomics.xyz",
-            "count": 217
+            "count": 248
           },
           {
             "parent": "2026lfg.com",
-            "count": 202
+            "count": 239
           },
           {
             "parent": "gboner.fun",
-            "count": 137
+            "count": 175
           },
           {
             "parent": "mealprepsunday.xyz",
-            "count": 99
+            "count": 126
           },
           {
             "parent": "brokenresolutions.xyz",
-            "count": 96
+            "count": 124
           }
         ]
       }
@@ -636,14 +646,14 @@
       "month": "2026-07",
       "launched": 64,
       "graduated": 11,
-      "still_on_curve": 10,
+      "still_on_curve": 9,
       "grad_pct": 17.0
     },
     {
       "month": "2026-08",
-      "launched": 25,
+      "launched": 29,
       "graduated": 0,
-      "still_on_curve": 25,
+      "still_on_curve": 29,
       "grad_pct": 0.0
     }
   ],
@@ -657,25 +667,25 @@
         "rate": 51.42857142857142
       },
       "q2": {
-        "launches": 192,
+        "launches": 194,
         "graduated": 46,
-        "failed": 126,
-        "on_curve": 20,
-        "rate": 26.744186046511626
+        "failed": 127,
+        "on_curve": 21,
+        "rate": 26.589595375722542
       },
       "l30": {
-        "launches": 34,
+        "launches": 36,
         "graduated": 6,
-        "failed": 8,
-        "on_curve": 20,
-        "rate": 42.857142857142854
+        "failed": 9,
+        "on_curve": 21,
+        "rate": 40.0
       },
       "all": {
-        "launches": 374,
+        "launches": 376,
         "graduated": 136,
-        "failed": 211,
-        "on_curve": 20,
-        "rate": 39.19308357348703
+        "failed": 212,
+        "on_curve": 21,
+        "rate": 39.08045977011494
       }
     },
     "self_serve": {
@@ -687,24 +697,24 @@
         "rate": 26.143790849673206
       },
       "q2": {
-        "launches": 156,
+        "launches": 158,
         "graduated": 22,
         "failed": 118,
-        "on_curve": 15,
+        "on_curve": 17,
         "rate": 15.714285714285714
       },
       "l30": {
-        "launches": 26,
+        "launches": 28,
         "graduated": 1,
         "failed": 10,
-        "on_curve": 15,
+        "on_curve": 17,
         "rate": 9.090909090909092
       },
       "all": {
-        "launches": 309,
+        "launches": 311,
         "graduated": 62,
         "failed": 231,
-        "on_curve": 15,
+        "on_curve": 17,
         "rate": 21.160409556313994
       }
     }
@@ -715,201 +725,201 @@
         "domain": "software.ai",
         "launch_date": "2025-12-01",
         "cash_out_to_owner": 16843.75,
-        "volume_total": 23057322.0,
+        "volume_total": 23097588.0,
         "fees_q1": 13477.45,
-        "fees_q2": 13422.76,
-        "fees_t30d": 2687.92,
+        "fees_q2": 13502.81,
+        "fees_t30d": 2767.97,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 81.0840716568259,
-        "pct_q2": 25.542648456035867,
-        "pct_t30d": 43.46712413524955
+        "pct_q2": 25.636050569217115,
+        "pct_t30d": 43.90400933186567
       },
       {
         "domain": "brag.com",
         "launch_date": "2025-12-12",
         "cash_out_to_owner": 21437.5,
-        "volume_total": 7543740.0,
+        "volume_total": 7568367.0,
         "fees_q1": 4003.94,
-        "fees_q2": 6926.1,
-        "fees_t30d": 2655.29,
+        "fees_q2": 6998.99,
+        "fees_t30d": 2728.17,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 29.453554167310294,
-        "pct_q2": 76.64032204237283,
-        "pct_t30d": 95.75583471089493
+        "pct_q2": 76.81878975398759,
+        "pct_t30d": 95.83091816985933
       },
       {
         "domain": "boner.com",
         "launch_date": "2025-12-17",
         "cash_out_to_owner": 13475.0,
-        "volume_total": 5309543.0,
+        "volume_total": 5334493.0,
         "fees_q1": 5533.44,
-        "fees_q2": 8723.38,
-        "fees_t30d": 2559.67,
+        "fees_q2": 8797.03,
+        "fees_t30d": 2633.33,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 99.9912733582507,
-        "pct_q2": 83.9213437983653,
-        "pct_t30d": 95.35217105320677
+        "pct_q2": 84.02486933202096,
+        "pct_t30d": 95.43490061863267
       },
       {
         "domain": "rides.com",
         "launch_date": "2026-04-03",
         "cash_out_to_owner": 15618.75,
-        "volume_total": 2120025.0,
+        "volume_total": 2120584.0,
         "fees_q1": 0.0,
-        "fees_q2": 596.2,
-        "fees_t30d": 29.2,
+        "fees_q2": 596.62,
+        "fees_t30d": 29.62,
         "live_q1": false,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": null,
-        "pct_q2": 9.374043478708156,
-        "pct_t30d": 14.531504487597878
+        "pct_q2": 9.37819726878031,
+        "pct_t30d": 14.61927157776504
       },
       {
         "domain": "investors.xyz",
         "launch_date": "2025-12-12",
         "cash_out_to_owner": 857.5,
-        "volume_total": 1649939.0,
+        "volume_total": 1665685.0,
         "fees_q1": 332.67,
-        "fees_q2": 3120.22,
-        "fees_t30d": 1280.11,
+        "fees_q2": 3161.09,
+        "fees_t30d": 1320.98,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 50.09297049261585,
-        "pct_q2": 72.80538177604008,
-        "pct_t30d": 88.07354740524826
+        "pct_q2": 72.95481711624446,
+        "pct_t30d": 88.02440818525325
       },
       {
         "domain": "wines.xyz",
         "launch_date": "2026-01-15",
         "cash_out_to_owner": 5635.0,
-        "volume_total": 1296978.0,
+        "volume_total": 1309243.0,
         "fees_q1": 249.55,
-        "fees_q2": 3386.25,
-        "fees_t30d": 1365.61,
+        "fees_q2": 3423.04,
+        "fees_t30d": 1402.4,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 49.6115831472904,
-        "pct_q2": 99.95063069746452,
-        "pct_t30d": 99.99985443880567
+        "pct_q2": 99.95116110979568,
+        "pct_t30d": 99.9998582578484
       },
       {
         "domain": "depin.ai",
         "launch_date": "2025-12-30",
         "cash_out_to_owner": 3920.0,
-        "volume_total": 1253948.0,
+        "volume_total": 1266629.0,
         "fees_q1": 427.59,
-        "fees_q2": 3326.65,
-        "fees_t30d": 1319.32,
+        "fees_q2": 3364.69,
+        "fees_t30d": 1357.36,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 98.26135505353658,
-        "pct_q2": 99.99888130428003,
+        "pct_q2": 99.99889395307606,
         "pct_t30d": 100.0
       },
       {
         "domain": "smoothie.com",
         "launch_date": "2026-07-07",
         "cash_out_to_owner": 15925.0,
-        "volume_total": 1232655.0,
+        "volume_total": 1247760.0,
         "fees_q1": 0.0,
-        "fees_q2": 3426.5,
-        "fees_t30d": 3307.35,
+        "fees_q2": 3471.6,
+        "fees_t30d": 3352.46,
         "live_q1": false,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": null,
-        "pct_q2": 92.65917123657232,
-        "pct_t30d": 93.57011178967822
+        "pct_q2": 92.74246027568437,
+        "pct_t30d": 93.64567004655926
       },
       {
         "domain": "hightech.xyz",
         "launch_date": "2025-12-16",
         "cash_out_to_owner": 857.5,
-        "volume_total": 1167990.0,
+        "volume_total": 1181497.0,
         "fees_q1": 255.06,
-        "fees_q2": 3203.82,
-        "fees_t30d": 1315.61,
+        "fees_q2": 3244.34,
+        "fees_t30d": 1356.13,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 89.36913589833844,
-        "pct_q2": 99.54178959501355,
-        "pct_t30d": 99.99799009375924
+        "pct_q2": 99.54748672014604,
+        "pct_t30d": 99.99805014909214
       },
       {
         "domain": "terabytes.ai",
         "launch_date": "2026-02-24",
         "cash_out_to_owner": 1212.75,
-        "volume_total": 1154643.0,
+        "volume_total": 1172852.0,
         "fees_q1": 125.42,
-        "fees_q2": 3257.38,
-        "fees_t30d": 1297.85,
+        "fees_q2": 3305.62,
+        "fees_t30d": 1346.09,
         "live_q1": true,
         "live_q2": true,
         "live_t30d": true,
         "pct_q1": 100.0,
-        "pct_q2": 97.57014884500414,
-        "pct_t30d": 99.99460890385248
+        "pct_q2": 97.42098710040953,
+        "pct_t30d": 99.5224874160996
       }
     ],
     "totals": {
       "cash_out_to_owner": 95782.75,
       "fees_q1": 24405.12,
-      "fees_q2": 49389.26,
-      "fees_t30d": 17817.93,
+      "fees_q2": 49865.83,
+      "fees_t30d": 18294.51,
       "pct_q1": 64.6276442835544,
-      "pct_q2": 49.5887740164447,
-      "pct_t30d": 80.51952099222775
+      "pct_q2": 49.80039921877863,
+      "pct_t30d": 80.72608452997899
     }
   },
   "candidates": {
     "baseline_commit": "df48cfb9",
     "baseline_missing": false,
     "volume": [
-      "volume -34.7% WoW ($-5,918,094)",
-      "organic -42.2%, 45.2% of the move",
-      "non_organic -30.3%, 54.8% of the move",
-      "non_organic broke on 2026-08-12 (-100.0%) \u2014 a dated event, so there is something to point at",
+      "volume -21.1% WoW ($-3,605,469)",
+      "organic -32.9%, 57.9% of the move",
+      "non_organic -14.2%, 42.1% of the move",
+      "organic broke on 2026-08-12 (-100.0%) \u2014 a dated event, so there is something to point at",
       "shape: throughput: swap count fell while average size held"
     ],
     "moves": [
       {
         "metric": "monthly_volume.organic_last_week",
         "prior": 6337591.849802999,
-        "now": 3658247.862558999,
-        "delta": -2679343.9872439997,
-        "pct": -42.3
+        "now": 4248494.822098,
+        "delta": -2089097.0277049989,
+        "pct": -33.0
       },
       {
         "metric": "monthly_volume.last_week_sum",
         "prior": 17048310.692842,
-        "now": 11128179.543139,
-        "delta": -5920131.149703,
-        "pct": -34.7
+        "now": 13440679.216724,
+        "delta": -3607631.4761179984,
+        "pct": -21.2
       },
       {
         "metric": "monthly_volume.non_organic_last_week",
         "prior": 10710718.843039,
-        "now": 7469931.68058,
-        "delta": -3240787.162459,
-        "pct": -30.3
+        "now": 9192184.394626,
+        "delta": -1518534.4484129995,
+        "pct": -14.2
       },
       {
         "metric": "mau.last_end",
         "prior": 9906.0,
-        "now": 8610.0,
-        "delta": -1296.0,
-        "pct": -13.1
+        "now": 8618.0,
+        "delta": -1288.0,
+        "pct": -13.0
       }
     ],
     "cause_candidates": [],
