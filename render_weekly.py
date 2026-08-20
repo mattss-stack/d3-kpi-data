@@ -1,10 +1,22 @@
 #!/usr/bin/env python3
 """Self-contained renderer for D3's weekly KPI report (stdlib only).
 
-Ported from /root/kpi-report/publish_weekly_gdoc.py. Produces byte-identical
-table HTML, but reads data + narrative from JSON files instead of calling
-weekly_report.build_weekly_data() / Drive. No third-party imports, no
-dependency on the weekly_report module.
+Structure follows the EOW Scorecard format Matt settled on 2026-08-07 and rebuilt
+2026-08-20: subject, heading, one links line, TLDR, Key Wins, Key Updates, Product
+Updates, Next Steps. Nothing else.
+
+What was removed on 2026-08-20, and why, so it does not creep back:
+  - The KPI metrics table, Fractional Performance, Premium Domains, Registrars BD /
+    Integrations, Ecosystem Partners and Definitions. All KPIs live in Metabase
+    dashboard 57 now, for access control. The report links there once at the top.
+  - The Read. Matt's call: it added no value, and a generated judgment reads like a
+    real one.
+  - The Volume Driver block. Volume folds into the TLDR as computed figures plus, at
+    most, one causal sentence the routine has a dated source for.
+  - The "EMAIL ENDS HERE" divider and the whole below-the-line tail. It existed
+    because the full report lived on the Vercel dashboard's Weekly tab; that front
+    end was retired 2026-08-20.
+  - The candidates scratch block, which existed to help Matt write The Read.
 
 Run: python3 render_weekly.py <data.json> <narrative.json> > out.html
 """
@@ -12,16 +24,19 @@ import json
 import math
 import sys
 
+METABASE_URL = "https://metabase-prod.d3.app/dashboard/57-doma-kpi"
+PRODUCT_BOARD_URL = ("https://app.notion.com/p/d3global/285d0d86d2708011ade2ee589c633509"
+                     "?v=28fd0d86d2708052bba9000c38a4269b")
+
 
 def _trunc1(x):
     """Truncate toward zero to 1 decimal (Matt's convention: never round up)."""
     return math.floor(abs(x) * 10) / 10.0
 
 
-# --- Inlined formatters (copies of weekly_report's, with None guards) ---------
 def fmt_money_dollars(usd):
     if usd is None:
-        return "—"
+        return None
     if usd >= 1_000_000:
         return f"${_trunc1(usd / 1_000_000):.1f}M"
     if usd >= 1_000:
@@ -29,307 +44,26 @@ def fmt_money_dollars(usd):
     return f"${int(usd)}"
 
 
-def fmt_money_nav(usd):
-    """NAV-only: 2-decimal truncation (Matt's documented exception to the 1-decimal
-    money format). Ex 30977403 -> $30.97M."""
-    if usd is None:
-        return "—"
-    if usd >= 1_000_000:
-        return f"${math.floor(usd / 10_000) / 100:.2f}M"
-    if usd >= 1_000:
-        return f"${math.floor(usd / 10) / 100:.2f}K"
-    return f"${int(usd)}"
-
-
 def fmt_count(n):
     if n is None:
-        return "—"
+        return None
     return f"{int(round(n)):,}"
 
 
 def fmt_pct(p):
     if p is None:
-        return "  —"
+        return None
     sign = "+" if p >= 0 else "-"
     return f"{sign}{_trunc1(p):.1f}%"
 
 
-def _pct(p):
-    return fmt_pct(p).strip()
-
-
-def _goal(v, target, suffix):
-    """Progress vs. goal. Reads 'X% to <goal>' under 100%, 'X% of <goal> goal'
-    once the goal is met/exceeded (so an over-100% metric doesn't read as 'to')."""
-    if v is None:
-        return ""
-    pct = int(v / target * 100)  # truncate toward zero
-    if pct >= 100:
-        return f"{pct}% of {suffix} goal"
-    return f"{pct}% to {suffix}"
-
-
-TH = 'style="border:1px solid #ccc;padding:5px 9px;background:#f3f3f3;text-align:%s;font-weight:bold"'
-TD = 'style="border:1px solid #ccc;padding:5px 9px;text-align:%s"'
-
-
-def _kpi_table(d):
-    k = d["kpis"]; mv = k["monthly_volume"]; ta = k["tokenized_assets"]; bd = ta["breakdown"]
-    mau = k["mau"]; lau = k["domain_launches"]; nav = k["nav"]
-    money = fmt_money_dollars; cnt = fmt_count
-
-    def row(label, this_wk, last_wk, wow, goal, indent=False):
-        # No in-cell <b> on main rows: Drive's HTML->Doc turns it into literal "**"
-        # asterisks in the table. Indentation marks sub-rows; the dashboard renderer
-        # bolds main rows itself (render_weekly_from_doc.KPI_SUBMETRICS).
-        lbl = ("&nbsp;&nbsp;&nbsp;&nbsp;" + label) if indent else label
-        return (f"<tr><td {TD % 'left'}>{lbl}</td>"
-                f"<td {TD % 'right'}>{this_wk}</td><td {TD % 'right'}>{last_wk}</td>"
-                f"<td {TD % 'right'}>{_pct(wow)}</td><td {TD % 'left'}>{goal}</td></tr>")
-
-    nav_goal = _goal(nav["last_end"], 30_000_000, "$30M")
-    rows = [
-        f"<tr>{''.join(f'<th {TH % a}>{h}</th>' for h,a in [('Metric','left'),('This wk','right'),('Last wk','right'),('WoW','right'),('Goal','left')])}</tr>",
-        row("Monthly Volume", money(mv["headline_30d"]), money(mv["prior_30d_total"]), mv["rolling_30d_pct"], _goal(mv["headline_30d"], 100_000_000, "$100M/mo")),
-        row("Network Asset Value", fmt_money_nav(nav["last_end"]), fmt_money_nav(nav["prior_end"]), nav["wow_pct"], nav_goal),
-        row("MAU", cnt(mau["last_end"]), cnt(mau["prior_end"]), mau["wow_pct"], _goal(mau["last_end"], 20_000, "20K")),
-        row("Total Domains Onchain", cnt(ta["last_end"]), cnt(ta["prior_end"]), ta["wow_pct"], _goal(ta["last_end"], 1_000_000, "1M")),
-        row("domains", cnt(bd["domains"]["last_end"]), cnt(bd["domains"]["prior_end"]), bd["domains"]["wow_pct"], "", indent=True),
-        row("subdomains", cnt(bd["subdomains"]["last_end"]), cnt(bd["subdomains"]["prior_end"]), bd["subdomains"]["wow_pct"], "", indent=True),
-        row("name tokens", cnt(bd["name_tokens"]["last_end"]), cnt(bd["name_tokens"]["prior_end"]), bd["name_tokens"]["wow_pct"], "", indent=True),
-        row("Fractional Launches", cnt(lau["last_end"]), cnt(lau["prior_end"]), lau["wow_pct"], _goal(lau["last_end"], 500, "500")),
-    ]
-    return '<table style="border-collapse:collapse;font-size:10pt">' + "".join(rows) + "</table>"
-
-
-def _frac_table(d):
-    """Graduation Rates table: resolved-only rate per channel per period, plus a Total row on the
-    same basis. rate = graduated / resolved, where resolved = graduated + failed. Launches still
-    bonding (FRACTIONALIZED) are excluded from both numerator and denominator so recent windows
-    (Q2, trailing-30d) aren't dragged toward zero by launches that simply haven't finished bonding
-    yet — the cohort basis (grad / all launches) put ~3/4 of trailing-30d launches in the
-    denominator as automatic non-graduations (e.g. self-serve 30d read 3%). Segments and the Total
-    still foot because both divide by the same resolved base. Recomputed from counts, never a
-    precomputed `rate` field."""
-    gc = d["graduation_by_channel"]
-    wg = gc.get("white_glove", {})
-    ss = gc.get("self_serve", {})
-
-    def rate(ch, per):
-        x = gc.get(ch, {}).get(per, {})
-        g, f = x.get("graduated", 0), x.get("failed", 0)
-        resolved = g + f
-        return f"{g / resolved * 100:.0f}%" if resolved else "&mdash;"
-
-    def total_rate(per):
-        g = wg.get(per, {}).get("graduated", 0) + ss.get(per, {}).get("graduated", 0)
-        f = wg.get(per, {}).get("failed", 0) + ss.get(per, {}).get("failed", 0)
-        resolved = g + f
-        return f"{100 * g / resolved:.0f}%" if resolved else "&mdash;"
-
-    pers = ["q1", "q2", "l30", "all"]
-    head = ['Graduation Rates', 'Q1', 'Q2', 'Trailing 30d', 'All time']
-    rows = ["<tr>" + "".join(f"<th {TH % ('left' if i==0 else 'right')}>{h}</th>" for i,h in enumerate(head)) + "</tr>"]
-    for label, ch in [("White glove", "white_glove"), ("Self serve", "self_serve")]:
-        rows.append(f"<tr><td {TD % 'left'}>{label}</td>"
-                    + "".join(f"<td {TD % 'right'}>{rate(ch, p)}</td>" for p in pers) + "</tr>")
-    rows.append(f"<tr><td {TD % 'left'}><b>Total</b></td>"
-                + "".join(f"<td {TD % 'right'}>{total_rate(p)}</td>" for p in pers) + "</tr>")
-    return '<table style="border-collapse:collapse;font-size:10pt">' + "".join(rows) + "</table>"
-
-
-def _frac_caveat(d):
-    """One-line note that the rate excludes launches still bonding, with the trailing-30d count."""
-    gc = d["graduation_by_channel"]
-    wg = gc.get("white_glove", {}).get("l30", {})
-    ss = gc.get("self_serve", {}).get("l30", {})
-    bonding = wg.get("on_curve", 0) + ss.get("on_curve", 0)
-    launches = wg.get("launches", 0) + ss.get("launches", 0)
-    return ('<p style="font-size:9pt;color:#666">Rate is of launches that have finished bonding '
-            f'(graduated or failed); launches still bonding are excluded. {bonding} of {launches} '
-            'trailing-30d launches are still bonding.</p>')
-
-
-def _frac_launch_table(d):
-    """Launch Volume table: launches/graduations per channel for Q1 and Q2, plus a Total row."""
-    gc = d["graduation_by_channel"]
-    wg = gc.get("white_glove", {})
-    ss = gc.get("self_serve", {})
-
-    def cell(ch, per, key):
-        return gc.get(ch, {}).get(per, {}).get(key, 0)
-
-    head = ['Launch Volume', 'Q1 Launches', 'Q1 Graduations', 'Q2 Launches', 'Q2 Graduations']
-    rows = ["<tr>" + "".join(f"<th {TH % ('left' if i==0 else 'right')}>{h}</th>" for i,h in enumerate(head)) + "</tr>"]
-    for label, ch in [("White glove", "white_glove"), ("Self serve", "self_serve")]:
-        rows.append(f"<tr><td {TD % 'left'}>{label}</td>"
-                    f"<td {TD % 'right'}>{cell(ch,'q1','launches')}</td>"
-                    f"<td {TD % 'right'}>{cell(ch,'q1','graduated')}</td>"
-                    f"<td {TD % 'right'}>{cell(ch,'q2','launches')}</td>"
-                    f"<td {TD % 'right'}>{cell(ch,'q2','graduated')}</td></tr>")
-
-    def tot(per, key):
-        return wg.get(per, {}).get(key, 0) + ss.get(per, {}).get(key, 0)
-
-    rows.append(f"<tr><td {TD % 'left'}><b>Total</b></td>"
-                f"<td {TD % 'right'}>{tot('q1','launches')}</td>"
-                f"<td {TD % 'right'}>{tot('q1','graduated')}</td>"
-                f"<td {TD % 'right'}>{tot('q2','launches')}</td>"
-                f"<td {TD % 'right'}>{tot('q2','graduated')}</td></tr>")
-    return '<table style="border-collapse:collapse;font-size:10pt">' + "".join(rows) + "</table>"
-
-
-def _product_section(narrative, ul):
-    """Product update: 'shipped this week' + 'in development'. Content is sourced from
-    the GitHub release feed, which isn't wired up yet, so when the narrative carries no
-    product items we emit a [MATT: ...] placeholder for Matt to fill before send. Lives
-    in the full-report tail, above Definitions (Definitions stays last)."""
-    shipped = narrative.get("product_shipped", [])
-    dev = narrative.get("product_dev", [])
-    out = ["<p><b>Product &mdash; shipped this week</b></p>"]
-    out.append(ul(shipped) if shipped
-               else ul(["[MATT: product releases shipped this week, pending GitHub feed]"]))
-    out.append("<p><b>Product &mdash; in development</b></p>")
-    out.append(ul(dev) if dev
-               else ul(["[MATT: product in development, pending GitHub feed]"]))
-    return out
-
-
-def _read_section(narrative):
-    """The read: what mattered most this week, written by Matt.
-
-    Deliberately never generated. The routine emits a placeholder and Matt fills
-    it before send; a visible placeholder is the correct failure mode, because
-    generated judgment reads as real judgment and the reader can't tell.
-    Supporting candidates live in the scratch block, not here."""
-    read = (narrative.get("read") or "").strip()
-    body = read if read else "[MATT: the read. What mattered most this week and why.]"
-    return f"<p><b>The Read</b></p><p>{body}</p>"
-
-
-def _volume_driver_section(d, narrative):
-    """Why volume moved: direction, cause, fix, by when — every week, never omitted.
-
-    Direction, cohort attribution, the break date and the count-vs-size reading are
-    computed in volume_diagnosis.py. Cause and fix are human-owned and render as
-    placeholders when absent, so an unexplained move is visible rather than quiet.
-    """
-    vd = d.get("volume_driver")
-    if not vd:
-        return ("<p><b>Volume Driver</b></p>"
-                "<p>[MATT: volume_driver missing from the data JSON &mdash; "
-                "run volume_diagnosis.py before sending]</p>")
-
-    m = fmt_money_dollars
-    p = fmt_pct
-
-    def mag(x):
-        """Unsigned percent for prose: 'declined 30.7%', not 'declined -30.7%'."""
-        return f"{_trunc1(abs(x)):.1f}%" if x is not None else "an unknown amount"
-
-    t = vd["total"]
-    down = (t["wow_pct"] or 0) < 0
-    verb = "declined" if down else "grew"
-    # Prefer the pipeline's own short window labels ("7/23-29") over ISO dates so the
-    # sentence reads the way the rest of the report does.
-    wins = d.get("windows", {})
-    lw_lbl = (wins.get("last_week") or {}).get("label")
-    pw_lbl = (wins.get("prior_week") or {}).get("label")
-    if not (lw_lbl and pw_lbl):
-        win = vd.get("window", {})
-        lw, pw = win.get("last") or ["", ""], win.get("prior") or ["", ""]
-        lw_lbl, pw_lbl = f"{lw[0]} to {lw[1]}", f"{pw[0]} to {pw[1]}"
-
-    # Lead by naming the window. Monthly Volume in the table is a rolling 30 days
-    # and the weekly figure is 7 days; they measure different things and can move
-    # in opposite directions, so the two must never read as competing headlines.
-    lines = [f"Week over week, volume {verb} {mag(t['wow_pct'])} to {m(t['last'])} "
-             f"({lw_lbl} vs {pw_lbl}). This is the 7-day window, a different measure "
-             f"from the rolling 30-day Monthly Volume in the table above. The two can "
-             f"move in opposite directions."]
-
-    # Attribution, as one sentence rather than a stack of stat lines.
-    co = vd.get("cohorts", {})
-    no, og = co.get("non_organic"), co.get("organic")
-    if no and og:
-        lead, second = (no, og) if abs(no["share_of_delta_pct"] or 0) >= abs(og["share_of_delta_pct"] or 0) else (og, no)
-        lead_name = "Non-organic" if lead is no else "Organic"
-        second_name = "organic" if lead is no else "non-organic"
-        lines.append(
-            f"{lead_name} accounts for {abs(lead['share_of_delta_pct'])}% of the change "
-            f"({p(lead['wow_pct'])} to {m(lead['last'])}); {second_name} "
-            f"{abs(second['share_of_delta_pct'])}% ({p(second['wow_pct'])} to {m(second['last'])}).")
-
-    # Organic stays organic: D3's definition of non-organic is the 13 internal trade
-    # wallets and nothing else. These third-party high-frequency wallets are inside the
-    # organic number by definition, so we attribute rather than reclassify.
-    to = vd.get("organic_ex_hf") or {}
-    if to.get("wallets") and to.get("hf_share_of_organic_delta_pct") is not None:
-        lines.append(
-            f"Within organic, {to['wallets']} high-frequency third-party wallets account for "
-            f"{abs(to['hf_share_of_organic_delta_pct'])}% of the organic change "
-            f"({m(abs(to['hf_delta']))} of it). Excluding them, organic "
-            f"{'fell' if (to['wow_pct'] or 0) < 0 else 'rose'} {mag(to['wow_pct'])}. "
-            f"They stay in the reported organic figure, which excludes D3's 13 internal "
-            f"trade wallets only.")
-
-    # Mechanism: what kind of change this was, in one sentence.
-    mech = []
-    cliff = vd.get("cliff")
-    if cliff:
-        mech.append(f"The change has a date: the {cliff['cohort'].replace('_', '-')} run rate went "
-                    f"from {m(cliff['before_per_day'])}/day to {m(cliff['after_per_day'])}/day "
-                    f"on {cliff['date']}, a {mag(cliff['pct'])} shift.")
-    else:
-        mech.append("The change was gradual, with no single break date.")
-    cs = vd.get("count_vs_size") or {}
-    if cs.get("reading"):
-        shape = cs["reading"].split(":", 1)
-        detail = shape[1].strip() if len(shape) > 1 else cs["reading"]
-        # Name the cohort. count_vs_size runs on the primary driver only, and an
-        # unlabelled "swap count moved -X%" reads as a total-volume claim, which is a
-        # different number (a fact-check flagged exactly this).
-        cohort_label = vd.get("primary_driver", "").replace("_", "-") or "the driver"
-        mech.append(f"Within {cohort_label}, swap count moved {p(cs['swaps_pct'])} against "
-                    f"average size {p(cs['avg_size_pct'])}, so {detail}.")
-    bi = vd.get("base_inflation")
-    if bi:
-        mech.append(f"The prior week also ran {bi['ratio']}x its trailing 30-day rate "
-                    f"({m(bi['prior_week_per_day'])}/day vs {m(bi['trailing_30d_per_day'])}/day), "
-                    f"so part of the percentage reflects the comparison base.")
-    lines.append(" ".join(mech))
-
-    # Cause and fix come from the narrative (human), never from the diagnosis.
-    cause = (narrative.get("volume_cause") or "").strip()
-    lines.append(f"Cause: {cause}" if cause
-                 else "Cause: [MATT: cause + source link, or 'unconfirmed' + who is investigating]")
-    owner = (narrative.get("volume_fix_owner") or "").strip()
-    eta = (narrative.get("volume_fix_eta") or "").strip()
-    if owner or eta:
-        lines.append(f"Fix: {owner or '[MATT: owner]'} by {eta or '[MATT: ETA needed]'}.")
-    else:
-        lines.append("Fix: [MATT: owner] by [MATT: ETA needed].")
-
-    return "<p><b>Volume Driver</b></p>" + "".join(f"<p>{x}</p>" for x in lines)
-
-
-def _definitions():
-    """Definitions section: a heading followed by plain <p> lines (no table)."""
-    items = [
-        "<b>Monthly Volume:</b> total trading volume over the trailing 30 days. WoW compares to the 30-day window ending 7 days earlier.",
-        "<b>Organic volume:</b> excludes known internal/bot wallets.",
-        "<b>Total Domains Onchain:</b> domains + subdomains + name tokens, spam-excluded.",
-        "<b>Network Asset Value:</b> implied value of the underlying domain assets, derived from token prices (bonding curve pre-graduation, pool price post-graduation). Distinct from TVL.",
-        "<b>MAU:</b> unique active wallets over the trailing 30 days.",
-        "<b>Fractional Launches:</b> cumulative launches since inception.",
-        "<b>Graduation rate:</b> of launches that have finished bonding in the period (graduated or failed), the share that graduated. Launches still bonding are excluded.",
-    ]
-    return "<p><b>Definitions</b></p>" + "".join(f"<p>{x}</p>" for x in items)
+TH = 'style="border:1px solid #ccc;padding:5px 9px;background:#f3f3f3;text-align:left;font-weight:bold"'
+TD = 'style="border:1px solid #ccc;padding:5px 9px;text-align:left;vertical-align:top"'
 
 
 def _quarter_label(report_friday):
-    """Derive the quarter label from report_friday ('YYYY-MM-DD') so the heading
-    tracks the calendar (Q2 -> Q3 on Jul 1) instead of being hard-coded."""
+    """Derive the quarter from report_friday ('YYYY-MM-DD') so the heading tracks
+    the calendar (Q2 -> Q3 on Jul 1) instead of being hard-coded."""
     try:
         q = (int(report_friday[5:7]) - 1) // 3 + 1
         return f"Q{q}"
@@ -337,96 +71,96 @@ def _quarter_label(report_friday):
         return "Q"
 
 
+def metrics_sentence(d):
+    """The one numeric sentence in the report, computed here so the prose can never
+    disagree with the data. Monthly Volume pairs the 30-day dollar with the 30-day
+    rolling WoW (never the weekly WoW: pairing a 30-day dollar with a 7-day percent
+    is the error that used to make the TLDR contradict itself). Returns '' when
+    neither figure is available, so a data gap shortens the TLDR instead of
+    printing a placeholder."""
+    kpis = d.get("kpis") or {}
+    parts = []
+
+    mv = kpis.get("monthly_volume") or {}
+    dollars = fmt_money_dollars(mv.get("headline_30d"))
+    wow = fmt_pct(mv.get("rolling_30d_pct"))
+    if dollars:
+        parts.append(f"Monthly Volume {dollars}" + (f" ({wow} WoW)" if wow else ""))
+
+    mau = kpis.get("mau") or {}
+    mau_v = fmt_count(mau.get("last_end"))
+    mau_wow = fmt_pct(mau.get("wow_pct"))
+    if mau_v:
+        parts.append(f"MAU {mau_v}" + (f" ({mau_wow} WoW)" if mau_wow else ""))
+
+    return ("; ".join(parts) + ".") if parts else ""
+
+
+def _ul(items):
+    items = [str(x) for x in (items or []) if str(x).strip()]
+    if not items:
+        return ""
+    return "<ul>" + "".join(f"<li>{x}</li>" for x in items) + "</ul>"
+
+
+PRODUCT_COLS = [
+    ("idea", "Idea"),
+    ("owner", "Owner"),
+    ("impact", "Expected impact"),
+    ("status", "Status"),
+    ("date", "Expected date"),
+    ("this_week", "This week"),
+]
+
+
+def _product_table(rows):
+    """Inder's format. Single header row and no spans: Drive's HTML to Doc
+    conversion silently drops rowspan/colspan."""
+    if not rows:
+        return ""
+    out = ['<table style="border-collapse:collapse;font-size:10pt"><tr>']
+    out += [f"<th {TH}>{label}</th>" for _, label in PRODUCT_COLS]
+    out.append("</tr>")
+    for r in rows:
+        out.append("<tr>")
+        for key, _ in PRODUCT_COLS:
+            out.append(f"<td {TD}>{(r.get(key) or '').strip()}</td>")
+        out.append("</tr>")
+    out.append("</table>")
+    return "".join(out)
+
+
 def build_html(d, narrative, email=False):
-    pd = d["premium_domains"]
-    prem = []
-    # Label is driven by the fractional_token.status field carried in the JSON,
-    # never assumed: GRADUATION_SUCCESSFUL -> Graduated, GRADUATION_FAILED ->
-    # Graduation failed, FRACTIONALIZED (on the bonding curve) -> Bonding Now.
-    # Fallbacks cover data snapshots written before the status field existed.
-    STATUS_LABEL = {
-        "GRADUATION_SUCCESSFUL": "Graduated",
-        "GRADUATION_FAILED": "Graduation failed",
-        "FRACTIONALIZED": "Bonding Now",
-    }
-    if pd["live"]:
-        lbl = STATUS_LABEL.get(pd["live"].get("status"), "Graduated")
-        prem.append(f"{lbl}: {pd['live']['name']} (FDV {fmt_money_dollars(pd['live']['fdv_usd'])})")
-    if pd["upcoming"]:
-        lbl = STATUS_LABEL.get(pd["upcoming"].get("status"), "Bonding Now")
-        prem.append(f"{lbl}: {pd['upcoming']['name']} (Blended FDV {fmt_money_dollars(pd['upcoming']['fdv_usd'])})")
-    def ul(items):
-        return "<ul>" + "".join(f"<li>{x}</li>" for x in items) + "</ul>"
+    """`email` is accepted and ignored. The report and the email are now the same
+    document; the flag stays so older callers do not break."""
+    tldr = (narrative.get("tldr") or "").strip()
+    metrics = metrics_sentence(d)
+    if metrics:
+        tldr = (tldr + " " + metrics).strip() if tldr else metrics
 
-    # Single link in the whole report: an italic note under the TLDR pointing at
-    # the dashboard's Weekly tab (which renders this full report). No links-first
-    # banner up top — the reader hits the scorecard, not logistics.
-    note = ('<p><i>Full report, including fractional, registrar and ecosystem detail, '
-            'in the <a href="' + WEEKLY_TAB_URL + '">live dashboard’s Weekly tab</a>. '
-            '(user d3 / pw d3demo)</i></p>')
-
-    # Shared top block (header through Next Steps). The email is this block only;
-    # the full Doc appends the detail tail below.
-    # Candidates scratch block, when the pipeline attached one. Renders first so it
-    # is impossible to miss, and is marked for deletion before send.
-    candidates_html = ""
-    cand = d.get("candidates")
-    if cand:
-        try:
-            from build_candidates import render_block
-            candidates_html = render_block(cand)
-        except Exception:  # renderer must stay stdlib-only and never hard-fail
-            candidates_html = ('<div style="border:2px dashed #c00;padding:10px">'
-                               '<p><b>CANDIDATES present in data but could not render '
-                               '&mdash; run build_candidates.py directly. '
-                               'DELETE BEFORE SENDING.</b></p></div>')
-
-    head = [
-        candidates_html,
+    parts = [
         '<div style="font-family:Arial,sans-serif;font-size:11pt">',
         (f"<p><b>Subject:</b> {narrative['subject']}</p>" if narrative.get("subject") else ""),
-        f"<p><b>{_quarter_label(d['report_friday'])} KPIs &middot; Week ending {narrative['week_ending']}</b></p>",
-        f"<p><b>TLDR:</b> {narrative['tldr']}</p>",
-        note,
-        _read_section(narrative),
-        "<p><b>Key Wins</b></p>", ul(narrative.get("key_wins", [])),
-        "<p><b>Key Updates</b></p>", ul(narrative.get("key_updates", [])),
-        _kpi_table(d),
-        '<p style="font-size:9pt;color:#666">Goal column reflects Q2 targets; Q3 goals coming soon.</p>',
-        _volume_driver_section(d, narrative),
-        "<p><b>Next Steps</b></p>", ul(narrative.get("next_steps", [])),
+        f"<p><b>{_quarter_label(d.get('report_friday',''))} KPIs, week ending "
+        f"{narrative.get('week_ending','')}</b></p>",
+        f'<p><i>All KPIs live in Metabase: <a href="{METABASE_URL}">Doma KPI dashboard</a>. '
+        f'Full product board <a href="{PRODUCT_BOARD_URL}">here</a>.</i></p>',
+        f"<p><b>TLDR</b></p><p>{tldr}</p>",
+        "<p><b>Key Wins</b></p>", _ul(narrative.get("key_wins")),
+        "<p><b>Key Updates</b></p>", _ul(narrative.get("key_updates")),
     ]
-    reg_int = narrative.get("reg_int", [])
-    ecosystem = narrative.get("ecosystem", [])
-    tail = [
-        "<p><b>Fractional Performance</b></p>",
-        _frac_table(d),
-        _frac_caveat(d),
-        _frac_launch_table(d),
-        "<p><b>Premium Domains</b></p>", ul(prem),
-        "<p><b>Registrars &ndash; BD</b></p>", ul(narrative.get("reg_bd", [])),
-    ]
-    # Omit Integrations / Ecosystem entirely when quiet (empty array), rather than
-    # leaving an empty header for Matt to hand-delete. Matches the prompt's
-    # omit-when-quiet rule for these sections.
-    if reg_int:
-        tail += ["<p><b>Registrars &ndash; Integrations</b></p>", ul(reg_int)]
-    if ecosystem:
-        tail += ["<p><b>Ecosystem Partners</b></p>", ul(ecosystem)]
-    # Product section, then Definitions last.
-    tail += _product_section(narrative, ul)
-    tail += [_definitions()]
-    # In the full Doc, mark where the page-1 email ends so Matt can copy the top
-    # for the team post; the email render itself just stops after Next Steps.
-    divider = ['<hr><p style="text-align:center;color:#999;font-size:9pt">'
-               '&mdash; EMAIL ENDS HERE &mdash; everything below goes to the full report only '
-               '(dashboard Weekly tab) &mdash;</p><hr>']
-    parts = head + ([] if email else (divider + tail)) + ["</div>"]
+
+    rows = narrative.get("product_rows") or []
+    if rows:
+        parts += [
+            "<p><b>Product Updates</b></p>",
+            f'<p>What product and engineering have shipped and have in progress. '
+            f'Full board <a href="{PRODUCT_BOARD_URL}">here</a>.</p>',
+            _product_table(rows),
+        ]
+
+    parts += ["<p><b>Next Steps</b></p>", _ul(narrative.get("next_steps")), "</div>"]
     return "".join(parts)
-
-
-DASHBOARD_URL = "https://d3-kpi-dashboard-one.vercel.app"
-WEEKLY_TAB_URL = "https://d3-kpi-dashboard-one.vercel.app/#weekly"
 
 
 def main():
